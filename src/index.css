@@ -1,0 +1,14 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+    --background-color: #fff;
+    --text-color: #1c1c1c;
+    --button-bg: #3b95f6;
+    --nav-bg: #f0f9f4;
+    --bg-card-color: #f7f9fc;
+    --bg-blockcode: #edf5ee;
+}

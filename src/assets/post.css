@@ -1,0 +1,70 @@
+/* src/styles/post.css */
+
+.post-container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: "Segoe UI", sans-serif;
+  line-height: 1.7;
+}
+
+.post-container h1,
+.post-container h2,
+.post-container h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.post-container p {
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+}
+
+.post-container code {
+  background-color: transparent;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.95rem;
+}
+
+.post-container pre {
+  background-color: var(--bg-blockcode);
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+.post-container blockquote {
+  border-left: 4px solid #888;
+  padding-left: 1rem;
+  color: #555;
+  font-style: italic;
+  margin: 1.5rem 0;
+}
+
+.post-container ul {
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+
+.post-container a {
+  color: #007acc;
+  text-decoration: none;
+}
+.post-container a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 720px) {
+  .post-container {
+    width: 100%;
+    padding: 0;
+  }
+  .post-container pre {
+    margin-left: -2rem;
+    margin-right: -2rem;
+    border-radius: 0;
+  }
+}

@@ -1,0 +1,41 @@
+
+# Tutorial Git 🗂️
+
+Git es un sistema de control de versiones distribuido que permite a los desarrolladores __registrar cambios en el código a lo largo del tiempo__, colaborar con otros y mantener un historial limpio y ordenado del proyecto.
+
+## Configuración Inicial
+
+Para comenzar a personalizar aspectos básicos y avanzados de Git debemos saber del funcionamiento y cómo modificar su configuración predeterminada. Una herramienta inherente de Git llamada git config permite establecer y obtener variables de configuración que controlan aspectos del funcionamiento y la apariencia de Git. Estas variables se pueden almacenar en tres lugares diferentes:
+
+```git
+git config --list --show-origin
+```
+
+## Configuración de identidad
+
+Después de instalar Git, los usuarios deben establecer inmediatamente el nombre de usuario y la dirección de correo eléctronico, que se usarán para cada confirmación de Git.
+
+__Configurar el nombre de usuario__:
+
+```git
+git config --global user.name "nombre de usuario" 
+```
+
+__Configurar el email para el usuario__:
+
+```git
+git config --global user.email "usuario@correo.com"
+```
+
+
+## Configurar Editor
+
+__Configurar VS code como el editor por defecto para git__
+
+```git
+git config --global core.editor "code --wait"
+```
+
+:::info card-pro
+Este es un bloque de información con clase personalizada.
+:::

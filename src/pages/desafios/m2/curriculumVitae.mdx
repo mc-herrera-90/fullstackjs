@@ -1,0 +1,60 @@
+En este desafío desarrolarás una página estática que represente tu __Curriculum Vitae (CV)__ en __HTML__, utilizando exclusivamente HTML. El objetivo principal es comprender y aplicar correctamente las __etiquetas semánticas__ de HTML5, organizando el contenido de manera clara, estructurada y profesional.
+
+## __Paso 1: Estructura del Proyecto__
+
+Cuando trabajamos en un sitio o página web de forma local, es importante __mantener todos los archivos relacionados en un solo directorio o carpeta__. Puedes crear este directorio en cualquier ubicación del sistema, pero es recomendable elegir un lugar de fácil acceso, como el __Escritorio__.
+
+> Elige un lugar específico para almacenar tus proyectos web. Por ejemplo, puedes crear un directorio llamado __proyectos_web__, donde organizarás todos los proyectos que desarrolles.
+
+Ahora, para organizar nuestro proyecto de manera adecuada, pensemos en todo lo que necesitamos para crear un sitio web simple:
+
+- Un archivo html principal (Ejemplo: `index.html`)
+- Directorio para contener las imágenes (Ejemplo: `portada.jpg`, `perfil.png`)
+- Directorio para contener archivos de estilos (Ejemplo: `estilos.css`)
+- Directorio para contener archivos script (Ejemplo: `funciones.js`)
+
+Siguiendo esta estructura, mantedrás un proyecto bien organizado. Además, es común agrupar estos directorios dentro de una carpeta llamada `📂 assets`.
+
+## __Paso 2: Cabecera de un documento HTML__
+
+Como sabemos, la estructura básica de un documento HTML debe incluir siempre dos secciones o etiquetas principales:
+
+- La __cabecera del documento__ (`<head>`)
+- El __cuerpo del documento__ (`<body>`)
+
+La sección de cabecera `<head>` del documento se encarga de incluir __metadatos sobre la página__, como el título del documento, la codificación de caracteres, enlaces de hojas de estilos, scripts y otros recursos externos. Esta parte no es visible directamente para el usuario.
+
+Existen varias etiquetas que podemos utilizar en esta sección de la cabecera del documento:
+
+
+| Etiqueta    | Atributos         | Descripción                  |
+|-------------|-------------------|------------------------------|
+| `<title>`   |                   | Título de la página.         |
+| `<base>`    | `href`, `target`  | URL base del documento.      |
+| `<link>`    | `href`, `hreflang`, `rel`, `media`, `type` | Establece una relación del documento actual con otro externo. |
+
+También, en la cabecera de un documento HTML se suele utilizar las etiquetas `Open Graph` que permiten destacar más nuestro sitio o página web.
+
+## __¿Qué es Open Graph?__
+
+¿Te haz preguntado cómo, al compartir una página web, un blog, un video de YouTube o una canción de Spotify, aparece una vista previa con una imagen y su título?
+
+Desde el año 2010, facebook introdujo el <a href="https://ogp.me/" target="_blank" rel="noopener noreferrer">Protocolo Open Graph</a>, que permite convertir cualquier página web en un objeto gráfico, mejorando su presentación en redes sociales.
+
+Un ejemplo de ello, es el siguiente:
+
+```html
+<html prefix="og: https://ogp.me/ns#">
+<head>
+  <meta property="og:title" content="Marco Contreras - Curriculum Vitae">
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="Curriculum Vitae - Programador FullStack" />
+  <meta property="og:url" content="https://miweb.cl/curriculum">
+  <meta property="og:image" content="https://miweb.cl/perfil.png">
+  ...
+</head>
+  ...
+</html>
+```
+
+Aunque los motores de búsqueda como [Google](https://www.google.com/) analizan el contenido de la página para determinar automáticamente el fragmento más adecuado para la descripción, también pueden utilizar la información proporcionada en el elemento `<meta name="description">` cuando esta resulta más relevante que otras partes del contenido.
