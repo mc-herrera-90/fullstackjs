@@ -32,7 +32,7 @@
 .card h3 {
   margin-bottom: 0.8rem;
   font-weight: 700;
-  color: #297cc9e3;
+  color: var(--card-title);
 }
 
 .card-content {

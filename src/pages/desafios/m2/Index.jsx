@@ -12,21 +12,22 @@ export default () => {
     return (
     <div>
         <h2>Introducción al desarrollo web</h2>
-        { desafiosM2 ?  ( <table>
+        { desafiosM2 ?  (
+        <table className='responsive-table'>
             <thead>
                 <th>N°</th>
+                <th>Dificultad</th>
                 <th>Desafío</th>
-                <th>Enlace</th>
             </thead>
             <tbody>
                 { desafiosM2.map((entry, index) => {
                     return (
                     <tr key={index} onClick={() => handleRowClick(entry.slug)} style={{cursor: "pointer"}}>
-                        <td>{index + 1}</td>
-                        <td>
-                            {entry.title}
+                        <td data-label="N°">{index + 1}</td>
+                        <td data-label="Dificultad">
+                            {entry.difficult}
                         </td>
-                        <td>
+                        <td data-label="Desafío">
                             {entry.title}
                         </td>
                     </tr>
