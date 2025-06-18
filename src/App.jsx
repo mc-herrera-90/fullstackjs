@@ -15,6 +15,7 @@ import { desafiosM1 } from './data/desafiosM1'
 import { useLocation } from 'react-router-dom'
 import CopyCodeButtonInjector from './components/CopyCodeButtonInjector';
 import ScrollToTop from './components/ScrollToTop';
+import Footer from './components/Footer'
 
 function App() {
 
@@ -68,6 +69,7 @@ function App() {
           }
         </Routes>
         </main>
+        <Footer/>
       </>
   )
 }
