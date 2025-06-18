@@ -14,6 +14,7 @@ import { desafiosM2 } from './data/desafiosM2'
 import { desafiosM1 } from './data/desafiosM1'
 import { useLocation } from 'react-router-dom'
 import CopyCodeButtonInjector from './components/CopyCodeButtonInjector';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
 
@@ -44,8 +45,9 @@ function App() {
   return (
       <>
         <Navbar />
-        <CopyCodeButtonInjector />
         <main className={isDesafios ? 'page-container': ''}>
+        <CopyCodeButtonInjector />
+        <ScrollToTop />
         <Routes>
           <Route index path="/" element={<Home />} />
           <Route path="/proyectos" element={<Proyectos />} />
