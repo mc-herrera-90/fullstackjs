@@ -1,0 +1,145 @@
+import MathComponent from '../../../components/MathComponent';
+
+## __Calculadora IMC__
+
+El __IMC__, conocido como el índice de masa corporal, es una medida que asocia el peso de una persona. Este valor es utilizado como indicador nutricional y constituye un índice fácil y sencillo de calcular para determinar el estado de obesidad y sobrepreso de una persona.
+
+El __IMC__ se calcula de la siguiente manera:
+
+<MathComponent formula="\\IMC=\frac{W}{H^2}" />
+
+__Donde:__
+
+- `peso` está en __kilogramos (kg)__
+- `altura` está en __metros (m)__
+
+Para ello la Organización Mundial de la Salud (OMS) ha determinado una clasificación para distintos rangos de valores:
+
+|IMC|Clasificación OMS|
+|:--|:----------------|
+|`< 18.5`|Bajo Peso|
+|`18.5 - 25`|Adecuado|
+|`25 - 30`|Sobrepeso|
+|`30 - 35`|Obesidad Grado I|
+|`35 - 40`|Obesidad Grado II|
+|`> 40`|Obesidad Grado III|
+
+## __<span style={{color: 'var(--main-secondary)'}}>PASO 1</span> ↙<br/> Crear el archivo y la clase principal__
+
+Primero, en tu proyecto crea un archivo llamado `CalculadoraIMC.java`.
+
+Este será el punto de entrada al programa:
+
+```java
+public class CalculadoraIMC {
+    public static void main(String[] args) {
+        // Aquí irá el código principal
+    }
+}
+```
+
+
+## __<span style={{color: 'var(--main-secondary)'}}>PASO 2</span> ↙<br/> Capturar los datos del usuario__
+
+Java no trae por defecto entrada desde consola, por eso es que se necesita importar la clase `Scanner` desde la librería `java.util`.
+
+Vamos a usar `Scanner` para leer el __peso__ y la __altura__ por teclado.
+
+```java
+import java.util.Scanner;
+
+public class CalculadoraIMC {
+    public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Ingresa tu peso en kg: ");
+        double peso = scanner.nextDouble();
+
+        System.out.println("Ingresa tu altura en metros: ");
+        double altura = scanner.nextDouble();
+    }
+}
+```
+
+## __<span style={{color: 'var(--main-secondary)'}}>PASO 3</span> ↙<br/> Calcular el IMC__
+
+A continuación, aplicamos la fórmula matemática:
+
+```java
+public class CalculadoraIMC {
+    public static void main(String[] args){
+        // código anterior...
+        double imc = peso / (altura * altura);
+    }
+}
+```
+
+Luego, mostramos el resultado obtenido, pero limitándolo a 2 decimales:
+
+```java
+public class CalculadoraIMC {
+    public static void main(String[] args){
+        // código anterior...
+        double imc = peso / (altura * altura);
+        System.out.printf("Tu IMC es: %.2f\\n", imc);
+    }
+}
+```
+
+## __<span style={{color: 'var(--main-secondary)'}}>PASO 4</span> ↙<br/> Clasificar el resultado__
+
+Ahora agregamos la lógica para mostrar la categoría según el resultado:
+
+```java
+public class CalculadoraIMC {
+    public static void main(String[] args){
+        // código anterior...
+        double imc = peso / (altura * altura);
+        System.out.printf("Tu IMC es: %.2f\\n", imc);
+        
+        if (imc < 18.5) {
+            System.out.println("Clasificación: Bajo peso");
+        } else if (imc < 24.9) {
+            System.out.println("Clasificación: Normal");
+        } else if (imc < 29.9) {
+            System.out.println("Clasificación: Sobrepeso");
+        } else {
+            System.out.println("Clasificación: Obesidad");
+        }
+    }
+}
+```
+
+## __Código completo__
+
+
+```java
+import java.util.Scanner;
+
+public class CalculadoraIMC {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Ingresa tu peso en kg: ");
+        double peso = scanner.nextDouble();
+
+        System.out.print("Ingresa tu altura en metros: ");
+        double altura = scanner.nextDouble();
+
+        double imc = peso / (altura * altura);
+        System.out.printf("Tu IMC es: %.2f\\n", imc);
+
+        if (imc < 18.5) {
+            System.out.println("Clasificación: Bajo peso");
+        } else if (imc < 24.9) {
+            System.out.println("Clasificación: Normal");
+        } else if (imc < 29.9) {
+            System.out.println("Clasificación: Sobrepeso");
+        } else {
+            System.out.println("Clasificación: Obesidad");
+        }
+
+        scanner.close();
+    }
+}
+```

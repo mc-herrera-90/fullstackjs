@@ -1,6 +1,7 @@
 
 body {
     background: var(--background-color);
+    --main-secondary: #4f46e5;
     color: var(--text-color);
     --anchor-visited: rgb(49, 51, 60);
     --blockquote-bg: #f1f5f8;
@@ -11,6 +12,7 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 body.dark {
+    --main-secondary: #948ffe;
     --background-color: #1f1f1f;
     --table-thead-bg: #303030;
     --text-color: #fcfcfc;
@@ -23,8 +25,7 @@ body.dark {
     --blockquote-fg: #ebf3ff;
     --anchor-link: bisque;
     --card-title: #5eacff;
-  }
-
+}
 a {
   color: var(--anchor-link);
   text-decoration: none;
@@ -61,6 +62,7 @@ th, td {
   padding: 0.75rem;
   text-align: left;
   border: 1px solid #ddd;
+  width: 1%;
 }
 
 /* Scroll horizontal en pantallas pequeñas */
@@ -71,15 +73,14 @@ th, td {
     white-space: nowrap;
   }
 }
-
 /* Texto responsivo */
 h1 {
   font-size: 2rem;
 }
 h2 {
-  font-size: 2.6rem;
+  font-size: 2.5rem;
   margin: 1.8rem 0;
-  line-height: 2.7rem;
+  line-height: 2.8rem;
 }
 p {
   font-size: 1rem;
@@ -91,12 +92,6 @@ pre {
   border-radius: 6px;
   overflow-x: auto;
   margin: 1.5rem 0;
-}
-
-.hljs, code * {
-  tab-size: 2 !important; /* Cambia 2 por el número de espacios que quieras */
-  -moz-tab-size: 2 !important; /* Firefox */
-  -o-tab-size: 2 !important;    /* Opera */
 }
 
 .page-container {

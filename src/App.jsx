@@ -9,7 +9,9 @@ import Contacto from './pages/Contacto'
 import { Blog } from './pages/Blog';
 import { BlogPostPage } from './pages/BlogPostPage';
 import IndexM2 from './pages/desafios/m2/Index';
+import IndexM1 from './pages/desafios/m1/Index';
 import { desafiosM2 } from './data/desafiosM2'
+import { desafiosM1 } from './data/desafiosM1'
 import { useLocation } from 'react-router-dom'
 
 function App() {
@@ -48,7 +50,13 @@ function App() {
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
+          <Route path="/desafios/m1" element={<IndexM1 />} />
           <Route path="/desafios/m2" element={<IndexM2 />} />
+          {
+            desafiosM1.map(({slug, component: Component}) => (
+              <Route key={slug} path={`/desafios/m1/${slug}`} element={<Component />} />
+            ))
+          }
           {
             desafiosM2.map(({slug, component: Component}) => (
               <Route key={slug} path={`/desafios/m2/${slug}`} element={<Component />} />
