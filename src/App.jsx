@@ -13,6 +13,7 @@ import IndexM1 from './pages/desafios/m1/Index';
 import { desafiosM2 } from './data/desafiosM2'
 import { desafiosM1 } from './data/desafiosM1'
 import { useLocation } from 'react-router-dom'
+import CopyCodeButtonInjector from './components/CopyCodeButtonInjector';
 
 function App() {
 
@@ -43,6 +44,7 @@ function App() {
   return (
       <>
         <Navbar />
+        <CopyCodeButtonInjector />
         <main className={isDesafios ? 'page-container': ''}>
         <Routes>
           <Route index path="/" element={<Home />} />

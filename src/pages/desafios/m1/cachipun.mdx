@@ -1,0 +1,147 @@
+En este desafío vamos a programar uno de los juegos clásicos de toda la vida: **El Cachipún**, también conocido como **Piedra**, **Papel** o **Tijeras**. Ideal si estás empezando con Java, este proyecto te ayudará a practicar entrada de datos, condicionales y generación aleatoria.
+
+## __<span style={{color: 'var(--main-secondary)'}}>PASO 1</span> ↙<br/> Crear un proyecto__
+
+### __En IntelliJ IDEA__
+
+1. Abre IntelliJ y crea un nuevo proyecto Java.
+2. Dentro del directorio `src`, crea una clase nueva: `Cachipun.java`.
+
+## __<span style={{color: 'var(--main-secondary)'}}>PASO 2</span> ↙<br/> Código Base__
+
+Comienza con la estructura mínima e importamos las clases necesarias:
+
+```java
+import java.util.Scanner;
+import java.util.Random;
+
+public class Cachipun {
+    public static void main(String[] args) {
+        // Aquí va el código
+    }
+}
+```
+
+## __<span style={{color: 'var(--main-secondary)'}}>PASO 3</span> ↙<br/> Entrada del usuario y jugada aleatoria__
+
+El siguiente paso es capturar la jugada del usuario y generar el de la computadora al azar (utilizando `Random`):
+
+
+```java
+import java.util.Scanner;
+import java.util.Random;
+
+public class Cachipun {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+
+        System.out.println("Bienvenido al juego de Cachipún");
+        System.out.print("Elige una opción (piedra, papel o tijera): ");
+        String jugador = scanner.nextLine().toLowerCase();
+
+        String[] opciones = {"piedra", "papel", "tijera"};
+        String computadora = opciones[random.nextInt(3)];
+
+        System.out.println("La computadora eligió: " + computadora);
+    }
+}
+```
+
+## __<span style={{color: 'var(--main-secondary)'}}>PASO 4</span> ↙<br/> Determinar al ganador__
+
+Comparamos las opciones y mostramos el resultado:
+
+```java
+import java.util.Scanner;
+import java.util.Random;
+
+public class Cachipun {
+    public static void main(String[] args) {
+        // ... Código anterior
+        if (jugador.equals(computadora)) {
+            System.out.println("¡Empate!");
+        } else if (
+            (jugador.equals("piedra") && computadora.equals("tijera")) ||
+            (jugador.equals("papel") && computadora.equals("piedra")) ||
+            (jugador.equals("tijera") && computadora.equals("papel"))
+        ) {
+            System.out.println("¡Ganaste!");
+        } else if (
+            jugador.equals("piedra") ||
+            jugador.equals("papel") ||
+            jugador.equals("tijera")
+        ) {
+            System.out.println("¡Perdiste!");
+        } else {
+            System.out.println("Opción no válida. Debes elegir piedra, papel o tijera.");
+        }
+    }
+
+    scanner.close(); // Cerramos el Scanner
+}
+```
+
+> 📌 **Nota importante sobre `.equals()` en Java**
+>
+> En Java, **no debes usar `==` para comparar cadenas de texto**, ya que `==` compara si dos objetos son el mismo en memoria, no si contienen el mismo texto.
+>
+> Para comparar el contenido de dos cadenas, se utiliza el método `.equals()`, así:
+>
+> ```java
+> "piedra".equals("piedra") // true
+> "piedra".equals("tijera") // false
+> ```
+>
+> En nuestro juego de Cachipún, usamos `jugador.equals(computadora)` para saber si el usuario y la computadora eligieron la misma opción.
+>
+> También usamos condiciones como:
+>
+> ```java
+> jugador.equals("piedra")
+> ```
+>
+> para verificar que el texto ingresado por el usuario coincide exactamente con una de las opciones válidas.
+
+## __Código completo__
+
+```java
+import java.util.Scanner;
+import java.util.Random;
+
+public class Cachipun {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+
+        System.out.println("Bienvenido al juego de Cachipún");
+        System.out.print("Elige una opción (piedra, papel o tijera): ");
+        String jugador = scanner.nextLine().toLowerCase();
+
+        String[] opciones = {"piedra", "papel", "tijera"};
+        String computadora = opciones[random.nextInt(3)];
+
+        System.out.println("La computadora eligió: " + computadora);
+
+        if (jugador.equals(computadora)) {
+            System.out.println("¡Empate!");
+        } else if (
+            (jugador.equals("piedra") && computadora.equals("tijera")) ||
+            (jugador.equals("papel") && computadora.equals("piedra")) ||
+            (jugador.equals("tijera") && computadora.equals("papel"))
+        ) {
+            System.out.println("¡Ganaste!");
+        } else if (
+            jugador.equals("piedra") ||
+            jugador.equals("papel") ||
+            jugador.equals("tijera")
+        ) {
+            System.out.println("¡Perdiste!");
+        } else {
+            System.out.println("Opción no válida. Debes elegir piedra, papel o tijera.");
+        }
+
+        scanner.close();
+    }
+}
+```
