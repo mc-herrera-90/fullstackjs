@@ -33,8 +33,8 @@ function App() {
 
     linkTag.href =
       theme === 'dark'
-        ? '/node_modules/highlight.js/styles/a11y-dark.min.css'
-        : '/node_modules/highlight.js/styles/github.css';
+        ? '/styles/a11y-dark.min.css'
+        : '/styles/github.min.css';
   }, [theme])
   
   const location = useLocation();
