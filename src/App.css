@@ -72,6 +72,10 @@ th, td {
     overflow-x: auto;
     white-space: nowrap;
   }
+
+  .page-container{
+    padding: 1.2rem;
+  }
 }
 /* Texto responsivo */
 h1 {
@@ -173,7 +177,7 @@ body.dark ::-webkit-scrollbar-thumb {
 /* Estilo específico para pantallas pequeñas */
 @media (max-width: 600px) {
   .main-container {
-    padding: 1rem;
+    padding: 0.3rem;
   }
 
   h1 {
@@ -189,7 +193,7 @@ body.dark ::-webkit-scrollbar-thumb {
     font-size: 1.9rem;
   }
   pre {
-    margin: 1rem -2.15rem;
+    margin: 1rem -2rem;
     border: 1px solid transparent;
   }
   pre code {

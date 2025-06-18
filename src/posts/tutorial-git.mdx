@@ -1,5 +1,5 @@
 
-# Tutorial Git 🗂️
+## Tutorial Git 🗂️
 
 Git es un sistema de control de versiones distribuido que permite a los desarrolladores __registrar cambios en el código a lo largo del tiempo__, colaborar con otros y mantener un historial limpio y ordenado del proyecto.
 
@@ -7,7 +7,7 @@ Git es un sistema de control de versiones distribuido que permite a los desarrol
 
 Para comenzar a personalizar aspectos básicos y avanzados de Git debemos saber del funcionamiento y cómo modificar su configuración predeterminada. Una herramienta inherente de Git llamada git config permite establecer y obtener variables de configuración que controlan aspectos del funcionamiento y la apariencia de Git. Estas variables se pueden almacenar en tres lugares diferentes:
 
-```git
+```bash
 git config --list --show-origin
 ```
 
@@ -17,25 +17,73 @@ Después de instalar Git, los usuarios deben establecer inmediatamente el nombre
 
 __Configurar el nombre de usuario__:
 
-```git
+```bash
 git config --global user.name "nombre de usuario" 
 ```
 
 __Configurar el email para el usuario__:
 
-```git
+```bash
 git config --global user.email "usuario@correo.com"
 ```
 
 
-## Configurar Editor
+## __Configurar Editor__
 
 __Configurar VS code como el editor por defecto para git__
 
-```git
+```bash
 git config --global core.editor "code --wait"
 ```
 
-:::info card-pro
-Este es un bloque de información con clase personalizada.
-:::
+> La opción `--wait` es para que la terminal se quede esperando hasta que cerremos el editor de texto.
+
+## __ALIAS__
+
+La herramienta `git config` también nos permite definir __alias__ que son útiles para ahorrarnos un poco de escritura de comandos más largos. A continuación, algunos ejemplos:
+
+
+```bash
+git config --global alias.br branch
+```
+
+```bash
+git config --global alias.co checkout
+```
+
+```bash
+git config --global alias.ci commit 
+```
+
+```bash
+git config --global alias.st status
+```
+
+```bash
+git config --global alias.rt remote
+```
+
+
+## __Inicializar un proyecto con GIT__
+
+Para iniciar un proyecto en Git, primera debemos situarnos en el directorio donde tendrás tu proyecto o podemos crear en este caso una carpeta y entrar en ella y partir desde cero. Si estás Windows, Mac o Linux podemos crear una carpeta con el comando mkdir y luego entrar en ella con el comando cd
+
+Crea una carpeta para contener el proyecto y accedemos a esa carpeta:
+
+```bash
+mkdir git-tutorial && cd git-tutorial
+```
+
+Inicializar un repositorio en local con git en el directorio actual
+
+```bash
+git init
+```
+
+Crear un nuevo repositorio en local con el nombre especificado (crea la carpeta y dentro el repositorio local)
+
+```bash
+git init tutorial-git
+```
+
+> Una vez inicializado el repositorio se crea una carpeta oculta llamada .git dentro del proyecto. Resultará obvio, pero conviene decir que nunca se debe borrar esa carpeta (al menos que quieras que tu proyecto no sea controlado por git).
