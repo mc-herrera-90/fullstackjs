@@ -188,6 +188,14 @@ body.dark ::-webkit-scrollbar-thumb {
   h2 {
     font-size: 1.9rem;
   }
+  pre {
+    margin: 1rem -2.15rem;
+    border: 1px solid transparent;
+  }
+  pre code {
+    font-size: 16px;
+    line-height: 1.4rem;
+  }
 }
 /* TableResponsive.css */
 .responsive-table {
