@@ -184,6 +184,11 @@ body.dark ::-webkit-scrollbar-thumb {
     font-size: 0.95rem;
   }
 }
+@media (max-width: 760px) {
+  h2 {
+    font-size: 1.9rem;
+  }
+}
 /* TableResponsive.css */
 .responsive-table {
   width: 100%;
