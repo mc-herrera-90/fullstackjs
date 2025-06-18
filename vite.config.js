@@ -14,5 +14,6 @@ export default defineConfig({
       remarkPlugins: [remarkDirective, remarkCustomDirective, remarkGfm],
       rehypePlugins: [rehypeHighlight]
     })
-  ]
+  ],
+  base: '/'
 })
