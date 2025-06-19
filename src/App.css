@@ -280,3 +280,11 @@ body.dark ::-webkit-scrollbar-thumb {
 pre {
   position: relative;
 }
+code {
+  background-color: var(--bg-blockcode);  /* fondo gris claro */
+  color: #d6336c;             /* color rosa oscuro para destacar */
+  padding: 2px 6px;           /* un poco de espacio alrededor */
+  border-radius: 4px;         /* bordes redondeados suaves */
+  font-family: 'Source Code Pro', monospace; /* fuente monoespaciada */
+  font-size: 0.95em;          /* tamaño un poco menor que el texto */
+}
