@@ -380,8 +380,6 @@ date: "2025-05-18"`}),`
 `,i.jsx(n.h2,{children:i.jsx(n.strong,{children:"¿Qué es el factorial?"})}),`
 `,i.jsxs(n.p,{children:["El factorial de un número entero ",i.jsx(n.code,{children:"n"})," (representado como ",i.jsx(n.code,{children:"n!"}),") es el ",i.jsx(n.strong,{children:"producto"})," de todos los enteros positivos desde ",i.jsx(n.code,{children:"1"})," hasta ",i.jsx(n.code,{children:"n"}),"."]}),`
 `,i.jsxs(n.p,{children:["Por ejemplo: ",i.jsx(n.code,{children:"5! = 5 × 4 × 3 × 2 × 1 = 120"})]}),`
-`,i.jsx(n.h2,{children:i.jsx(n.strong,{children:"¿Qué es la recursión?"})}),`
-`,i.jsxs(n.p,{children:["La ",i.jsx(n.strong,{children:"recursión"})," es una técnica donde una función se llama a sí misma para resolver un problema."]}),`
 `,i.jsx(n.h2,{children:i.jsx(n.strong,{children:"Decidir cómo vas a resolverlo"})}),`
 `,i.jsx(n.p,{children:'Ahora piensas: "¿Cómo puedo escribir esto como un programa?"'}),`
 `,i.jsxs(n.p,{children:["Tienes dos opciones: hacerlo con un ciclo (",i.jsx(n.code,{children:"for"}),") o con ",i.jsx(n.strong,{children:"recursión"}),". Primero lo resolvemos con ",i.jsx(n.strong,{children:"recursión"}),", porque:"]}),`
@@ -421,8 +419,10 @@ date: "2025-05-18"`}),`
 
     `,i.jsx(n.span,{className:"hljs-keyword",children:"public"})," ",i.jsx(n.span,{className:"hljs-keyword",children:"static"})," ",i.jsx(n.span,{className:"hljs-type",children:"long"})," ",i.jsx(n.span,{className:"hljs-title function_",children:"factorial"}),i.jsxs(n.span,{className:"hljs-params",children:["(",i.jsx(n.span,{className:"hljs-type",children:"int"})," n)"]}),` {
         `,i.jsx(n.span,{className:"hljs-keyword",children:"if"})," (n <= ",i.jsx(n.span,{className:"hljs-number",children:"1"}),`) {
+            expresion += `,i.jsx(n.span,{className:"hljs-string",children:'"1"'}),`;
             `,i.jsx(n.span,{className:"hljs-keyword",children:"return"})," ",i.jsx(n.span,{className:"hljs-number",children:"1"}),`;
         } `,i.jsx(n.span,{className:"hljs-keyword",children:"else"}),` {
+            expresion += n + `,i.jsx(n.span,{className:"hljs-string",children:'"*"'}),`;
             `,i.jsx(n.span,{className:"hljs-keyword",children:"return"})," n * factorial(n - ",i.jsx(n.span,{className:"hljs-number",children:"1"}),`);
         }
     }
