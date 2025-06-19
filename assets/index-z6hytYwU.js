@@ -435,7 +435,7 @@ date: "2025-05-18"`}),`
 `,s.jsxs(n.blockquote,{children:[`
 `,s.jsxs(n.p,{children:["Definimos la variable estática llamada ",s.jsx(n.code,{children:"expresion"}),", que nos permite construir visualmente la expresión completa del cálculo."]}),`
 `]}),`
-`,s.jsx(n.h2,{children:s.jsxs(n.strong,{children:[s.jsx("span",{style:{color:"var(--main-secondary)"},children:"PASO 4"})," ↙",s.jsx("br",{})," Probar el método"]})}),`
+`,s.jsx(n.h2,{children:s.jsxs(n.strong,{children:[s.jsx("span",{style:{color:"var(--main-secondary)"},children:"PASO 3"})," ↙",s.jsx("br",{})," Probar el método"]})}),`
 `,s.jsxs(n.p,{children:["En el método ",s.jsx(n.code,{children:"main"}),", definimos un número para calcular su factorial y mostrar el resultado:"]}),`
 `,s.jsx(n.pre,{children:s.jsxs(n.code,{className:"hljs language-java",children:[s.jsx(n.span,{className:"hljs-keyword",children:"public"})," ",s.jsx(n.span,{className:"hljs-keyword",children:"class"})," ",s.jsx(n.span,{className:"hljs-title class_",children:"FactorialRecursivo"}),` {
 
