@@ -8,10 +8,6 @@ El factorial de un número entero `n` (representado como `n!`) es el __producto_
 
 Por ejemplo: `5! = 5 × 4 × 3 × 2 × 1 = 120`
 
-## __¿Qué es la recursión?__
-
-La __recursión__ es una técnica donde una función se llama a sí misma para resolver un problema.
-
 
 ## __Decidir cómo vas a resolverlo__
 
@@ -64,8 +60,10 @@ public class FactorialRecursivo {
 
     public static long factorial(int n) {
         if (n <= 1) {
+            expresion += "1";
             return 1;
         } else {
+            expresion += n + "*";
             return n * factorial(n - 1);
         }
     }
@@ -79,7 +77,7 @@ public class FactorialRecursivo {
 > Definimos la variable estática llamada `expresion`, que nos permite construir visualmente la expresión completa del cálculo.
 
 
-## __<span style={{color: 'var(--main-secondary)'}}>PASO 4</span> ↙<br/> Probar el método__
+## __<span style={{color: 'var(--main-secondary)'}}>PASO 3</span> ↙<br/> Probar el método__
 
 En el método `main`, definimos un número para calcular su factorial y mostrar el resultado:
 
@@ -90,6 +88,33 @@ public class FactorialRecursivo {
 
     public static void main(String[] args) {
         int numero = 5;
+        long resultado = factorial(numero);
+
+        System.out.println(expresion + " = " + resultado);
+    }
+}
+```
+
+## __Código completo__
+
+```java
+public class FactorialRecursivo {
+
+    static String expresion = "";
+
+    public static long factorial(int n) {
+        if (n <= 1) {
+            expresion += "1";
+            return 1;
+        } else {
+            expresion += n + " * ";
+            return n * factorial(n - 1);
+        }
+    }
+
+    public static void main(String[] args) {
+        
+        int numero = 10;
         long resultado = factorial(numero);
 
         System.out.println(expresion + " = " + resultado);
