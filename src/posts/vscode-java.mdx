@@ -1,0 +1,68 @@
+import imgRunProgram from '../assets/holaMundo_java.png';
+
+## Configurar VS Code para Java
+
+En este artículo, configuraremos VSCode para un desarrollo Java óptimo. La documentación de VSCode incluye un completo [tutorial de introducción](https://code.visualstudio.com/docs/java/java-tutorial) que cubre los conceptos básicos. Te recomiendo que la consultes si eres nuevo con el desarrollo con Java mediante VSCode.
+
+## __Requisitos Previos__
+
+Antes de comenzar con la configuración de VS Code para desarrollar en Java, asegúrate de tener lo siguiente listo:
+<br />
+
+### __1. <span style={{ color: 'var(--main-secondary)'}}>Instalar Java JDK</span>__
+
+Para que VS Code pueda compilar y ejecutar programas Java, necesitas tener instalado el **JDK (Java Development Kit)**.
+
+* __Recomendado__: [JDK 17 (LTS)](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html) o superior.
+* Verifica que esté correctamente instalado ejecutando este comando en tu terminal o consola:
+
+```bash
+java -version
+```
+
+### __2. <span style={{ color: 'var(--main-secondary)'}}>Tener Visual Studio Code</span>__
+
+👉 [https://code.visualstudio.com](https://code.visualstudio.com)
+
+
+## __Extensiones para Java__
+
+En VS Code, ve a la vista __Extensiones__ con <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd> y busca:
+<br />
+### __`Java Extension Pack` (by Microsoft) este pack incluye__:
+
+- 📦 [Language Support for Java™ (by Red Hat)](https://marketplace.visualstudio.com/items?itemName=redhat.java): Para navegación de código, autocompletado, refactorización y fragmentos de código.
+- 📦 [Debugger for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-debug): Soporte de depuración.
+- 📦 [Java Test Runner](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-test): Ejecuta y depura casos de prueba JUnit/TestNG.
+- 📦 [Maven for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-maven): Soporte de Maven para el andamiaje del proyecto y la ejecución de tareas/objetivos de Maven.
+- 📦 [Project Manager for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-dependency): Habilita una vista de explorador de proyectos, facilitando la creación de paquetes, clases y dependencias de bibliotecas.
+- 📦 [Visual Studio IntelliCode](https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode): Desarrollo asistido.
+
+![extension pack for java](https://mcherrera.dev/assets/img/java/extension-pack-for-java.webp)
+
+
+
+## __Ejecuta y compila un programa Java__
+
+Para realizar algunas pruebas, crea un archivo llamado `HolaMundo.java` y agrega el siguiente contenido:
+
+
+```java
+public class HolaMundo {
+    public static void main(String[] args) {
+        System.out.println("¡Hola Mundo!");
+    }
+}
+```
+
+__🚀 Ejecutar el programa__
+
+1. Guarda el archivo.
+2. Haz clic en el botón ▶️ que aparece arriba de `main`.
+3. Abre la terminal (<kbd>Ctrl</kbd> + <kbd>J</kbd>) si no se muestra automáticamente.
+4. Verás el resultado impreso en consola:
+
+<img src={imgRunProgram} alt="Ejecutar programa Java"/>
+
+Ya probaste tu primer programa en Java usando VS Code y la extensión Java Extension Pack. Este entorno ligero y moderno es ideal para practicar y desarrollar pequeños desafíos.
+

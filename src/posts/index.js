@@ -1,6 +1,6 @@
 // src/posts/index.js
 import Post01 from './tutorial-git.mdx';
-import Post02 from './post-02.mdx';
+import Post02 from './vscode-java.mdx';
 
 export const posts = [
   {
@@ -10,8 +10,8 @@ export const posts = [
     Content: Post01,
   },
   {
-    slug: 'post-02',
-    title: 'Otro post interesante',
+    slug: 'vscode-para-java',
+    title: 'Configurar VS Code para Java',
     date: '2025-05-19',
     Content: Post02,
   },

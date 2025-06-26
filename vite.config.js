@@ -5,6 +5,7 @@ import remarkDirective from 'remark-directive'
 import remarkCustomDirective from './remark-directives.js'
 import remarkGfm from 'remark-gfm'
 import rehypeHighlight from 'rehype-highlight';
+import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -15,5 +16,11 @@ export default defineConfig({
       rehypePlugins: [rehypeHighlight]
     })
   ],
-  base: '/'
+  base: '/',
+  resolve: {
+    alias: {
+      '@assets': path.resolve(__dirname, './src/assets'),
+      '@components': path.resolve(__dirname, './src/components')
+    }
+  }
 })

@@ -188,7 +188,17 @@ body.dark ::-webkit-scrollbar-thumb {
     font-size: 0.95rem;
   }
 }
+
+.math {
+  display: block !important;
+  font-size: 1.5rem;
+  text-align: center;
+  margin: 1.5rem 0;
+}
 @media (max-width: 760px) {
+  .math {
+    font-size: 1.3rem;
+  }
   h2 {
     font-size: 1.9rem;
   }
@@ -288,3 +298,28 @@ code {
   font-family: 'Source Code Pro', monospace; /* fuente monoespaciada */
   font-size: 0.95em;          /* tamaño un poco menor que el texto */
 }
+
+kbd {
+  background-color: var(--bg-blockcode);
+  border: 1px solid var(--background-color);
+  border-radius: 4px;
+  box-shadow: inset 0 -2px 0 #d1d5db;
+  padding: 2px 6px;
+  font-family: 'Courier New', Courier, monospace;
+  color: var(--text-color);
+  margin: 0 2px;
+  display: inline-block;
+  user-select: none;
+}
+
+img {
+  max-width: 100%;
+  margin: 1rem 0;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+h3 {
+  margin: 1.3rem 0;
+}
+

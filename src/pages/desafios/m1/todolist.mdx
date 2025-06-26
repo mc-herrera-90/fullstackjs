@@ -1,0 +1,225 @@
+import esquemaProyecto from '@assets/estructura-de-todolist.webp';
+
+En este proyecto consiste en hacer una aplicación de consola que permite realizar las operaciones como __crear__, __ver__, __completar__ y __eliminar tareas__. Utilizaremos el paradigma de __programación orientada a objetos__ con __Java puro__, organizando el código en __paquetes__ para mantener una arquitectura clara y limpia.
+
+El objetivo es que entiendas cómo aplicar principios como __encapsulamiento__, __modularidad__, y separación de responsabilidades mediante el uso de paquetes.
+
+## __Estructura del Proyecto__
+
+Antes de comenzar a programar, es importante definir una estructura organizada para separar __las responsabilidades__ y facilitar el mantenimiento.
+
+Vamos a organizar nuestra aplicación en **paquetes** según su función:
+
+* `model`: define las clases que representan los datos (en este caso, las tareas).
+* `controller`: contiene la lógica de negocio, como agregar, eliminar o completar tareas.
+* `view`: maneja la interacción con el usuario, mostrando menús y capturando entradas.
+* `Main.java`: es el punto de entrada de la aplicación.
+
+> Esta estructura nos acerca a un diseño limpio y modular, muy utilizado en proyectos profesionales.
+
+<img src={esquemaProyecto} alt="Estructura del proyecto"/>
+
+## __model/tarea.java__
+
+Aquí definimos nuestra entidad principal: la `Tarea`. Esta clase representa una tarea con un __`ID`__, una __`descripcion`__ y un estado como __`completada`__ o no (`true` o `false`).
+
+### __Creamos la clase y defimos su constructor__
+
+```java
+package model;
+
+public class Tarea {
+    private int id;
+    private String descripcion;
+    private boolean completada;
+
+    public Tarea(int id, String descripcion) {
+        this.id = id;
+        this.descripcion = descripcion;
+        this.completada = false;
+    }
+}
+```
+
+> __Usamos encapsulamiento 👀__:<br />todos los atributos son privados y se accede a ellos a través de métodos públicos (_getters_ y _setters_).
+
+### __Ahora definimos los getter y setter__
+
+```java
+package model;
+
+public class Tarea {
+    // Atributos privados...
+    // Constructor...
+
+    public int getId() {
+        return id;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public boolean isCompletada() {
+        return completada;
+    }
+
+    public void completar() {
+        this.completada = true;
+    }
+}
+```
+
+### __Ahora modificamos el formato del objeto__
+
+
+```java
+package model;
+
+public class Tarea {
+    // Atributos privados...
+    // Constructor...
+    // Getter y Setter...
+
+    @Override
+    public String toString(){
+        return (completada ? "[✔] " : "[] ") + id + ": " + descripcion;
+    }
+}
+```
+
+> Esto permite que cuando hagamos:
+> ```java
+> System.out.println(tarea);
+> ```
+> Se muestre:
+> ```java
+> [✔] 1: Terminar informe
+> ```
+
+## __controller/GestorTareas.java__
+
+En este archivo se define lo que se conoce como __lógica de negocio__, es decir, las operaciones __CRUD__ (Crear, Leer, Actualizar, Eliminar) sobre una lista de tareas.
+
+Además, controla el ID autoincremental y mantiene la lista de tareas en memoria.
+
+```java
+package controller;
+
+import model.Tarea;
+import java.util.ArrayList;
+
+public class GestorTareas {
+    private ArrayList<Tarea> tareas = new ArrayList<>();
+    private int proximoId = 1;
+
+    public void agregarTarea(String descripcion) {
+        tareas.add(new Tarea(proximoId++, descripcion));
+    }
+
+    public void eliminarTarea(int id) {
+        tareas.removeIf(t -> t.getId() == id);
+    }
+
+    public void completarTarea(int id) {
+        for (Tarea t : tareas) {
+            if (t.getId() == id) {
+                t.completar();
+                break;
+            }
+        }
+    }
+
+    public ArrayList<Tarea> obtenerTareas() {
+        return tareas;
+    }
+}
+```
+
+## __view/Menu.java__
+
+
+Esta clase se encarga de la **interacción con el usuario**. Muestra un menú en la consola y permite seleccionar las operaciones disponibles.
+
+Llama a los métodos del controlador para realizar las acciones correspondientes.
+
+```java
+package view;
+
+import controller.GestorTareas;
+import model.Tarea;
+
+import java.util.Scanner;
+
+public class Menu {
+    private GestorTareas gestor;
+    private Scanner scanner;
+
+    public Menu(GestorTareas gestor) {
+        this.gestor = gestor;
+        this.scanner = new Scanner(System.in);
+    }
+
+    public void mostrar() {
+        int opcion;
+        do {
+            System.out.println("\n📋 MENU TODO LIST:");
+            System.out.println("1. Agregar tarea");
+            System.out.println("2. Ver tareas");
+            System.out.println("3. Completar tarea");
+            System.out.println("4. Eliminar tarea");
+            System.out.println("0. Salir");
+            System.out.print("Elige una opción: ");
+            opcion = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (opcion) {
+                case 1 -> {
+                    System.out.print("Descripción de la tarea: ");
+                    String desc = scanner.nextLine();
+                    gestor.agregarTarea(desc);
+                }
+                case 2 -> {
+                    System.out.println("\nTAREAS:");
+                    for (Tarea t : gestor.obtenerTareas()) {
+                        System.out.println(t);
+                    }
+                }
+                case 3 -> {
+                    System.out.print("ID de la tarea a completar: ");
+                    int id = scanner.nextInt();
+                    gestor.completarTarea(id);
+                }
+                case 4 -> {
+                    System.out.print("ID de la tarea a eliminar: ");
+                    int id = scanner.nextInt();
+                    gestor.eliminarTarea(id);
+                }
+                case 0 -> System.out.println("👋 Hasta luego.");
+                default -> System.out.println("⚠️ Opción no válida.");
+            }
+        } while (opcion != 0);
+    }
+}
+```
+
+## __Main.java__
+
+Es el **punto de entrada** de la aplicación. Aquí se crean las instancias necesarias y se inicia el programa.
+
+```java
+import controller.GestorTareas;
+import view.Menu;
+
+public class Main {
+    public static void main(String[] args) {
+        GestorTareas gestor = new GestorTareas();
+        Menu menu = new Menu(gestor);
+        menu.mostrar();
+    }
+}
+```

@@ -7,9 +7,11 @@ const config = {
 export default function MathComponent({ formula }) {
   return (
     <MathJaxContext config={config}>
-      <MathJax inline dynamic style={{display: "block", fontSize: "1.4rem", textAlign: "center", margin: "1.5rem 0"}}>
-        {`\\(${formula}\\)`}
-      </MathJax>
+      <div style={{ overflowX: 'auto', width: '100%' }}>
+        <MathJax inline dynamic className="math">
+          {`\\(${formula}\\)`}
+        </MathJax>
+      </div>
     </MathJaxContext>
   );
 }
