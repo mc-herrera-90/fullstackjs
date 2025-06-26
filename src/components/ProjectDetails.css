@@ -1,0 +1,42 @@
+.project-container {
+  font-family: Consolas, monospace;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 15px 0;
+  border: 1px solid #ccc;
+}
+
+.project-title {
+  color: var(--main-secondary);
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  width: fit-content;
+  font-family: cursive;
+  padding-bottom: 5px;
+}
+
+.project-abstract {
+  font-style: italic;
+  font-family: consolas;
+  margin-bottom: 20px;
+}
+.project-abstract strong {
+    color: var(--main-secondary);
+}
+
+.project-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.project-table th,
+.project-table td {
+  text-align: left;
+  padding: 8px;
+}
+
+.project-table th {
+  color: var(--main-secondary);
+  width: 1%;
+  white-space: nowrap;
+}
