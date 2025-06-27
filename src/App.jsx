@@ -16,6 +16,16 @@ import { useLocation } from 'react-router-dom'
 import CopyCodeButtonInjector from './components/CopyCodeButtonInjector';
 import ScrollToTop from './components/ScrollToTop';
 import Footer from './components/Footer'
+import StepHeading from './components/StepHeading.jsx';
+import ProjectDetails from '@components/ProjectDetails';
+import GitHubRepo from './components/cards/GithubRepo.jsx'
+
+const mdxComponents = {
+  h2: StepHeading,
+  ProjectDetails,
+  GitHubRepo
+}
+
 
 function App() {
 
@@ -59,7 +69,10 @@ function App() {
           <Route path="/desafios/m2" element={<IndexM2 />} />
           {
             desafiosM1.map(({slug, component: Component}) => (
-              <Route key={slug} path={`/desafios/m1/${slug}`} element={<Component />} />
+              <Route 
+                key={slug}
+                path={`/desafios/m1/${slug}`}
+                element={<Component components={mdxComponents}/>} />
             ))
           }
           {

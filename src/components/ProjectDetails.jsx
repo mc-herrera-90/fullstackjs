@@ -9,11 +9,12 @@ const ProjectDetails = ({ details }) => {
       <p className="project-abstract">
         <ReactMarkdown>{details.abstract}</ReactMarkdown>
       </p>
+      
       <table className="project-table">
         <tbody>
           <tr>
             <th>Lenguaje usado:</th>
-            <td>{details.languages}</td>
+            <td><ReactMarkdown>{details.languages}</ReactMarkdown></td>
           </tr>
           <tr>
             <th>IDE:</th>
@@ -21,7 +22,7 @@ const ProjectDetails = ({ details }) => {
           </tr>
           <tr>
             <th>Java Version:</th>
-            <td>{details.javaVersion}</td>
+            <td><ReactMarkdown>{details.javaVersion}</ReactMarkdown></td>
           </tr>
           <tr>
             <th>Base de Datos:</th>

@@ -2,6 +2,7 @@
 body {
     background: var(--background-color);
     --main-secondary: #4f46e5;
+    --secondary: rgb(40, 45, 80);
     color: var(--text-color);
     --anchor-visited: rgb(49, 51, 60);
     --blockquote-bg: #f1f5f8;
@@ -10,9 +11,15 @@ body {
     --anchor-link: #3b83e1;
     --card-title: #297cc9e3;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+    strong {
+      color: var(--secondary);
+    }
 }
+
 body.dark {
-    --main-secondary: #948ffe;
+    --main-secondary: #c6c3fe;
+    --secondary: rgb(170, 190, 251);
     --background-color: #1f1f1f;
     --table-thead-bg: #303030;
     --text-color: #fcfcfc;
