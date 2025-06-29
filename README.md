@@ -1,12 +1,50 @@
-# React + Vite
+## ⚙️ Configuración inicial
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/mc-herrera-90/fullstackjs.git
+   cd fullstackjs
+   ```
 
-Currently, two official plugins are available:
+2. Instala dependencias:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+   ```bash
+   npm install
+   ```
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Ejecutar en desarrollo
+
+```bash
+npm run dev
+```
+
+Abre tu navegador en `http://localhost:5173` (o el puerto que Vite indique al iniciar).
+
+---
+
+## 🚀 Despliegue automático con GitHub Actions
+
+Este repositorio incluye un workflow (`.github/workflows/deploy.yml`) que **despliega automáticamente el contenido de la carpeta `dist/` a GitHub Pages** cada vez que haces push a la rama `main`.
+
+### ✅ Para que funcione correctamente:
+
+1. En GitHub:
+
+   * Ve a **Settings → Actions → General**
+   * En **Workflow permissions**, selecciona **Read and write permissions**
+
+2. En **Settings → Pages**:
+
+   * Rama: `gh-pages`
+   * Carpeta: `/ (root)`
+
+
+![Deploy to GitHub Pages](https://github.com/mc-herrera-90/fullstackjs/actions/workflows/deploy.yml/badge.svg)
+
+---
+
+## 📄 Licencia
+
+Este proyecto está bajo la licencia MIT.
