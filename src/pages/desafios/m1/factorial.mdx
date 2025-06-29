@@ -1,17 +1,28 @@
 import MathComponent from '../../../components/MathComponent';
 
-El __factorial__ es una de las funciones más clásicas en matemáticas y programación. En una excelente forma de aprender __recursión__, un concepto clave que permite que __una función se llame a sí misma__
+<ProjectDetails 
+  details={{
+    name: "Factorial en Java",
+    abstract: `Este proyecto consiste en hacer una __aplicación de consola en Java__ que calcule el factorial de un número entero ingresado por el usuario. La idea es practicar conceptos básicos de programación orientada a objetos, como el uso de clases, métodos y entrada de datos, __recursividad__, manteniendo el código ordenado y fácil de entender.`,
+    languages: "Java",
+    ide: "VS Code",
+    javaVersion: `Java (\`latest version\`)`,
+    type: "Aplicación de consola",
+    recommended: "Java Básico",
+    time: "15 mins – 30 mins"
+  }}
+/>
 
-## __¿Qué es el factorial?__
+
+El __factorial__ es una de las funciones más clásicas en matemáticas y programación. En una excelente forma de aprender __recursión__, un concepto clave que permite que __una función se llame a sí misma__.
+
+## ¿Te suena el <span style={{color: 'var(--color-primary)'}}>n!</span> (factorial)?
 
 El factorial de un número entero `n` (representado como `n!`) es el __producto__ de todos los enteros positivos desde `1` hasta `n`.
 
 Por ejemplo: `5! = 5 × 4 × 3 × 2 × 1 = 120`
 
-
-## __Decidir cómo vas a resolverlo__
-
-Ahora piensas: "¿Cómo puedo escribir esto como un programa?"
+Ahora piensas: _"¿Cómo puedo escribir esto como un programa?"_
 
 Tienes dos opciones: hacerlo con un ciclo (`for`) o con __recursión__. Primero lo resolvemos con __recursión__, porque:
 
@@ -22,21 +33,21 @@ Y recuerda la fórmula recursiva:
 
 <MathComponent formula="n! = \begin{cases} 1 & \text{si } n \leq 1 \\ n \times (n-1)! & \text{si } n > 1 \end{cases}" />
 
-__Explicación:__
+__Explicación__:
 
 - Aquí decidimos que cuando `n` es `0` o `1`, el factorial es igual a `1`.
 - Esto es porque, por definición, `0! = 1` y `1! = 1`.
 
-## __<span style={{color: 'var(--main-secondary)'}}>PASO 1</span> ↙<br/> Crear un proyecto__
+## PASO 1 Crear el archivo y la clase principal
 
-### __En IntelliJ IDEA__
-
-1. Abre IntelliJ y crea un nuevo proyecto Java.
-2. Dentro del directorio `src`, crea una clase nueva: `FactorialRecursivo.java`.
+- Primero, abre __Visual Studio Code__.
+- Selecciona o crea una carpeta donde guardar el proyecto, ej: `factorial-recursivo`
+- Crea un nuevo archivo llamado `FactorialRecursivo.java`.
 
 Comienza con la estructura mínima para tu clase y método principal:
 
 ```java
+// filename: FactorialRecursivo.java
 public class FactorialRecursivo {
     public static void main(String[] args) {
         // Aquí va el código para probar el factorial
@@ -44,26 +55,24 @@ public class FactorialRecursivo {
 }
 ```
 
+## PASO 2 Definir el método recursivo
 
-## __<span style={{color: 'var(--main-secondary)'}}>PASO 2</span> ↙<br/> Definir el método recursivo__
+Dentro de la clase, creamos un __método estático__ llamado `factorial` que reciba un entero y devuelve un valor de tipo `long`. Esto se debe a que los factoriales crecen rápidamente y pueden alcanzar valores muy grandes, por lo que es necesario usar un tipo de dato que soporte números de gran magnitud.
 
-Dentro de la clase, creamos un __método estático__ llamado `factorial` que reciba un entero y devuelve un `long` considerando lo siguiente:
+La implementación del método sigue una estructura recursiva, considerando los siguientes casos:
 
 - Que retorne `1` si número es `0` o `1` (caso base).
 - Si no, devuelve `n * factorial(n - 1)` (paso recursivo).
 
 
 ```java
+// filename: FactorialRecursivo.java
 public class FactorialRecursivo {
-
-    static String expresion = ""; // usamos static para compartir entre llamadas
 
     public static long factorial(int n) {
         if (n <= 1) {
-            expresion += "1";
             return 1;
         } else {
-            expresion += n + "*";
             return n * factorial(n - 1);
         }
     }
@@ -74,50 +83,80 @@ public class FactorialRecursivo {
 }
 ```
 
-> Definimos la variable estática llamada `expresion`, que nos permite construir visualmente la expresión completa del cálculo.
+> __En este bloque__:
+> ```java
+>   if (n <= 1) {
+>       return 1;
+>   }
+> ```
+> - Este es el __caso base__. Esto detiene la recursión y empieza a devolver valores hacia atrás.
+>
+> __En este bloque__:
+> ```java
+>   else {
+>       return n * factorial(n - 1);
+>   }
+> ```
+> - Esta es la __llamada recursiva__, esto es lo que realmente sucede:
+>   1. `factorial(3)` necesita saber cuánto vale `factorial(2)`.
+>   2. `factorial(2)` necesita saber cuánto vale `factorial(1)`.
+>   3. `factorial(1)` devuelve `1` (caso base).
+>   4. Ahora sí, se van resolviendo las operaciones:
+>   5. `factorial(2) = 2 * 1 = 2`
+>   5. `factorial(3) = 3 * 2 = 6`
 
 
-## __<span style={{color: 'var(--main-secondary)'}}>PASO 3</span> ↙<br/> Probar el método__
+## PASO 3 Probar el método
 
 En el método `main`, definimos un número para calcular su factorial y mostrar el resultado:
 
 ```java
+// filename: FactorialRecursivo.java
 public class FactorialRecursivo {
-
-    // ... Código anterior
+    // ... Código anterior del método factorial {}
 
     public static void main(String[] args) {
         int numero = 5;
         long resultado = factorial(numero);
 
-        System.out.println(expresion + " = " + resultado);
+        System.out.println("El factorial de " + numero + " es: " + resultado);
     }
 }
 ```
 
-## __Código completo__
+## PASO 4 Mejora Visual
+
+Esta nueva versión muestra el proceso paso a paso para que sea más fácil ver en qué orden se hacen las llamadas recursivas y cómo se calcula el resultado final.
 
 ```java
+// filename: FactorialRecursivo.java
 public class FactorialRecursivo {
-
-    static String expresion = "";
 
     public static long factorial(int n) {
         if (n <= 1) {
-            expresion += "1";
             return 1;
         } else {
-            expresion += n + " * ";
-            return n * factorial(n - 1);
+            long resultadoParcial = factorial(n - 1);
+            long resultado = n * resultadoParcial;
+            System.out.println("Calculando: " + resultadoParcial + " x " + n + " = " + resultado);
+            return resultado;
         }
     }
 
     public static void main(String[] args) {
-        
-        int numero = 10;
+        int numero = 5;
+        System.out.println("Calculando el factorial de " + numero + " paso a paso:\n");
         long resultado = factorial(numero);
-
-        System.out.println(expresion + " = " + resultado);
+        System.out.println("\nResultado final: " + numero + "! = " + resultado);
     }
 }
 ```
+
+## PASO 5 Repositorio
+
+Pasa por el repositorio, ahí encontrarás el código completo por si quieres revisar la solución o clonarlo para experimentar por tu cuenta.
+
+<GitHubRepo
+  owner="mc-herrera-90"
+  repo="factorial-recursivo"
+/>

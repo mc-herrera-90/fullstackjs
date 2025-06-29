@@ -2,7 +2,6 @@
   border: 1px solid #e1e4e8;
   border-radius: 8px;
   padding: 1rem;
-  background: var(--background-color);
   max-width: 400px;
   transition: transform 0.2s, box-shadow 0.2s;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -42,6 +41,6 @@
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  font-size: 0.85rem;
-  color: var(--main-secondary);
+  font-size: 0.95rem;
+  color: var(--color-primary);
 }

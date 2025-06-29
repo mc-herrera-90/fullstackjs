@@ -1,3 +1,9 @@
+@import './styles/variables.css';
+@import './styles/typography.css';
+@import './styles/components/buttons.css';
+@import './styles/components/table.css';
+@import './styles/components/card.css';
+
 * {
   padding: 0;
   margin: 0;

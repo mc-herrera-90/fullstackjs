@@ -1,0 +1,18 @@
+.btn-primary {
+  background-color: var(--color-button-primary);
+  color: var(--color-button-text);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-button-hover);
+}
+
+.btn-primary:active {
+  background-color: var(--color-button-active);
+}

@@ -1,0 +1,75 @@
+/* variables.css */
+:root {
+  --color-primary: #4f46e5;
+  --color-secondary: #283050;
+  --color-background: #ffffff;
+  --color-tenue: rgba(255, 255, 255, 0.1);
+  --color-text: #000000;
+  --color-hover: #ccc;
+  --color-link: #3b83e1;
+  --color-visited: #31333c;
+  --color-card-bg: #f9f9f9;
+  --color-blockcode-bg: #f0f0f0;
+
+  /* === NAVBAR COLORS === */
+  --color-nav-bg: #f9f4ff;
+  --color-nav-text: #000000;
+  --color-nav-link: #3b83e1;
+  --color-nav-link-hover: #4f46e5;
+
+  --color-button-primary: #4f46e5;
+  --color-button-hover: #665eff;
+  --color-button-active: #3c36b2;
+  --color-button-text: #ffffff;
+  /* CODE COLORS */
+  --color-code-bg: #f5f5f5;          /* Fondo claro gris */
+  --color-code-text: #d6336c;        /* Rosa oscuro para texto */
+
+  /* CARD COLORS */
+  --color-card-bg: #eff1fa;           /* Gris azulado oscuro, neutro y suave */
+  --color-card-border: #d1d5db;
+  --color-card-shadow: rgba(79, 70, 229, 0.3); /* Sombra índigo suave */
+
+  /* TABLES COLOR */
+  --color-table-bg: #ffffff;
+  --color-table-border: #dcdcdc;
+  --color-table-header-bg: #f5f5f5;
+  --color-table-header-text: #1a1a1a;
+  --color-table-row-hover: #f0f0f0;
+}
+
+body.dark {
+  --color-primary: #c6c3fe;
+  --color-secondary: #aabefb;
+  --color-background: #1a1c23;
+  --color-text: #fcfcfc;
+  --color-hover: #313939;
+  --color-link: bisque;
+  --color-visited: bisque;
+  --color-card-bg: #33343f;
+  --color-blockcode-bg: #282c34;
+
+  /* === NAVIGATION COLORS === */
+  --color-nav-bg: #1c1f2a;
+  --color-nav-text: #000000;
+  --color-nav-link: #3b83e1;
+  --color-nav-link-hover: #4f46e5;
+
+  --color-button-primary: #5a50ee;
+  --color-button-hover: #736bfa;
+  --color-button-active: #443dbd;
+  --color-button-text: #ffffff;
+
+  --color-code-bg: #202a39;     /* Fondo oscuro */
+  --color-code-text: #f07178;   /* Rosa claro para texto */
+ /* Componente card */
+  --color-card-bg: #252836;           /* Gris azulado oscuro, neutro y suave */
+  --color-card-border: #444868;       /* Borde más claro para definir */
+  --color-card-shadow: rgba(14, 14, 14, 0.3); /* Sombra índigo suave */
+
+  --color-table-bg: #252836;;
+  --color-table-border: #38394f;
+  --color-table-header-bg: rgb(35, 34, 52);
+  --color-table-header-text: #e0e0e0;
+  --color-table-row-hover: #444868;
+}

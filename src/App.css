@@ -1,7 +1,7 @@
-
 body {
-    background: var(--background-color);
+    background: var(--color-background);
     --main-secondary: #4f46e5;
+    --hover: #ccc;
     --secondary: rgb(40, 45, 80);
     color: var(--text-color);
     --anchor-visited: rgb(49, 51, 60);
@@ -19,8 +19,8 @@ body {
 
 body.dark {
     --main-secondary: #c6c3fe;
+    --hover: #313939;
     --secondary: rgb(170, 190, 251);
-    --background-color: #1f1f1f;
     --table-thead-bg: #303030;
     --text-color: #fcfcfc;
     --button-bg: #0056b3;
@@ -28,7 +28,7 @@ body.dark {
     --bg-card-color: #33343f;
     --bg-blockcode: #282c34;
     --anchor-visited: bisque;
-    --blockquote-bg: #343434;
+    --blockquote-bg: #282c42;
     --blockquote-fg: #ebf3ff;
     --anchor-link: bisque;
     --card-title: #5eacff;
@@ -44,6 +44,9 @@ a {
   font-style: italic;
   margin: 1.5em 0;
 }
+.code-line-hidden {
+  display: none;
+}
 
 /* Contenedor principal */
 main {
@@ -52,25 +55,7 @@ main {
   margin: 0 auto;
   box-sizing: border-box;
 }
-/* Estilos básicos y responsive para tablas */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 1.2rem 0;
-  overflow-x: auto;
-  display: block;
-}
 
-thead {
-  background-color: var(--table-thead-bg);
-}
-
-th, td {
-  padding: 0.75rem;
-  text-align: left;
-  border: 1px solid #ddd;
-  width: 1%;
-}
 
 /* Scroll horizontal en pantallas pequeñas */
 @media (max-width: 768px) {
@@ -84,10 +69,7 @@ th, td {
     padding: 1.2rem;
   }
 }
-/* Texto responsivo */
-h1 {
-  font-size: 2rem;
-}
+
 h2 {
   font-size: 2.5rem;
   margin: 2.3rem 0 1.8rem 0;
@@ -145,7 +127,7 @@ ul, ol {
 }
 
 ul li::marker {
-  color: #4f46e5; /* Indigo */
+  color: var(--color-primary); /* Indigo */
   font-size: 1.2rem;
 }
 
@@ -206,7 +188,7 @@ body.dark ::-webkit-scrollbar-thumb {
   text-align: center;
   margin: 1.5rem 0;
 }
-@media (max-width: 760px) {
+@media (max-width: 768px) {
   .math {
     font-size: 1.3rem;
   }
@@ -214,15 +196,16 @@ body.dark ::-webkit-scrollbar-thumb {
     font-size: 1.9rem;
   }
   pre {
-    margin: 1rem -2rem;
-    border: 1px solid transparent;
+    margin: 1rem -1.2rem;
+    border-radius: 0;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
   }
   pre code {
     font-size: 16px;
     line-height: 1.4rem;
   }
 }
-/* TableResponsive.css */
 .responsive-table {
   width: 100%;
   border-collapse: collapse;
@@ -230,13 +213,8 @@ body.dark ::-webkit-scrollbar-thumb {
 
 .responsive-table th,
 .responsive-table td {
-  border: 1px solid #ccc;
   padding: 8px 12px;
   text-align: left;
-}
-
-.responsive-table thead {
-  background-color: var(--table-thead-bg);
 }
 
 /* Responsive Styles */
@@ -258,13 +236,11 @@ body.dark ::-webkit-scrollbar-thumb {
     border: 1px solid #ddd;
     padding: 0.5rem;
   }
-
   .responsive-table td {
     text-align: right;
     padding-left: 50%;
     position: relative;
     border: none;
-    border-bottom: 1px solid #eee;
   }
 
   .responsive-table td::before {
@@ -277,55 +253,8 @@ body.dark ::-webkit-scrollbar-thumb {
     text-align: left;
   }
 }
-/* styles.css */
-.copy-btn {
-  background: #333;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  padding: 4px 8px;
-  font-size: 0.8rem;
-  cursor: pointer;
-  opacity: 0.6;
-  transition: opacity 0.2s;
-  z-index: 10;
-}
-
-.copy-btn:hover {
-  opacity: 1;
-}
-
-pre {
-  position: relative;
-}
-code {
-  background-color: var(--bg-blockcode);  /* fondo gris claro */
-  color: #d6336c;             /* color rosa oscuro para destacar */
-  padding: 2px 6px;           /* un poco de espacio alrededor */
-  border-radius: 4px;         /* bordes redondeados suaves */
-  font-family: 'Source Code Pro', monospace; /* fuente monoespaciada */
-  font-size: 0.95em;          /* tamaño un poco menor que el texto */
-}
-
-kbd {
-  background-color: var(--bg-blockcode);
-  border: 1px solid var(--background-color);
-  border-radius: 4px;
-  box-shadow: inset 0 -2px 0 #d1d5db;
-  padding: 2px 6px;
-  font-family: 'Courier New', Courier, monospace;
-  color: var(--text-color);
-  margin: 0 2px;
-  display: inline-block;
-  user-select: none;
-}
 
 img {
   max-width: 100%;
-  margin: 1rem 0;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  border-radius: 8px;
 }
+

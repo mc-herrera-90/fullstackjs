@@ -1,9 +1,9 @@
 import {  useEffect } from 'react'
-import './App.css'
 import { useTheme } from './context/ThemeContext'
-import Navbar from './components/navigation/Navbar'
-import {  Routes, Route } from 'react-router-dom'
-import Home from './pages/Home.mdx'
+import { Routes, Route } from 'react-router-dom'
+import './App.css'
+import Navbar from '@components/Navbar'
+import Home from './pages/Home'
 import Proyectos from './pages/Proyectos'
 import Contacto from './pages/Contacto'
 import { Blog } from './pages/Blog';
@@ -77,7 +77,7 @@ function App() {
           }
           {
             desafiosM2.map(({slug, component: Component}) => (
-              <Route key={slug} path={`/desafios/m2/${slug}`} element={<Component />} />
+              <Route key={slug} path={`/desafios/m2/${slug}`} element={<Component components={mdxComponents}/>} />
             ))
           }
         </Routes>

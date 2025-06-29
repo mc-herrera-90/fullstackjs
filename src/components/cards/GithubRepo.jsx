@@ -1,9 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './GithubRepo.css';
+import { getLanguageIcon } from '@utils/languageIcons';
 
 const GitHubRepoCard = ({ owner, repo }) => {
-  const [repoData, setRepoData] = useState(null);
+  const [repoData, setRepoData] = useState('');
   const [error, setError] = useState(null);
+
+ const iconClass = getLanguageIcon(repoData.language);
 
   useEffect(() => {
     fetch(`https://api.github.com/repos/${owner}/${repo}`)
@@ -28,7 +31,7 @@ const GitHubRepoCard = ({ owner, repo }) => {
         <p className="github-description">{repoData.description}</p>
         {repoData.language && (
           <div className="github-language">
-            <i className="fas fa-code" aria-hidden="true"></i>
+            <i className={iconClass} aria-hidden="true"></i>
             <span>{repoData.language}</span>
           </div>
         )}

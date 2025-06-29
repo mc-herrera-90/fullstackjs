@@ -11,13 +11,15 @@ export default () => {
 
     return (
     <div>
-        <h2>Java Básico</h2>
+        <h2 align="center">Desafíos Java</h2>
         { desafiosM1 ?  (
         <table className='responsive-table'>
             <thead>
-                <th>N°</th>
-                <th>Dificultad</th>
-                <th>Desafío</th>
+                <tr>
+                    <th>N°</th>
+                     <th>Dificultad</th>
+                    <th>Desafío</th>
+                </tr>
             </thead>
             <tbody>
                 { desafiosM1.map((entry, index) => {

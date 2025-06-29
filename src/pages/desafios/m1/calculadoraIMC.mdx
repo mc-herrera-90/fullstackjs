@@ -3,17 +3,15 @@ import MathComponent from '../../../components/MathComponent';
 <ProjectDetails 
   details={{
     name: "Calculadora IMC",
-    abstract: `Este proyecto consiste en hacer una __aplicación de consola en Java__ que calcule el IMC (Índice de Masa Corporal) a partir del \`peso\` y la \`altura\` que ingresa el usuario por teclado. La idea es practicar conceptos básicos de programación orientada a objetos, como el uso de clases, métodos y entrada de datos, manteniendo el código ordenado y fácil de entender.`,
+    abstract: `Este proyecto consiste en hacer una __aplicación de consola en Java__ que calcule el IMC ( Índice de Masa Corporal ) a partir del \`peso\` y la \`altura\` que ingresa el usuario por teclado. La idea es practicar conceptos básicos de programación orientada a objetos, como el uso de clases, métodos y entrada de datos, manteniendo el código ordenado y fácil de entender.`,
     languages: "Java",
     ide: "VS Code",
     javaVersion: `Java (\`latest version\`)`,
     type: "Aplicación de consola",
-    recommended: "Java Intemerdio",
-    time: "30 mins – 60 mins"
+    recommended: "Java Básico",
+    time: "15 mins – 30 mins"
   }}
 />
-
-## Calculadora IMC
 
 El __IMC__, conocido como el índice de masa corporal, es una medida que asocia el peso de una persona. Este valor es utilizado como indicador nutricional y constituye un índice fácil y sencillo de calcular para determinar el estado de obesidad y sobrepreso de una persona.
 
@@ -39,17 +37,22 @@ Para ello la Organización Mundial de la Salud (OMS) ha determinado una clasific
 
 ## PASO 1 Crear el archivo y la clase principal
 
-Primero, en tu proyecto crea un archivo llamado `CalculadoraIMC.java`.
+- Primero, abre __Visual Studio Code__.
+- Selecciona o crea una carpeta donde guardar el proyecto, ej: `calculadora-imc`
+- Crea un nuevo archivo llamado `CalculadoraIMC.java`.
 
 Este será el punto de entrada al programa:
 
 ```java
+// filename: CalculadoraIMC.java
 public class CalculadoraIMC {
     public static void main(String[] args) {
         // Aquí irá el código principal
     }
 }
 ```
+
+>  ⚠️ __Dato importante__: Recuerda que en Java, el nombre del archivo debe coincidir exactamente con el nombre de la clase pública principal.  
 
 ## PASO 2 Capturar los datos del usuario
 
@@ -58,6 +61,7 @@ Java no trae por defecto entrada desde consola, por eso es que se necesita impor
 Vamos a usar `Scanner` para leer el __peso__ y la __altura__ por teclado.
 
 ```java
+// filename: CalculadoraIMC.java
 import java.util.Scanner;
 
 public class CalculadoraIMC {
@@ -78,6 +82,7 @@ public class CalculadoraIMC {
 A continuación, aplicamos la fórmula matemática:
 
 ```java
+// filename: CalculadoraIMC.java
 public class CalculadoraIMC {
     public static void main(String[] args){
         // código anterior...
@@ -89,6 +94,7 @@ public class CalculadoraIMC {
 Luego, mostramos el resultado obtenido, pero limitándolo a 2 decimales:
 
 ```java
+// filename: CalculadoraIMC.java
 public class CalculadoraIMC {
     public static void main(String[] args){
         // código anterior...
@@ -103,6 +109,7 @@ public class CalculadoraIMC {
 Ahora agregamos la lógica para mostrar la categoría según el resultado:
 
 ```java
+// filename: CalculadoraIMC.java
 public class CalculadoraIMC {
     public static void main(String[] args){
         // código anterior...
@@ -122,7 +129,9 @@ public class CalculadoraIMC {
 }
 ```
 
-## Repositorio
+## PASO 5 Repositorio
+
+Pasa por el repositorio, ahí encontrarás el código completo por si quieres revisar la solución o clonarlo para experimentar por tu cuenta.
 
 <GitHubRepo
   owner="mc-herrera-90"

@@ -1,19 +1,42 @@
-En este desafío vamos a programar uno de los juegos clásicos de toda la vida: **El Cachipún**, también conocido como **Piedra**, **Papel** o **Tijeras**. Ideal si estás empezando con Java, este proyecto te ayudará a practicar entrada de datos, condicionales y generación aleatoria.
+<ProjectDetails 
+  details={{
+    name: "Cachipun",
+    abstract: `Este proyecto consiste en crear una __aplicación de consola en Java__ que simule el juego de __Cachipún__ ✊📄✂️ (piedra, papel o tijera) contra la computadora 🤖. El usuario debe ingresar su jugada por __teclado__, y el programa responderá con una **elección aleatoria**, determinando al **ganador** según las reglas del juego.
+    
+    Ideal si estás empezando con Java, este ejercicio te ayudará a practicar __entrada de datos__, __condicionales__ y __generación aleatoria__.
+`,
+    languages: "Java",
+    ide: "VS Code",
+    javaVersion: `Java (\`latest version\`)`,
+    type: "Aplicación de consola",
+    recommended: "Java Básico",
+    time: "15 mins – 30 mins"
+  }}
+/>
 
-## PASO 1 Crear un proyecto
 
-## __<span style={{color: 'var(--main-secondary)'}}>PASO 1</span> ↙<br/> Crear un proyecto__
+El clásico **Cachipún**, consiste en un enfrentamiento de dos jugadores, y cada uno elige una opción.
 
-### __En IntelliJ IDEA__
+__Reglas básicas__:
 
-1. Abre IntelliJ y crea un nuevo proyecto Java.
-2. Dentro del directorio `src`, crea una clase nueva: `Cachipun.java`.
+* El usuario elige entre `piedra`, `papel` o `tijeras`.
+* El computador elige una opción aleatoria.
+* Gana quien siga la lógica del juego:
+    - 🌑 Piedra vence a tijeras  
+    - ✂️ Tijeras vencen a papel  
+    - 📄 Papel vence a piedra
 
-## __<span style={{color: 'var(--main-secondary)'}}>PASO 2</span> ↙<br/> Código Base__
+
+## PASO 1 Crear el archivo y la clase principal
+
+- Primero, abre __Visual Studio Code__.
+- Selecciona o crea una carpeta donde guardar el proyecto, ej: `cachipun-java`
+- Crea un nuevo archivo llamado `Cachipun.java`.
 
 Comienza con la estructura mínima e importamos las clases necesarias:
 
 ```java
+// filename: Cachipun.java
 import java.util.Scanner;
 import java.util.Random;
 
@@ -24,12 +47,15 @@ public class Cachipun {
 }
 ```
 
-## __<span style={{color: 'var(--main-secondary)'}}>PASO 3</span> ↙<br/> Entrada del usuario y jugada aleatoria__
+> Ya conoces `Scanner`, que sirve para leer lo que escribe el usuario por teclado. También importamos la clase `Random`, que usaremos para generar la jugada aleatoria del computador (piedra, papel o tijera), simulando así una elección impredecible como en un juego real.
+
+## PASO 2 Entrada del usuario y jugada aleatoria
 
 El siguiente paso es capturar la jugada del usuario y generar el de la computadora al azar (utilizando `Random`):
 
 
 ```java
+// filename: Cachipun.java
 import java.util.Scanner;
 import java.util.Random;
 
@@ -50,11 +76,26 @@ public class Cachipun {
 }
 ```
 
-## __<span style={{color: 'var(--main-secondary)'}}>PASO 4</span> ↙<br/> Determinar al ganador__
+
+> __En este bloque__:
+> ```java
+> String[] opciones = {"piedra", "papel", "tijera"};
+> ```
+> - Creamos un *arreglo* (o array) de tipo `String` que contiene las posibles jugadas. Es una forma práctica de tenerlas todas en una sola variable.  
+>
+> __En este bloque__:
+> ```java
+> opciones[random.nextInt(3)]
+> ```
+> - Genera un número aleatorio entre `0` y `2`. Ese número se usa como índice para elegir una opción del arreglo `opciones`, simulando así la jugada aleatoria de la computadora.
+
+
+## PASO 3 Determinar al ganador
 
 Comparamos las opciones y mostramos el resultado:
 
 ```java
+// filename: Cachipun.java
 import java.util.Scanner;
 import java.util.Random;
 
@@ -78,9 +119,10 @@ public class Cachipun {
         } else {
             System.out.println("Opción no válida. Debes elegir piedra, papel o tijera.");
         }
+
+        scanner.close(); // Cerramos el Scanner
     }
 
-    scanner.close(); // Cerramos el Scanner
 }
 ```
 
@@ -105,45 +147,11 @@ public class Cachipun {
 >
 > para verificar que el texto ingresado por el usuario coincide exactamente con una de las opciones válidas.
 
-## __Código completo__
+## PASO 4 Repositorio
 
-```java
-import java.util.Scanner;
-import java.util.Random;
+Pasa por el repositorio, ahí encontrarás el código completo por si quieres revisar la solución o clonarlo para experimentar por tu cuenta.
 
-public class Cachipun {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        Random random = new Random();
-
-        System.out.println("Bienvenido al juego de Cachipún");
-        System.out.print("Elige una opción (piedra, papel o tijera): ");
-        String jugador = scanner.nextLine().toLowerCase();
-
-        String[] opciones = {"piedra", "papel", "tijera"};
-        String computadora = opciones[random.nextInt(3)];
-
-        System.out.println("La computadora eligió: " + computadora);
-
-        if (jugador.equals(computadora)) {
-            System.out.println("¡Empate!");
-        } else if (
-            (jugador.equals("piedra") && computadora.equals("tijera")) ||
-            (jugador.equals("papel") && computadora.equals("piedra")) ||
-            (jugador.equals("tijera") && computadora.equals("papel"))
-        ) {
-            System.out.println("¡Ganaste!");
-        } else if (
-            jugador.equals("piedra") ||
-            jugador.equals("papel") ||
-            jugador.equals("tijera")
-        ) {
-            System.out.println("¡Perdiste!");
-        } else {
-            System.out.println("Opción no válida. Debes elegir piedra, papel o tijera.");
-        }
-
-        scanner.close();
-    }
-}
-```
+<GitHubRepo
+  owner="mc-herrera-90"
+  repo="cachipun-java"
+/>
