@@ -17,9 +17,9 @@ El objetivo es que entiendas cómo aplicar principios como __encapsulamiento__, 
 />
 
 
-## __Estructura del Proyecto__
+## Estructura del Proyecto
 
-Antes de comenzar a programar, es importante definir una estructura organizada para separar __las responsabilidades__ y facilitar el mantenimiento.
+Antes de comenzar a programar, es importante definir una estructura organizada para separar __las responsabilidades__ y __facilitar el mantenimiento__.
 
 Vamos a organizar nuestra aplicación en **paquetes** según su función:
 
@@ -32,20 +32,22 @@ Vamos a organizar nuestra aplicación en **paquetes** según su función:
 
 <img src={esquemaProyecto} alt="Estructura del proyecto"/>
 
->  recuerda tener instaladas las extensiones de Java para programar en VS Code. También puedes revisar el artículo en nuestro blog 👉 <a href="#/blog/vscode-para-java">VSCode para Java</a>
+>  Recuerda tener instaladas las __extensiones de Java para programar__ en __VS Code__. También puedes revisar el artículo en nuestro blog 👉 <a href="#/blog/vscode-para-java">VSCode para Java</a>
 
-## __Archivos Fuentes__
+## Archivos Fuentes <i class="fas fa-file-code" style={{color: 'var(--main-secondary)'}}></i>
 
 Ya teniendo la estructura de paquetes sugerida, pasamos a implementar las funcionalidades clave del sistema dentro de los archivos fuente.  
 En esta sección te mostraré cada clase relevante, explicando su propósito y cómo encaja en la arquitectura general del proyecto.
 
-### <i class="fas fa-file-code" style={{color: 'var(--main-secondary)'}}></i> __model/Tarea.java__
+## Paso 1 Crea un paquete y la clase de Tarea
+
+<h3>📁 model<br/><span style={{ marginLeft: '1.5rem' }}>↳  <strong>Tarea.java</strong></span></h3>
 
 Aquí definimos nuestra entidad principal: la `Tarea`. Esta clase representa una tarea con un __`ID`__, una __`descripcion`__ y un estado como __`completada`__ o no (`true` o `false`).
 
-### __Creamos la clase y defimos su constructor__
 
 ```java
+// filename: Tarea.java
 package model;
 
 public class Tarea {
@@ -61,11 +63,10 @@ public class Tarea {
 }
 ```
 
-> __Usamos encapsulamiento 👀__:<br />todos los atributos son privados y se accede a ellos a través de métodos públicos (_getters_ y _setters_).
-
-### __Ahora definimos los getter y setter__
+Ahora definimos los getter y setter:
 
 ```java
+// filename: Tarea.java
 package model;
 
 public class Tarea {
@@ -94,7 +95,9 @@ public class Tarea {
 }
 ```
 
-### __Ahora modificamos el formato del objeto__
+> __Usamos encapsulamiento 👀__:<br />todos los atributos son privados y se accede a ellos a través de métodos públicos (_getters_ y _setters_).
+
+Ahora modificamos el formato de salida del objeto:
 
 ```java
 package model;
@@ -120,13 +123,16 @@ public class Tarea {
 > [✔] 1: Terminar informe
 > ```
 
-### <i class="fas fa-file-code" style={{color: 'var(--main-secondary)'}}></i> __controller/GestorTareas.java__
+## Paso 2 Crea un paquete y la clase de GestorTareas
+
+<h3>📁 controller<br/><span style={{ marginLeft: '1.5rem' }}>↳  <strong>GestorTareas.java</strong></span></h3>
 
 En este archivo se define lo que se conoce como __lógica de negocio__, es decir, las operaciones __CRUD__ (Crear, Leer, Actualizar, Eliminar) sobre una lista de tareas.
 
 Además, controla el ID autoincremental y mantiene la lista de tareas en memoria.
 
 ```java
+// filename: GestorTareas.java
 package controller;
 
 import model.Tarea;
@@ -159,19 +165,19 @@ public class GestorTareas {
 }
 ```
 
-### <i class="fas fa-file-code" style={{color: 'var(--main-secondary)'}}></i> __view/Menu.java__
+## Paso 3 Crea un paquete y la clase Menu
 
+<h3>📁 view<br/><span style={{ marginLeft: '1.5rem' }}>↳  <strong>Menu.java</strong></span></h3>
 
 Esta clase se encarga de la **interacción con el usuario**. Muestra un menú en la consola y permite seleccionar las operaciones disponibles.
 
 Llama a los métodos del controlador para realizar las acciones correspondientes.
 
 ```java
+// filename: Menu.java
 package view;
-
 import controller.GestorTareas;
 import model.Tarea;
-
 import java.util.Scanner;
 
 public class Menu {
@@ -226,11 +232,14 @@ public class Menu {
 }
 ```
 
-### <i class="fas fa-file-code" style={{color: 'var(--main-secondary)'}}></i> __Main.java__
+## Paso 4 Crea la clase Main
 
-Es el **punto de entrada** de la aplicación. Aquí se crean las instancias necesarias y se inicia el programa.
+### __Main.java__
+
+Este es el **punto de entrada** de la aplicación. Aquí se crean las instancias necesarias y se inicia el programa.
 
 ```java
+// filename: Main.java
 import controller.GestorTareas;
 import view.Menu;
 
@@ -242,3 +251,12 @@ public class Main {
     }
 }
 ```
+
+## Paso 5 Repositorio
+
+Pasa por el repositorio, ahí encontrarás el código completo y la estructura por si quieres revisar la solución o clonarlo para experimentar por tu cuenta.
+
+<GitHubRepo
+  owner="mc-herrera-90"
+  repo="simple-todo-java"
+/>
