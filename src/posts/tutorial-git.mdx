@@ -1,89 +1,165 @@
+## Git 🗂️: <br/>__Tutorial Práctico__
 
-## Tutorial Git 🗂️
+Git es un sistema de control de versiones distribuido. Te permite llevar el historial de tus proyectos, trabajar en equipo y mantener un flujo de trabajo profesional.
 
-Git es un sistema de control de versiones distribuido que permite a los desarrolladores __registrar cambios en el código a lo largo del tiempo__, colaborar con otros y mantener un historial limpio y ordenado del proyecto.
+## Paso 1 Instalación de Git
 
-## Configuración Inicial
+Descarga desde [https://git-scm.com](https://git-scm.com).
 
-Para comenzar a personalizar aspectos básicos y avanzados de Git debemos saber del funcionamiento y cómo modificar su configuración predeterminada. Una herramienta inherente de Git llamada git config permite establecer y obtener variables de configuración que controlan aspectos del funcionamiento y la apariencia de Git. Estas variables se pueden almacenar en tres lugares diferentes:
-
-```bash
-git config --list --show-origin
-```
-
-## Configuración de identidad
-
-Después de instalar Git, los usuarios deben establecer inmediatamente el nombre de usuario y la dirección de correo eléctronico, que se usarán para cada confirmación de Git.
-
-__Configurar el nombre de usuario__:
+Verifica la instalación:
 
 ```bash
-git config --global user.name "nombre de usuario" 
-```
+git --version
+````
 
-__Configurar el email para el usuario__:
-
-```bash
-git config --global user.email "usuario@correo.com"
-```
-
-
-## __Configurar Editor__
-
-__Configurar VS code como el editor por defecto para git__
+## Paso 2 Configuración inicial
 
 ```bash
+git config --global user.name "Tu Nombre"
+git config --global user.email "tucorreo@ejemplo.com"
+git config --global init.defaultBranch main
 git config --global core.editor "code --wait"
 ```
 
-> La opción `--wait` es para que la terminal se quede esperando hasta que cerremos el editor de texto.
-
-## __ALIAS__
-
-La herramienta `git config` también nos permite definir __alias__ que son útiles para ahorrarnos un poco de escritura de comandos más largos. A continuación, algunos ejemplos:
-
+## Paso 3 Inicializar un repositorio
 
 ```bash
-git config --global alias.br branch
-```
-
-```bash
-git config --global alias.co checkout
-```
-
-```bash
-git config --global alias.ci commit 
-```
-
-```bash
-git config --global alias.st status
-```
-
-```bash
-git config --global alias.rt remote
-```
-
-
-## __Inicializar un proyecto con GIT__
-
-Para iniciar un proyecto en Git, primera debemos situarnos en el directorio donde tendrás tu proyecto o podemos crear en este caso una carpeta y entrar en ella y partir desde cero. Si estás Windows, Mac o Linux podemos crear una carpeta con el comando mkdir y luego entrar en ella con el comando cd
-
-Crea una carpeta para contener el proyecto y accedemos a esa carpeta:
-
-```bash
-mkdir git-tutorial && cd git-tutorial
-```
-
-Inicializar un repositorio en local con git en el directorio actual
-
-```bash
+mkdir mi-proyecto
+cd mi-proyecto
 git init
 ```
 
-Crear un nuevo repositorio en local con el nombre especificado (crea la carpeta y dentro el repositorio local)
+Esto crea un repositorio vacío en la carpeta `.git`.
+
+## __Ciclo Básico__ 
+
+### add → commit → push
+
+Ver estado actual:
 
 ```bash
-git init tutorial-git
+git status
 ```
 
-> Una vez inicializado el repositorio se crea una carpeta oculta llamada .git dentro del proyecto. Resultará obvio, pero conviene decir que nunca se debe borrar esa carpeta (al menos que quieras que tu proyecto no sea controlado por git).
+Agregar archivos:
+
+```bash
+git add archivo.txt
+# o todos
+git add .
+```
+
+Crear un commit:
+
+```bash
+git commit -m "Mensaje claro del cambio"
+```
+
+## __Sincronizar__
+
+Conectar a un repositorio remoto:
+
+```bash
+git remote add origin https://github.com/usuario/repositorio.git
+git push -u origin main
+```
+
+Actualizar proyecto:
+
+```bash
+git pull origin main
+```
+
+## __Ramificar__
+
+Crear una nueva rama:
+
+```bash
+git checkout -b nombre-rama
+```
+
+Cambiar de rama:
+
+```bash
+git checkout main
+```
+
+Fusionar ramas:
+
+```bash
+git merge nombre-rama
+```
+
+## __Ignorar__
+
+Ejemplo de archivo `.gitignore`:
+
+```git
+node_modules/
+.env
+dist/
+```
+
+> Crea un archivo `.gitignore` en la raíz del proyecto.
+
+## __Historial__
+
+Ver historial en un cambios:
+
+```bash
+git log --oneline
+```
+
+## __Limpiar__
+
+Deshacer cambios no confirmados:
+
+```bash
+git checkout -- archivo.txt
+```
+
+Resetear último commit (manteniendo cambios):
+
+```bash
+git reset --soft HEAD~1
+```
+
+Resetear y borrar cambios:
+
+```bash
+git reset --hard HEAD~1
+```
+
+## __Diferencias__
+
+Ver diferencias:
+
+```bash
+git diff
+```
+
+## Buenas Prácticas
+
+* Commits pequeños y con mensajes claros.
+* Usa ramas descriptivas (`feature/`, `bugfix/`).
+* Evitá trabajar directamente en `main`.
+* Agregá `.gitignore` desde el inicio.
+
+## Comandos Básicos
+
+| Acción                      | Comando                |
+| --------------------------- | ---------------------- |
+| Clonar repo                 | `git clone URL`        |
+| Ver ramas                   | `git branch`           |
+| Borrar rama                 | `git branch -d nombre` |
+| Guardar cambios temporales  | `git stash`            |
+| Restaurar cambios del stash | `git stash pop`        |
+
+## Flujo Recomendado 
+
+1. Clona el proyecto.
+2. Crea una rama para la tarea.
+3. Realiza commits frecuentes.
+4. Empuja con `push` a la rama remota.
+5. Abre un Pull Request.
+6. Revisa y fusiona a `main`.

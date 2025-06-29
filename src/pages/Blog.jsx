@@ -4,7 +4,7 @@ import { posts } from '../posts';
 
 export function Blog() {
   return (
-    <main className='page-container'>
+    <div>
       <ul style={{ listStyle: 'none', padding: 0 }}>
         {posts.map(({ slug, title, date }) => (
           <li key={slug} style={{ marginBottom: '1.5rem' }}>
@@ -15,6 +15,6 @@ export function Blog() {
           </li>
         ))}
       </ul>
-    </main>
+    </div>
   );
 }

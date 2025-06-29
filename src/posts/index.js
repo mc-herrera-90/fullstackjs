@@ -11,7 +11,7 @@ export const posts = [
   },
   {
     slug: 'vscode-para-java',
-    title: 'Configurar VS Code para Java',
+    title: 'VS Code para Java',
     date: '2025-05-19',
     Content: Post02,
   },
