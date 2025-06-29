@@ -50,7 +50,7 @@ a {
 
 /* Contenedor principal */
 main {
-  padding: 2rem;
+  padding: 2rem 0;
   max-width: 1000px;
   margin: 0 auto;
   box-sizing: border-box;
@@ -79,9 +79,6 @@ h3 {
   font-size: 1.8rem;
   margin: 2rem 0 1.4rem 0;
 }
-p {
-  font-size: 1rem;
-}
 
 pre {
   background-color: var(--bg-blockcode);
@@ -92,7 +89,7 @@ pre {
 }
 
 .page-container {
-  max-width: 800px;
+  max-width: 790px;
   line-height: 1.6rem;
 }
 

@@ -2,7 +2,6 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { posts } from '../posts';
 import { BlogPost } from '../components/BlogPost';
-import { MDXProvider } from '@mdx-js/react';
 import { Card } from '../components/cards/Card';
 import StepHeading from '../components/StepHeading';
 
@@ -16,8 +15,6 @@ export function BlogPostPage() {
   if (!post) return <p>Post no encontrado</p>;
 
   return (
-        <MDXProvider>
             <BlogPost post={post} components={components} />
-        </MDXProvider>
   );
 }
