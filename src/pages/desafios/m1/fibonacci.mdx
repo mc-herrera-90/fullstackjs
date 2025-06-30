@@ -1,17 +1,55 @@
-import MathComponent from '../../../components/MathComponent';
 
-La sucesión de Fibonacci es uno de los conceptos más interesantes y populares tanto en matemáticas como en programación. Es ideal para practicar bucles, lógica iterativa y manejo de variables.
+<ProjectDetails 
+  details={{
+    name: "Sucesión de Fibinacci",
+    abstract: `Este proyecto consiste en hacer una __aplicación de consola en Java__ que calcule la sucesión de Fibonacci hasta un número entero ingresado por el usuario. El objetivo es practicar conceptos básicos de programación, como el uso de variables, estructuras de control como bucles \`for\`, y la lógica necesaria.`,
+    languages: "Java",
+    ide: "VS Code",
+    javaVersion: `Java (\`latest version\`)`,
+    type: "Aplicación de consola",
+    recommended: "Java Básico",
+    time: "15 mins – 30 mins"
+  }}
+/>
 
-## __¿Qué es la Sucesión de Fibonacci?__
+
+## ¿Te suena la Sucesión de Fibonacci?
 
 La sucesión de Fibonacci es una serie de números en la que cada número es la __suma de los dos anteriores__. Cada número se obtiene sumando los dos anteriores, lo que se expresa así:
 
-<MathComponent formula="F(n) = F(n - 1) + F(n - 2), \quad \text{con } F(0) = 0 \text{ y } F(1) = 1" />
+<MathComponent
+  formula={`\\begin{align*}
+F(n) &= F(n - 1) + F(n - 2) \\\\
+&\\text{con } F(0) = 0 \\text{ y } F(1) = 1
+\\end{align*}`}
+/>
 
 
-Entonces, la sucesión comienza así: `0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ...`
+Entonces, ¿Cómo sería la sucesión de Fibonacci hasta el décimo término?
 
-## __Lógica paso a paso <br />(<span style={{color: 'var(--main-secondary)'}}>versión iterativa</span>)__
+La sucesión de Fibonacci siempre comienza con los valores 0 y 1, es decir:
+
+<MathComponent
+  formula={`\\begin{align*}
+F(0) = 0 \\text{ y } F(1) = 1
+\\end{align*}`}
+/>
+
+A partir de ahí, cada término se obtiene sumando los dos anteriores, es decir:
+
+<MathComponent
+  formula={`\\begin{align*}
+F(n) &= F(n - 1) + F(n - 2)
+\\end{align*}`}
+/>
+
+Si queremos obtener los __primeros 10 términos__ (desde `F(0)` hasta `F(9)`), la sucesión sería:
+
+<MathComponent
+  formula={`0,\\ 1,\\ 1,\\ 2,\\ 3,\\ 5,\\ 8,\\ 13,\\ 21,\\ 34`}
+/>
+
+## Lógica paso a paso <br />(__versión iterativa__)
 
 Queremos construir los primeros `n` términos de la sucesión. Para eso:
 
@@ -29,14 +67,16 @@ Queremos construir los primeros `n` términos de la sucesión. Para eso:
    * Desplazamos los valores: `a = b`, `b = siguiente`.
 
 
-## __<span style={{color: 'var(--main-secondary)'}}>PASO 1</span> ↙<br/> Crear un proyecto__
+## PASO 1 Crear el archivo y la clase principal
 
-### __En IntelliJ IDEA__
+- Primero, abre __Visual Studio Code__.
+- Selecciona o crea una carpeta donde guardar el proyecto, ej: `sucesion-fibonacci`
+- Crea un nuevo archivo llamado `SucesionFibonacci`.
 
-1. Abre IntelliJ y crea un nuevo proyecto Java.
-2. Dentro del directorio `src`, crea una clase nueva: `SucesionFibonacci.java`.
+Comienza con la estructura mínima para tu clase y método principal:
 
 ```java
+// filename: SucesionFibonacci.java
 public class SucesionFibonacci {
     public static void main(String[] args) {
         // Aquí escribiremos el código
@@ -44,15 +84,15 @@ public class SucesionFibonacci {
 }
 ```
 
-## __<span style={{color: 'var(--main-secondary)'}}>PASO 2</span> ↙<br/> Declaracíon de variables__
+## PASO 2 Declaracíon de variables
 
 Dentro del método `main`, declaramos las dos variables:
 
 - `a` representa el primer término (0).
 - `b ` representa el segundo término (1).
 
-
 ```java
+// filename: SucesionFibonacci.java
 public class SucesionFibonacci {
     public static void main(String[] args) {
         int n = 6; // Cuántos términos mostrar
@@ -62,11 +102,12 @@ public class SucesionFibonacci {
 }
 ```
 
-## __<span style={{color: 'var(--main-secondary)'}}>PASO 3</span> ↙<br/> Usar un bucle para crear la sucesión__
+## PASO 3 Crear la lógica para la sucesión
 
 Ahora usamos un bucle `for` para generar los siguientes términos:
 
 ```java
+// filename: SucesionFibonacci.java
 public class SucesionFibonacci {
     public static void main(String[] args) {
         // ... Código anterior
@@ -88,8 +129,16 @@ public class SucesionFibonacci {
 > Avanzamos un paso en la secuencia:
 > `a` toma el valor anterior de `b`  
 > `b` toma el valor recién calculado (`siguiente`)
-
-## __Código completo__
+> 
+> __Ejemplo para `n = 6`__
+> ```text
+> Iteración 0: a = 0, b = 1 → imprime 0
+> Iteración 1: a = 1, b = 1 → imprime 1
+> Iteración 2: a = 1, b = 2 → imprime 1
+> Iteración 3: a = 2, b = 3 → imprime 2
+> Iteración 4: a = 3, b = 5 → imprime 3
+> Iteración 5: a = 5, b = 8 → imprime 5
+> ```
 
 ```java
 public class SucesionFibonacci {
@@ -111,22 +160,11 @@ public class SucesionFibonacci {
 }
 ```
 
+## PASO 4 Repositorio
 
-> Ejemplo paso a paso para `n = 6`
-> ```text
-> Iteración 0: a = 0, b = 1 → imprime 0
-> Iteración 1: a = 1, b = 1 → imprime 1
-> Iteración 2: a = 1, b = 2 → imprime 1
-> Iteración 3: a = 2, b = 3 → imprime 2
-> Iteración 4: a = 3, b = 5 → imprime 3
-> Iteración 5: a = 5, b = 8 → imprime 5
-> ```
+Pasa por el repositorio, ahí encontrarás el código completo por si quieres revisar la solución o clonarlo para experimentar por tu cuenta.
 
-Resultado final: `0 1 1 2 3 5`
-
-## __Ventajas de la versión iterativa__
-
-* Es mucho más rápida.
-* No usa pila de llamadas ni recursión profunda.
-* No necesita memorizar valores anteriores.
-
+<GitHubRepo
+  owner="mc-herrera-90"
+  repo="sucesion-fibonacci-java"
+/>

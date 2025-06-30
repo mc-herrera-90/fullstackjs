@@ -19,11 +19,13 @@ import Footer from './components/Footer'
 import StepHeading from './components/StepHeading.jsx';
 import ProjectDetails from '@components/ProjectDetails';
 import GitHubRepo from './components/cards/GithubRepo.jsx'
+import MathComponent from './components/MathComponent.jsx'
 
 const mdxComponents = {
   h2: StepHeading,
   ProjectDetails,
-  GitHubRepo
+  GitHubRepo,
+  MathComponent
 }
 
 
