@@ -1,0 +1,296 @@
+<ProjectDetails 
+  details={{
+    name: "Gestor de Calificaciones",
+    abstract: `Este proyecto consiste en hacer una __aplicación de consola en Java__ que permite registrar estudiantes, ingresar sus calificaciones, calcular sus promedios y mostrar quién tuvo la mejor y la peor nota.
+
+Es una forma simple y práctica de aprender a trabajar con **arreglos, bucles, condiciones**, entrada por teclado y funciones en Java.
+`,
+    languages: "Java",
+    ide: "VS Code, IntelliJ IDEA, Eclipse",
+    javaVersion: `Java (\`latest version\`)`,
+    type: "Aplicación de consola",
+    recommended: "Java Intermedio",
+    time: "30 mins – 60 mins"
+  }}
+/>
+
+## Paso 1 Crear el proyecto
+
+Abre tu entorno de desarrollo Java (IDE) favorito. Puede ser:
+
+* IntelliJ IDEA
+* Eclipse
+* VS Code con extensión de Java
+
+__Acciones__:
+
+1. Crea un nuevo proyecto Java.
+2. Elige una carpeta donde se guardará.
+
+
+## Paso 2 Crear la clase principal
+
+En la carpeta `src` (o donde vayan los archivos fuente), crea un nuevo archivo llamado:
+
+`GestionCalificaciones.java`
+
+Esto contendrá el método `main`, que es el punto de entrada del programa.
+
+```java
+// filename: GestionCalificaciones.java
+public class GestionCalificaciones {
+    public static void main(String[] args) {
+        // Aquí irá todo nuestro programa
+    }
+}
+```
+
+## Paso 3 Preparar el lector de entrada
+
+Vamos a leer datos desde la consola. Para eso, importamos la clase `Scanner` y la creamos dentro de `main`.
+
+```java
+// filename: GestionCalificaciones.java
+import java.util.Scanner;
+
+public class GestionCalificaciones {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Más código vendrá aquí
+    }
+}
+```
+
+## Paso 4 Solicitar la cantidad de estudiantes
+
+Antes de crear arrays, necesitamos saber cuántos estudiantes vamos a registrar. Pedimos ese número al usuario:
+
+```java
+// filename: GestionCalificaciones.java
+import java.util.Scanner;
+
+public class GestionCalificaciones {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("¿Cuántos estudiantes desea registrar? ");
+        int cantidad = scanner.nextInt();
+        scanner.nextLine(); // Limpiar el buffer
+    }
+}
+```
+
+## Paso 5 Crear estructuras para guardar datos
+
+Necesitamos almacenar:
+
+* Los **nombres** de los estudiantes (un array de `String`).
+* Las **notas** de cada uno (matriz `double[estudiante][nota]`).
+* El **promedio** de cada estudiante (`double[]`).
+
+```java
+// filename: GestionCalificaciones.java
+import java.util.Scanner;
+
+public class GestionCalificaciones {
+    public static void main(String[] args) {
+        // Código anterior
+
+        String[] nombres = new String[cantidad];
+        double[][] calificaciones = new double[cantidad][3];
+        double[] promedios = new double[cantidad];
+    }
+}
+```
+
+> __En esta línea__:
+> ```java
+>   String nombres = new String[cantidad];
+> ```
+> - Crea un arreglo para guardar __nombres de los estudiantes__.
+> - Su tamaño es `cantidad`, es decir, el número de estudiantes que ingresó el usuario.
+>
+> __En esta línea__:
+> ```java
+>   double[][] calificaciones = new double[cantidad][3];
+> ```
+> - Crea una __matriz de calificaciones__, donde cada fila representa un estudiante y cada columna representa una de sus tres notas.
+> - Por ejemplo, `calificaciones[1][2]` es la tercera nota del segundo estudiante.
+>
+> __En esta línea__:
+> ```java
+>   double[] promedios = new double[cantidad];
+> ```
+> - Guarda el __promedio de notas de cada estudiante__, calculo más adelante en el programa.
+
+## Paso 6 Recorrer a cada estudiante y pedir sus datos
+
+Aquí usamos un bucle `for` para pedir nombre y tres notas por cada estudiante. También validamos que las notas estén entre 0 y 10.
+
+```java
+// filename: GestionCalificaciones.java
+import java.util.Scanner;
+
+public class GestionCalificaciones {
+    public static void main(String[] args) {
+        // Código anterior...
+        for (int i = 0; i < cantidad; i++) {
+            System.out.println("\nEstudiante #" + (i + 1));
+
+            System.out.print("Nombre: ");
+            nombres[i] = scanner.nextLine();
+
+            for (int j = 0; j < 3; j++) {
+                double nota;
+                do {
+                    System.out.print("Calificación " + (j + 1) + " (0-10): ");
+                    nota = scanner.nextDouble();
+                    if (nota < 0 || nota > 10) {
+                        System.out.println("⚠️ Nota inválida. Intente de nuevo.");
+                    }
+                } while (nota < 0 || nota > 10);
+
+                calificaciones[i][j] = nota;
+            }
+            scanner.nextLine(); // Limpiar buffer
+        }
+    }    
+}
+```
+
+## Paso 7 Calcular el promedio de cada estudiante
+
+Creamos un **método auxiliar** que reciba un array de 3 notas y devuelva el promedio.
+
+```java
+// filename: GestionCalificaciones.java
+import java.util.Scanner;
+
+public class GestionCalificaciones {
+    public static void main(String[] args) {/*...*/}
+
+    public static double calcularPromedio(double[] notas)  {
+        double suma = 0;
+
+        for (double nota: notas) {
+            suma += nota;
+        }
+        return suma / notas.length; 
+    }
+}
+```
+
+Y lo usamos dentro del bucle principal:
+
+```java
+// filename: GestionCalificaciones.java
+import java.util.Scanner;
+
+public class GestionCalificaciones {
+    public static void main(String[] args) {
+        // Código anterior
+        for (int i = 0; i < cantidad; i++) {
+            System.out.println("\nEstudiante #" + (i + 1));
+            System.out.println("Nombre: ");
+
+            nombres[i] = scanner.nextLine();
+
+            for (int j = 0; j < 3; j++) {/*...*/}
+
+            promedios[i] = calcularPromedio(calificaciones[i]); // Aquí usamos el método
+            scanner.nextLine();
+        }
+    }
+
+    public static double calcularPromedio(double[] notas)  {/*...*/}
+}
+```
+
+## Paso 8 Mostrar los resultados
+
+Una vez terminada la entrada, recorremos los arrays para mostrar los nombres y sus promedios:
+
+```java
+// filename: GestionCalificaciones.java
+import java.util.Scanner;
+
+public class GestionCalificaciones {
+    public static void main(String[] args) {
+        // Código anterior
+        for (int i = 0; i < cantidad; i++) {/*...*/}
+    
+        System.out.println("\n📋 Resultados:");
+        for (int i = 0; i < cantidad; i++) {
+            System.out.printf("%s: promedio = %.2f%n", nombres[i], promedios[i]);
+        }
+    }
+
+    public static double calcularPromedio(double[] notas)  {/*...*/}
+}
+```
+
+## Paso 9 Encontrar el mejor y peor promedio
+
+Comparamos los valores de los promedios usando otro bucle y mostramos los resultados:
+
+```java
+// filename: GestionCalificaciones.java
+import java.util.Scanner;
+
+public class GestionCalificaciones {
+    public static void main(String[] args) {
+        // Código anterior
+        for (int i = 0; i < cantidad; i++) {/*...*/}
+    
+        System.out.println("\n📋 Resultados:");
+        for (int i = 0; i < cantidad; i++) {/*...*/}
+
+        int mejorIndex = 0;
+        int peorIndex = 0;
+
+        for (int i = 1; i < cantidad; i++) {
+            if (promedios[i] > promedios[mejorIndex]) {
+                mejorIndex = i;
+            }
+            if (promedios[i] < promedios[peorIndex]) {
+                peorIndex = i;
+            }
+        }
+
+        System.out.println("\n🏆 Mejor promedio: " + nombres[mejorIndex] + " (" + promedios[mejorIndex] + ")");
+        System.out.println("🔻 Peor promedio: " + nombres[peorIndex] + " (" + promedios[peorIndex] + ")");
+
+        scanner.close(); // Por buena práctica, cerramos el objeto `Scanner` al final:
+
+    }
+    public static double calcularPromedio(double[] notas)  {/*...*/}
+}
+```
+
+__Resultado Final Esperado__
+
+Cuando ejecutas el programa, verás algo así:
+
+```
+¿Cuántos estudiantes desea registrar? 2
+
+Estudiante #1
+Nombre: Carla
+Calificación 1 (0-10): 9
+Calificación 2 (0-10): 8
+Calificación 3 (0-10): 10
+
+Estudiante #2
+Nombre: Marcos
+Calificación 1 (0-10): 6
+Calificación 2 (0-10): 7
+Calificación 3 (0-10): 6
+
+📋 Resultados:
+Carla: promedio = 9.00
+Marcos: promedio = 6.33
+
+🏆 Mejor promedio: Carla (9.0)
+🔻 Peor promedio: Marcos (6.33)
+```
