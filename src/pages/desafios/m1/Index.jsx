@@ -1,3 +1,4 @@
+import JavaCheatsheet from '@components/JavaCheatsheet';
 import { useNavigate } from 'react-router-dom';
 import { desafiosM1 } from '../../../data/desafiosM1';
 
@@ -39,6 +40,8 @@ export default () => {
         </table>) : 
         (<p style={{fontSize: "3rem" }} align="center">No hay entradas</p>)
         }
+
+    <JavaCheatsheet/>
     </div>
     )
 }
