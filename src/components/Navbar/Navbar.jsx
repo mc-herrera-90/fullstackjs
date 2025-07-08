@@ -19,7 +19,7 @@ export default function Navbar() {
         <Link to="/" onClick={() => setMenuOpen(false)}>Inicio</Link>
         <Link to="/blog">Blog</Link>
         <a href="#">Proyectos</a>
-        <a href="#">Contacto</a>
+        <Link to="/cohorte">Cohorte</Link>
       </nav>
 
       <div className="theme-toggle" onClick={toggleTheme}>

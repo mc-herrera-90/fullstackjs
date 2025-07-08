@@ -5,7 +5,7 @@ import './App.css'
 import Navbar from '@components/Navbar'
 import Home from './pages/Home'
 import Proyectos from './pages/Proyectos'
-import Contacto from './pages/Contacto'
+import Cohorte from './pages/Cohorte.jsx'
 import { Blog } from './pages/Blog';
 import { BlogPostPage } from './pages/BlogPostPage';
 import IndexM2 from './pages/desafios/m2/Index';
@@ -68,7 +68,7 @@ function App() {
         <Routes>
           <Route index path="/" element={<Home />} />
           <Route path="/proyectos" element={<Proyectos />} />
-          <Route path="/contacto" element={<Contacto />} />
+          <Route path="/cohorte" element={<Cohorte />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPostPage />} />
           <Route path="/desafios/m1" element={<IndexM1 />} />
