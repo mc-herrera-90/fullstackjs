@@ -1,0 +1,253 @@
+<FloatingToC/>
+
+## Paso 1 Crear la estructura básica del documento HTML
+
+Antes de comenzar con el formulario, es importante construir la base de cualquier página web: la estructura HTML básica. Esto incluye la declaración del tipo de documento, el idioma, los metadatos y el cuerpo donde se insertará el contenido.
+
+```html
+<!-- filename: index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Encuesta de Hábitos Digitales</title>
+</head>
+<body>
+  <main>
+    <!-- Aquí irá el formulario -->
+  </main>
+</body>
+</html>
+```
+
+## Paso 2 Crear el formulario
+
+Los formularios son elementos esenciales para la interacción con usuarios en la web. Aquí iniciamos el formulario con la etiqueta `<form>` y especificamos que no recargue la página al enviar usando `action="#"`. Esto nos permite manejar los datos más adelante si queremos.
+
+```html
+<!-- filename: index.html -->
+<form action="#" method="post" novalidate>
+  <!-- Campos irán aquí -->
+</form>
+```
+
+## Paso 3 Añadir campos de texto para recopilar información básica
+
+Comenzamos con campos simples para que el usuario ingrese su nombre y correo electrónico. Usamos `<label>` vinculados a inputs con el atributo `for` para accesibilidad.
+
+```html
+<!-- filename: index.html -->
+<div>
+  <label for="nombre">Nombre completo *</label>
+  <input type="text" id="nombre" name="nombre" placeholder="Juan Pérez" required />
+</div>
+
+<div>
+  <label for="email">Correo electrónico *</label>
+  <input type="email" id="email" name="email" placeholder="juan@example.com" required />
+</div>
+```
+
+<Blockquote type="info">
+Con esto aprendes a crear campos de texto y correo con validación básica, usar etiquetas `<label>` para accesibilidad y `placeholder` para guiar al usuario.
+</Blockquote>
+
+
+## Paso 4 Solicitar la edad con validación numérica
+
+Usar el input tipo `number` permite que el navegador controle que el valor sea numérico, y con los atributos `min` y `max` podemos definir límites válidos.
+
+```html
+<!-- filename: index.html -->
+<div>
+  <label for="edad">Edad *</label>
+  <input type="number" id="edad" name="edad" min="10" max="120" required />
+</div>
+```
+
+<Blockquote type="info">
+Con esto aprendes a crear campos numéricos con validación básica, usando los atributos `min` y `max` para definir rangos válidos, y `<label>` para mantener la accesibilidad.
+</Blockquote>
+
+
+## Paso 5 Usar botones radio para seleccionar género
+
+Cuando se requiere que el usuario elija solo una opción de varias, usamos inputs de tipo `radio`. Agrupamos opciones con `<fieldset>` y `<legend>` para marcar semánticamente un grupo relacionado.
+
+```html
+<!-- filename: index.html -->
+<fieldset>
+  <legend>Género *</legend>
+  <div>
+    <input type="radio" id="genero-m" name="genero" value="masculino" required />
+    <label for="genero-m">Masculino</label>
+  </div>
+  <div>
+    <input type="radio" id="genero-f" name="genero" value="femenino" />
+    <label for="genero-f">Femenino</label>
+  </div>
+  <div>
+    <input type="radio" id="genero-o" name="genero" value="otro" />
+    <label for="genero-o">Otro</label>
+  </div>
+</fieldset>
+```
+
+<Blockquote type="info">
+Con esto aprendes a agrupar opciones con `fieldset` y `legend`, crear botones de opción (`radio`) y asociarlos correctamente con etiquetas `<label>` para asegurar accesibilidad y buena experiencia de usuario.
+</Blockquote>
+
+
+## Paso 6 Añadir un select para elegir tiempo en línea diario
+
+Los elementos `<select>` permiten que el usuario elija una opción de una lista desplegable, ideal para opciones predefinidas y evita errores de tipeo.
+
+```html
+<!-- filename: index.html -->
+<div>
+  <label for="tiempo-linea">Tiempo promedio en línea por día *</label>
+  <select id="tiempo-linea" name="tiempo-linea" required>
+    <option value="">Selecciona una opción</option>
+    <option value="menos-1">Menos de 1 hora</option>
+    <option value="1-3">1 a 3 horas</option>
+    <option value="3-6">3 a 6 horas</option>
+    <option value="mas-6">Más de 6 horas</option>
+  </select>
+</div>
+```
+
+<Blockquote type="info">
+Con esto aprendes a crear menús desplegables con `<select>` y `<option>`, incluyendo una opción inicial vacía para forzar la selección, y usar `<label>` para mantener la accesibilidad.
+</Blockquote>
+
+
+## Paso 7 Checkboxes para seleccionar múltiples dispositivos usados
+
+Para seleccionar varias opciones al mismo tiempo, se usan checkboxes. Se agrupan dentro de un `<fieldset>` para mantener la semántica.
+
+```html
+<!-- filename: index.html -->
+<fieldset>
+  <legend>Dispositivos que usas habitualmente</legend>
+  <div>
+    <input type="checkbox" id="disp-movil" name="dispositivos" value="movil" />
+    <label for="disp-movil">Móvil</label>
+  </div>
+  <div>
+    <input type="checkbox" id="disp-laptop" name="dispositivos" value="laptop" />
+    <label for="disp-laptop">Laptop / PC</label>
+  </div>
+  <div>
+    <input type="checkbox" id="disp-tablet" name="dispositivos" value="tablet" />
+    <label for="disp-tablet">Tablet</label>
+  </div>
+</fieldset>
+```
+
+<Blockquote type="info">
+Con esto aprendes a crear casillas de verificación (`checkbox`) para seleccionar múltiples opciones, agruparlas con `fieldset` y `legend`, y usar `<label>` para mejorar la accesibilidad.
+</Blockquote>
+
+## Paso 8 Área de texto para comentarios adicionales
+
+Para permitir respuestas largas o libres, el elemento `<textarea>` es el ideal, con su tamaño y posibilidad de expandirse.
+
+```html
+<!-- filename: index.html -->
+<div>
+  <label for="comentarios">Comentarios adicionales</label>
+  <textarea id="comentarios" name="comentarios" rows="4" placeholder="Cuéntanos más..."></textarea>
+</div>
+```
+
+<Blockquote type="info">
+Con esto aprendes a usar `<textarea>` para permitir entradas de texto extensas, junto con `placeholder` para guiar al usuario y `<label>` para mantener la accesibilidad.
+</Blockquote>
+
+## Paso 9 Botón para enviar el formulario
+
+Finalmente, un botón para que el usuario pueda enviar la encuesta.
+
+```html
+<!-- filename: index.html -->
+<div>
+  <button type="submit" class="submit-btn">Enviar encuesta</button>
+</div>
+```
+
+<Blockquote type="info">
+Con esto aprendes a usar un botón de tipo `submit` para enviar el formulario de manera adecuada.
+</Blockquote>
+
+
+## Paso 10 Estilizar con CSS básico para mejor presentación
+
+```css
+/* filename: estilos.css */
+body {
+  font-family: Arial, sans-serif;
+  background: #f7f9fc;
+  margin: 2rem;
+  color: #333;
+}
+main {
+  max-width: 600px;
+  background: white;
+  padding: 1.5rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+h1 {
+  text-align: center;
+  color: #5b51ed;
+}
+form > div, fieldset {
+  margin-bottom: 1rem;
+}
+label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+fieldset {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 0.75rem 1rem 1rem;
+}
+legend {
+  font-weight: 700;
+  padding: 0 5px;
+}
+.submit-btn {
+  background-color: #5b51ed;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+.submit-btn:hover {
+  background-color: #443ae3;
+}
+```
+
+<Blockquote type="info">
+Con esto aprendes a aplicar estilos CSS básicos para mejorar la presentación del formulario, utilizando espaciado, colores y tipografía para una mejor legibilidad y estructura visual.
+</Blockquote>

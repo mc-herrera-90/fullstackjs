@@ -10,20 +10,22 @@ export default function CopyCodeButtonInjector() {
     codeBlocks.forEach((block) => {
       const pre = block.parentElement;
 
+      // Evitar duplicados
       if (pre.querySelector('.copy-btn') || pre.querySelector('.code-filename')) return;
 
       const lines = block.innerText.split('\n');
-      const filenameLine = lines[0].match(/filename:\s*(.+)/);
+
+      // Detectar filename si la primera línea contiene 'filename:' al inicio
+      const filenameLine = lines[0].match(/^\s*.*filename:\s*(.+)$/i);
 
       if (filenameLine) {
-        const filename = filenameLine[1].trim();
+        const filename = filenameLine[1].replace('-->', '').replace('*/', '').trim();
 
-        // Detectar lenguaje por clase
-        const classAttr = block.className; // ej: "hljs language-java"
+        // Iconos genéricos por lenguaje (detectar lenguaje igual que antes)
+        const classAttr = block.className;
         const langMatch = classAttr.match(/language-([\w]+)/);
         const lang = langMatch ? langMatch[1].toLowerCase() : null;
 
-        // Iconos por lenguaje
         const icons = {
           java: 'fab fa-java',
           python: 'fab fa-python',
@@ -41,6 +43,7 @@ export default function CopyCodeButtonInjector() {
 
         const iconClass = icons[lang] || 'fas fa-file-code';
 
+        // Crear etiqueta filename
         const label = document.createElement('div');
         label.className = 'code-filename';
         label.innerHTML = `<i class="${iconClass} fa-fw fa-lg" style="margin-right: 3px;"></i>${filename}`;
@@ -64,11 +67,11 @@ export default function CopyCodeButtonInjector() {
 
         pre.appendChild(label);
 
-        // Ocultar visualmente la línea del comentario
+        // Ocultar visualmente la línea que contiene filename:
         const childNodes = Array.from(block.childNodes);
         for (const node of childNodes) {
           if (node.nodeType === Node.TEXT_NODE || node.nodeName === 'SPAN') {
-            if (node.textContent.includes('filename:')) {
+            if (/^\s*.*filename:/i.test(node.textContent)) {
               const span = document.createElement('span');
               span.className = 'code-line-hidden';
               span.textContent = node.textContent + '\n';

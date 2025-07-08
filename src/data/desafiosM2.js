@@ -1,7 +1,9 @@
 import Desafio1 from '../pages/desafios/m2/curriculumVitae.mdx';
+import Desafio2 from '../pages/desafios/m2/formularioEncuesta.mdx';
 
 export const desafiosM2 = [
     {title: 'Curriculum Vitae', difficult: 'Fácil', slug: 'curriculum-vitae', component: Desafio1},
+    {title: 'Formulario de Encuestas', difficult: 'Fácil', slug: 'formulario-encuestas', component: Desafio2},
 ]
 
 // data/projects

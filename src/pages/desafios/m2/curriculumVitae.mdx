@@ -56,6 +56,7 @@ Desde el año 2010, facebook introdujo el <a href="https://ogp.me/" target="_bla
 Un ejemplo de ello, es el siguiente:
 
 ```html
+<!-- filename: index.html -->
 <html prefix="og: https://ogp.me/ns#">
 <head>
   <meta property="og:title" content="Juan Peréz - Curriculum Vitae">
@@ -75,6 +76,7 @@ Aunque los motores de búsqueda como [Google](https://www.google.com/) analizan 
 __Ejemplo de uso:__
 
 ```html
+<!-- filename: index.html -->
 <head>
     ...
     <meta name="description" content="Contenido relacionado de la página" />
@@ -95,6 +97,7 @@ Para ello, nos guiaremos con la siguiente ilustración a modo de ejemplo:
 ![ilustración de CV](https://fullstack-python.mcherrera.dev/assets/img/desafios/curriculum/encabezado.webp)
 
 ```html
+<!-- filename: index.html -->
 <header align="center">
   <img src="https://i.ibb.co/SXnSFrkB/profile.png" width="80" height="80" alt="cv photo">
   <h1>JUAN PERÉZ</h1>
@@ -119,6 +122,7 @@ Para ello, nos guiaremos con la siguiente ilustración a modo de ejemplo:
 Dentro del contenido principal, vamos a estar trabajando básicamente con secciones (`<section>`) para cada apartado, como la **formación académica**, la **experiencia**, la **información complementaria**, etc. Un ejemplo de esa estructura sería lo siguiente:
 
 ```html
+<!-- filename: index.html -->
 <main>
   <section>
     <h3>Perfil Profesional</h3>
@@ -187,6 +191,7 @@ Al menos hay que tener en cuenta lo siguiente cuando se define un estilo para im
 Un ejemplo de lo anterior sería:
 
 ```css
+/* filename: print.css */
 @media print {
 	body, section {
 		color: #342;
@@ -213,6 +218,7 @@ Un ejemplo de lo anterior sería:
 Luego debemos vincular ese archivo desde nuestro HTML:
 
 ```html
+<!-- filename: index.html -->
 <head>
   ...
   <link rel="stylesheet" href="assets/css/print.css">
