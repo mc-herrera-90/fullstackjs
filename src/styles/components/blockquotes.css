@@ -1,0 +1,76 @@
+.blockquote {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2.5rem;
+  border-left: 4px solid;
+  border-radius: 0.5rem;
+  margin: 1.5rem 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  gap: 0.75rem;
+  font-style: normal;
+  position: relative;
+  background-color: var(--blockquote-info-bg);
+  border-color: var(--blockquote-info-border);
+  color: var(--blockquote-info-text);
+}
+
+.blockquote::before {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  font-style: normal;
+  font-size: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+  line-height: 1;
+  content: "\f05a"; /* default: info */
+  color: var(--blockquote-info-icon);
+}
+
+/* === INFO === */
+.blockquote.info {
+  background-color: var(--blockquote-info-bg);
+  border-color: var(--blockquote-info-border);
+  color: var(--blockquote-info-text);
+}
+.blockquote.info::before {
+  content: "\f05a"; /* fa-circle-info */
+  color: var(--blockquote-info-icon);
+}
+
+/* === WARNING === */
+.blockquote.warning {
+  background-color: var(--blockquote-warning-bg);
+  border-color: var(--blockquote-warning-border);
+  color: var(--blockquote-warning-text);
+}
+.blockquote.warning::before {
+  content: "\f071"; /* fa-triangle-exclamation */
+  color: var(--blockquote-warning-icon);
+}
+
+/* === DANGER === */
+.blockquote.danger {
+  background-color: var(--blockquote-danger-bg);
+  border-color: var(--blockquote-danger-border);
+  color: var(--blockquote-danger-text);
+}
+.blockquote.danger::before {
+  content: "\f06a"; /* fa-circle-exclamation */
+  color: var(--blockquote-danger-icon);
+}
+
+/* === TIP === */
+.blockquote.tip {
+  background-color: var(--blockquote-tip-bg);
+  border-color: var(--blockquote-tip-border);
+  color: var(--blockquote-tip-text);
+}
+.blockquote.tip::before {
+  content: "\f0eb"; /* fa-lightbulb */
+  color: var(--blockquote-tip-icon);
+}

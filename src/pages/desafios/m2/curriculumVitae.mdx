@@ -1,10 +1,19 @@
+import projects from '@data/desafiosM2'
+import repoSettings from '@assets/repo-settings.webp';
+import repoSettingsPage from '@assets/repo-settings-pages.webp';
+import repoSaveSettingsPage from '@assets/repo-save-settings-pages.webp';
+
+
+
 En este desafío desarrolarás una página estática que represente tu __Curriculum Vitae (CV)__ en __HTML__, utilizando exclusivamente HTML. El objetivo principal es comprender y aplicar correctamente las __etiquetas semánticas__ de HTML5, organizando el contenido de manera clara, estructurada y profesional.
 
 ## Paso 1 Estructura del Proyecto
 
 Cuando trabajamos en un sitio o página web de forma local, es importante __mantener todos los archivos relacionados en un solo directorio o carpeta__. Puedes crear este directorio en cualquier ubicación del sistema, pero es recomendable elegir un lugar de fácil acceso, como el __Escritorio__.
 
-> Elige un lugar específico para almacenar tus proyectos web. Por ejemplo, puedes crear un directorio llamado __proyectos_web__, donde organizarás todos los proyectos que desarrolles.
+<Blockquote type="tip">
+Elige un lugar específico para almacenar tus proyectos web. Por ejemplo, puedes crear un directorio llamado __proyectos_web__, donde organizarás todos los proyectos que desarrolles.
+</Blockquote>
 
 Ahora, para organizar nuestro proyecto de manera adecuada, pensemos en todo lo que necesitamos para crear un sitio web simple:
 
@@ -15,6 +24,10 @@ Ahora, para organizar nuestro proyecto de manera adecuada, pensemos en todo lo q
 
 Siguiendo esta estructura, mantedrás un proyecto bien organizado. Además, es común agrupar estos directorios dentro de una carpeta llamada `📂 assets`.
 
+Para nuestro proyecto __CV__, trabajaremos con la siguiente estructura de directorios y archivos:
+
+<FileTree tree={projects.cv} />
+
 ## Paso 2 Cabecera de un documento HTML
 
 Como sabemos, la estructura básica de un documento HTML debe incluir siempre dos secciones o etiquetas principales:
@@ -24,8 +37,7 @@ Como sabemos, la estructura básica de un documento HTML debe incluir siempre do
 
 La sección de cabecera `<head>` del documento se encarga de incluir __metadatos sobre la página__, como el título del documento, la codificación de caracteres, enlaces de hojas de estilos, scripts y otros recursos externos. Esta parte no es visible directamente para el usuario.
 
-Existen varias etiquetas que podemos utilizar en esta sección de la cabecera del documento:
-
+Existen varias etiquetas que podemos utilizar en esta sección de la cabecera del documento. A continuación, mencionamos algunas de las más comunes:
 
 | Etiqueta    | Atributos         | Descripción                  |
 |-------------|-------------------|------------------------------|
@@ -35,7 +47,7 @@ Existen varias etiquetas que podemos utilizar en esta sección de la cabecera de
 
 También, en la cabecera de un documento HTML se suele utilizar las etiquetas `Open Graph` que permiten destacar más nuestro sitio o página web.
 
-## __¿Qué es Open Graph?__
+## Paso 3 (EXTRA) ¿Qué es Open Graph?
 
 ¿Te haz preguntado cómo, al compartir una página web, un blog, un video de YouTube o una canción de Spotify, aparece una vista previa con una imagen y su título?
 
@@ -46,11 +58,12 @@ Un ejemplo de ello, es el siguiente:
 ```html
 <html prefix="og: https://ogp.me/ns#">
 <head>
-  <meta property="og:title" content="Marco Contreras - Curriculum Vitae">
+  <meta property="og:title" content="Juan Peréz - Curriculum Vitae">
   <meta property="og:type" content="website" />
-  <meta property="og:description" content="Curriculum Vitae - Programador FullStack" />
+  <meta property="og:description" content="Soy Juan Peréz, estoy comenzando en el mundo del desarrollo web con HTML y muchas ganas de aprender y crear." />
+  <meta property="og:type" content="website" />
   <meta property="og:url" content="https://miweb.cl/curriculum">
-  <meta property="og:image" content="https://miweb.cl/perfil.png">
+  <meta property="og:image" content="https://i.ibb.co/SXnSFrkB/profile.png">
   ...
 </head>
   ...
@@ -69,7 +82,189 @@ __Ejemplo de uso:__
 </head>
 ```
 
-> Una descripción meta es una información importante para los motores de búsqueda y los usuarios.
+<Blockquote type="info">
+Una descripción meta es una información importante para los motores de búsqueda y los usuarios.
+</Blockquote>
+
+## Paso 4 Encabezado del Currículum 📝
+
+En la parte principal del CV, vamos a agrupar el título, nuestra foto de perfil y los datos personales utilizando como contenedor la etiqueta header.
+
+Para ello, nos guiaremos con la siguiente ilustración a modo de ejemplo:
+
+![ilustración de CV](https://fullstack-python.mcherrera.dev/assets/img/desafios/curriculum/encabezado.webp)
+
+```html
+<header align="center">
+  <img src="https://i.ibb.co/SXnSFrkB/profile.png" width="80" height="80" alt="cv photo">
+  <h1>JUAN PERÉZ</h1>
+  <table align="center">
+    <tr>
+      <td align="left">
+        📍 Coquimbo, Chile | ✉️ juanperez@mail.com
+      </td>
+    </tr>
+    <tr>
+      <td align="left">
+        📞 +56 956120021 | 💼 linkedin.com/in/juanperez
+      </td>
+    </tr>
+  </table>
+</header>
+<hr>
+```
+
+## Paso 5 Secciones del Curriculum 
+
+Dentro del contenido principal, vamos a estar trabajando básicamente con secciones (`<section>`) para cada apartado, como la **formación académica**, la **experiencia**, la **información complementaria**, etc. Un ejemplo de esa estructura sería lo siguiente:
+
+```html
+<main>
+  <section>
+    <h3>Perfil Profesional</h3>
+    <p>
+      Soy Juan Pérez, estudiante autodidacta de desarrollo web. Me apasiona la tecnología y estoy dando mis primeros pasos con HTML, CSS y JavaScript. Busco oportunidades para aprender y crecer profesionalmente.
+    </p>
+    <blockquote>Con muchas ganas de aprender y empezar a construir proyectos reales.</blockquote>
+    <ul>
+      <li>Responsable y motivado</li>
+      <li>Buena disposición para el trabajo en equipo</li>
+      <li>Interés en diseño web y experiencia de usuario</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Educación</h3>
+    <p>
+      Actualmente curso la carrera de <strong>Programación Computacional</strong> en el Instituto Profesional AIEP, donde estoy desarrollando bases sólidas en lógica de programación, estructuras de datos, desarrollo web y bases de datos.
+    </p>
+    <blockquote>Complemento mis estudios formales con cursos en línea y práctica constante.</blockquote>
+    <ul>
+      <li>Programación Computacional - AIEP (2024 - Presente)</li>
+      <li>Curso de HTML y CSS - FreeCodeCamp</li>
+      <li>Curso de Fundamentos Web - YouTube (midudev)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Habilidades Técnicas</h3>
+    <p>
+      Conocimientos básicos en tecnologías de desarrollo web y herramientas complementarias.
+    </p>
+    <blockquote>En constante aprendizaje y mejora continua.</blockquote>
+    <ul>
+      <li>HTML5 (semántico)</li>
+      <li>CSS3 (selectores, clases, box model)</li>
+      <li>Uso básico de VSCode y GitHub</li>
+    </ul>
+  </section>
+
+  <section>
+    <h3>Proyectos</h3>
+    <p>
+      Primeros proyectos personales desarrollados como parte de mi formación.
+    </p>
+    <blockquote>Proyectos simples, pero funcionales, enfocados en la práctica constante.</blockquote>
+    <ul>
+      <li>Mi primer CV en HTML y CSS</li>
+      <li>Clon de Google (solo maquetado)</li>
+      <li>Página de presentación personal</li>
+    </ul>
+  </section>
+</main>
+```
+
+## Paso 6 (EXTRA) Estilos para imprimir 🖨️
+
+Este es un punto que se suele pasar por alto cuando se crean páginas o sitios web, y es poner un estilo específico para cuando alguien quiera imprimir y para nuestro curriculum sería positivo.
+
+Al menos hay que tener en cuenta lo siguiente cuando se define un estilo para imprimir:
+
+- Eliminar todo el contenido irrelevante como botones, menús, anuncios, etc.
+- Al imprimir se pierde la interactividad y por lo tanto hay que tener en cuenta que los enlaces generalmente no muestran la **url**, y si tenemos enlaces debemos mostrar esas **url**.
+- Centrar el título principal y subtítulo, eliminar emojis y caracteres raros.
+
+Un ejemplo de lo anterior sería:
+
+```css
+@media print {
+	body, section {
+		color: #342;
+		font-family: sans-serif;
+	}
+	main {
+		padding: 2rem;
+	}
+	h1, h2, h3 {
+		text-align: center;
+	}
+	img, button, footer {
+		display: none;
+	}
+	a {
+		text-decoration: none;
+	}
+	a[href^='https']:after {
+		content: " (" attr(href) ")"; /* mostramos la url del enlace */
+	}
+}
+```
+
+Luego debemos vincular ese archivo desde nuestro HTML:
+
+```html
+<head>
+  ...
+  <link rel="stylesheet" href="assets/css/print.css">
+</head>
+```
+
+<Blockquote type="info">
+  Para ver cómo se imprime tu CV, presiona <kbd>Ctrl</kbd> + <kbd>P</kbd> (o <kbd>Cmd</kbd> + <kbd>P</kbd> si estás en Mac).
+</Blockquote>
+
+## PASO 7 Repositorio
+
+Pasa por el repositorio, ahí encontrarás el código completo por si quieres revisar la solución o clonarlo para experimentar por tu cuenta.
+
+<GitHubRepo
+  owner="mc-herrera-90"
+  repo="mi-cv-html"
+/>
 
 
+## Paso 8 Desplegar en GitHub Pages
 
+- Ve a tu repositorio en [GitHub](https://github.com) en el navegador.
+- Haz clic en la pestaña Settings (Configuración).
+
+<img src={repoSettings} alt="Repo Settings" />
+
+- En el menú lateral izquierdo, selecciona __Pages__.
+
+<img src={repoSettingsPage} alt="Repo Settings" />
+
+- En la sección __Build and deployment__ dejamos la opción por defecto:
+  - En __Source__ (Fuente), elige la rama `main`.
+  - En __Folder__ (Carpeta), selecciona / (`root`) recuerda que el `index.html` está en la raíz del repositorio.
+
+<img src={repoSaveSettingsPage} alt="Repo Settings" />
+
+- GitHub comenzará a construir tu sitio. Esto puede tardar unos segundos.
+- Luego verás la URL donde tu sitio publicado, algo así:
+
+  - `https://tuusuario.github.io/mi-cv/`
+
+En nuestro caso es 👇
+
+[https://mc-herrera-90.github.io/mi-cv-html/](https://mc-herrera-90.github.io/mi-cv-html/)
+
+
+¡Listo! Ahora tu CV está online. 
+
+
+## __Recursos Adicionales__ ↙
+
+Si quieres íconos para utilizar en tus proyectos, te recomiendo las siguientes páginas:
+- [Icons8](https://iconos8.es/): Ofrece una gran variedad de íconos gratuitos y personalizables en diferentes estilos, además de herramientas como generadores de imágenes y fondos.
+- [FlatIcon](https://www.flaticon.es/): Una biblioteca de íconos vectoriales, con opciones en formato PNG, SVG y más, ideales para diseño web y aplicaciones.

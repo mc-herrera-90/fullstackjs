@@ -255,3 +255,111 @@ img {
   max-width: 100%;
 }
 
+
+.tree {
+  max-width: 600px;
+  width: 300px;
+  margin: auto;
+  padding: 1rem 0.5rem;
+  background: var(--tree-bg);
+  border-radius: 12px;
+  border: 1px solid var(--tree-border);
+  box-shadow:
+    0 2px 5px var(--tree-shadow-main),
+    inset 0 0 10px var(--tree-shadow-inset);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  color: var(--tree-text);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+ul.ftree {
+  list-style: none;
+  /* padding-left: 1.1rem; */
+  margin: 0;
+  border-left: 1px solid var(--line);
+  user-select: none;
+}
+
+ul.ftree li {
+  position: relative;
+  margin: 0.3rem 0;
+  /* padding-left: 1rem; */
+}
+
+ul.ftree li::before {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  left: -1.5rem;
+  width: 1.5rem;
+  height: 2px;
+  background: var(--line);
+}
+
+summary {
+  cursor: pointer;
+  display: inline-block;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 500;
+  border-radius: 6px;
+  padding: 0.2rem 0.3rem;
+  transition: background 0.2s;
+}
+
+summary:hover {
+    background: var(--filetree-hover-bg);
+}
+
+summary::marker {
+  display: none;
+}
+
+.file {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: 6px;
+}
+
+.file:hover {
+    background: var(--filetree-hover-bg);
+}
+
+.fa-folder,
+.fa-folder-open {
+  color:  #fbbf24;
+  width: 16px;
+}
+
+.fa-html5 {
+  color: #e34c26;
+}
+.fa-css3-alt {
+  color: #264de4;
+}
+.fa-js {
+  color: #facc15;
+}
+.fa-image {
+  color: #3b82f6;
+}
+.fa-file {
+  color: #6b7280;
+}
+
+/* folder icon toggle */
+details > summary .fa-folder-open {
+  display: none;
+}
+details[open] > summary .fa-folder {
+  display: none;
+}
+details[open] > summary .fa-folder-open {
+  display: inline-block;
+}
+
+pre {
+  tab-size: 2;
+}

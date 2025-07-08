@@ -36,9 +36,57 @@
   --color-table-header-bg: #f5f5f5;
   --color-table-header-text: #1a1a1a;
   --color-table-row-hover: #f0f0f0;
+
+    --blockquote-info-bg: #e7f3ff;
+  --blockquote-info-border: #2196f3;
+  --blockquote-info-text: #0b3c5d;
+  --blockquote-info-icon: #2196f3;
+
+  --blockquote-warning-bg: #fff9e6;
+  --blockquote-warning-border: #ffc107;
+  --blockquote-warning-text: #5f4700;
+  --blockquote-warning-icon: #ffc107;
+
+  --blockquote-danger-bg: #fdecea;
+  --blockquote-danger-border: #f44336;
+  --blockquote-danger-text: #7b1e1e;
+  --blockquote-danger-icon: #f44336;
+
+  --blockquote-tip-bg: #e6f7ed;
+  --blockquote-tip-border: #4caf50;
+  --blockquote-tip-text: #1b5e20;
+  --blockquote-tip-icon: #4caf50;
+
+    /* Variables para FileTree tema claro */
+  --tree-bg: linear-gradient(145deg, #f9fafb, #f0eeee);
+  --tree-border: rgba(0, 0, 0, 0.12);
+  --tree-shadow-main: rgba(0, 0, 0, 0.1);
+  --tree-shadow-inset: rgba(255, 255, 255, 0.4);
+  --tree-hover-border: #4f46e5;
+  --tree-hover-shadow-main: rgba(79, 70, 229, 0.4);
+  --tree-hover-shadow-inset: rgba(79, 70, 229, 0.15);
+  --tree-text: #222;
+  --filetree-border: #282a2d;
+  --filetree-shadow: rgba(0, 0, 0, 0.05);
+  --filetree-hover-bg: #babacc; /* color hover para modo claro y oscuro */
+
 }
 
+
 body.dark {
+  --tree-bg: linear-gradient(145deg, #222228, #1c1c22);
+  --tree-border: rgba(255, 255, 255, 0.1);
+  --tree-shadow-main: rgba(0, 0, 0, 0.5);
+  --tree-shadow-inset: rgba(255, 255, 255, 0.05);
+  --tree-hover-border: #8b82f9;
+  --tree-hover-shadow-main: rgba(139, 130, 249, 0.6);
+  --tree-hover-shadow-inset: rgba(139, 130, 249, 0.1);
+  --tree-text: #ddd;
+  --filetree-border: #444444;
+  --filetree-shadow: rgba(0, 0, 0, 0.3);
+  --filetree-hover-bg: #434344; /* mismo color para modo oscuro */
+
+
   --color-primary: #c6c3fe;
   --color-secondary: #aabefb;
   --color-background: #1a1c23;
@@ -72,4 +120,24 @@ body.dark {
   --color-table-header-bg: rgb(35, 34, 52);
   --color-table-header-text: #e0e0e0;
   --color-table-row-hover: #444868;
+
+    --blockquote-info-bg: #1c2b3a;
+  --blockquote-info-border: #3399ff;
+  --blockquote-info-text: #cfe8ff;
+  --blockquote-info-icon: #4da6ff;
+
+  --blockquote-warning-bg: #2d2a15;
+  --blockquote-warning-border: #ffcc00;
+  --blockquote-warning-text: #fff3b0;
+  --blockquote-warning-icon: #ffe066;
+
+  --blockquote-danger-bg: #3b1e1e;
+  --blockquote-danger-border: #ff4d4d;
+  --blockquote-danger-text: #ffcfcf;
+  --blockquote-danger-icon: #ff7373;
+
+  --blockquote-tip-bg: #1c3729;
+  --blockquote-tip-border: #66bb6a;
+  --blockquote-tip-text: #d4f2d4;
+  --blockquote-tip-icon: #81c784;
 }

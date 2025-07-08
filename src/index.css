@@ -3,6 +3,7 @@
 @import './styles/components/buttons.css';
 @import './styles/components/table.css';
 @import './styles/components/card.css';
+@import './styles/components/blockquotes.css';
 
 * {
   padding: 0;

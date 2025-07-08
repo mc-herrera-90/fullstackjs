@@ -20,12 +20,16 @@ import StepHeading from './components/StepHeading.jsx';
 import ProjectDetails from '@components/ProjectDetails';
 import GitHubRepo from './components/cards/GithubRepo.jsx'
 import MathComponent from './components/MathComponent.jsx'
+import Blockquote from './components/Blockquote.jsx'
+import FileTree from './components/FileTree.jsx'
 
 const mdxComponents = {
   h2: StepHeading,
   ProjectDetails,
   GitHubRepo,
-  MathComponent
+  MathComponent,
+  Blockquote,
+  FileTree
 }
 
 

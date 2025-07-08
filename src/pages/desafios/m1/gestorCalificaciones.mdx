@@ -1,6 +1,6 @@
 <ProjectDetails 
   details={{
-    name: "Gestor de Calificaciones",
+    name: "Gestor Escolar",
     abstract: `Este proyecto consiste en hacer una __aplicación de consola en Java__ que permite registrar estudiantes, ingresar sus calificaciones, calcular sus promedios y mostrar quién tuvo la mejor y la peor nota.
 
 Es una forma simple y práctica de aprender a trabajar con **arreglos, bucles, condiciones**, entrada por teclado y funciones en Java.
@@ -32,13 +32,13 @@ __Acciones__:
 
 En la carpeta `src` (o donde vayan los archivos fuente), crea un nuevo archivo llamado:
 
-`GestionCalificaciones.java`
+`GestorEscolar.java`
 
 Esto contendrá el método `main`, que es el punto de entrada del programa.
 
 ```java
-// filename: GestionCalificaciones.java
-public class GestionCalificaciones {
+// filename: GestorEscolar.java
+public class GestorEscolar {
     public static void main(String[] args) {
         // Aquí irá todo nuestro programa
     }
@@ -50,10 +50,10 @@ public class GestionCalificaciones {
 Vamos a leer datos desde la consola. Para eso, importamos la clase `Scanner` y la creamos dentro de `main`.
 
 ```java
-// filename: GestionCalificaciones.java
+// filename: GestorEscolar.java
 import java.util.Scanner;
 
-public class GestionCalificaciones {
+public class GestorEscolar {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -67,10 +67,10 @@ public class GestionCalificaciones {
 Antes de crear arrays, necesitamos saber cuántos estudiantes vamos a registrar. Pedimos ese número al usuario:
 
 ```java
-// filename: GestionCalificaciones.java
+// filename: GestorEscolar.java
 import java.util.Scanner;
 
-public class GestionCalificaciones {
+public class GestorEscolar {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -90,10 +90,10 @@ Necesitamos almacenar:
 * El **promedio** de cada estudiante (`double[]`).
 
 ```java
-// filename: GestionCalificaciones.java
+// filename: GestorEscolar.java
 import java.util.Scanner;
 
-public class GestionCalificaciones {
+public class GestorEscolar {
     public static void main(String[] args) {
         // Código anterior
 
@@ -129,10 +129,10 @@ public class GestionCalificaciones {
 Aquí usamos un bucle `for` para pedir nombre y tres notas por cada estudiante. También validamos que las notas estén entre 0 y 10.
 
 ```java
-// filename: GestionCalificaciones.java
+// filename: GestorEscolar.java
 import java.util.Scanner;
 
-public class GestionCalificaciones {
+public class GestorEscolar {
     public static void main(String[] args) {
         // Código anterior...
         for (int i = 0; i < cantidad; i++) {
@@ -164,10 +164,10 @@ public class GestionCalificaciones {
 Creamos un **método auxiliar** que reciba un array de 3 notas y devuelva el promedio.
 
 ```java
-// filename: GestionCalificaciones.java
+// filename: GestorEscolar.java
 import java.util.Scanner;
 
-public class GestionCalificaciones {
+public class GestorEscolar {
     public static void main(String[] args) {/*...*/}
 
     public static double calcularPromedio(double[] notas)  {
@@ -184,10 +184,10 @@ public class GestionCalificaciones {
 Y lo usamos dentro del bucle principal:
 
 ```java
-// filename: GestionCalificaciones.java
+// filename: GestorEscolar.java
 import java.util.Scanner;
 
-public class GestionCalificaciones {
+public class GestorEscolar {
     public static void main(String[] args) {
         // Código anterior
         for (int i = 0; i < cantidad; i++) {
@@ -212,10 +212,10 @@ public class GestionCalificaciones {
 Una vez terminada la entrada, recorremos los arrays para mostrar los nombres y sus promedios:
 
 ```java
-// filename: GestionCalificaciones.java
+// filename: GestorEscolar.java
 import java.util.Scanner;
 
-public class GestionCalificaciones {
+public class GestorEscolar {
     public static void main(String[] args) {
         // Código anterior
         for (int i = 0; i < cantidad; i++) {/*...*/}
@@ -235,10 +235,10 @@ public class GestionCalificaciones {
 Comparamos los valores de los promedios usando otro bucle y mostramos los resultados:
 
 ```java
-// filename: GestionCalificaciones.java
+// filename: GestorEscolar.java
 import java.util.Scanner;
 
-public class GestionCalificaciones {
+public class GestorEscolar {
     public static void main(String[] args) {
         // Código anterior
         for (int i = 0; i < cantidad; i++) {/*...*/}
@@ -294,3 +294,5 @@ Marcos: promedio = 6.33
 🏆 Mejor promedio: Carla (9.0)
 🔻 Peor promedio: Marcos (6.33)
 ```
+
+## Paso 10 Repositorio
