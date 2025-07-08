@@ -38,7 +38,6 @@ function App() {
 
   const { theme } = useTheme();
 
-  
   useEffect(() => {
   document.body.className = theme;
     const id = 'hljs-theme';

@@ -7,10 +7,10 @@ const FloatingToC = () => {
   const [activeId, setActiveId] = useState(null);
   const [visible, setVisible] = useState(false);
   const tocRef = useRef();
-  const toggleBtnRef = useRef(); // Referencia directa al "botón"
+  const toggleBtnRef = useRef();
   const location = useLocation();
 
-  // Detectar todos los h2
+  // Detectar todos los h2 del contenido
   useEffect(() => {
     const foundHeadings = Array.from(document.querySelectorAll('h2')).map((el) => {
       const id = el.id || el.textContent.toLowerCase().replace(/\s+/g, '-');
@@ -37,7 +37,7 @@ const FloatingToC = () => {
     return () => window.removeEventListener('scroll', onScroll);
   }, [headings]);
 
-  // Cierre del menú al hacer clic fuera
+  // Cerrar TOC al hacer clic fuera
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
@@ -60,9 +60,10 @@ const FloatingToC = () => {
     e.preventDefault();
     setVisible(false);
 
-    // Actualiza el hash sin romper la ruta base
-    const currentPath = location.pathname + location.search;
-    window.history.replaceState(null, '', `${currentPath}#${id}`);
+    // Corrige el hash sin romper HashRouter (forma: #/ruta#id)
+    const currentHash = window.location.hash; // "#/desafios/m2/cv"
+    const [baseHash] = currentHash.split('#').slice(1); // "/desafios/m2/cv"
+    window.location.hash = `#${baseHash}#${id}`;
 
     // Scroll suave
     const el = document.getElementById(id);
@@ -90,7 +91,7 @@ const FloatingToC = () => {
           {headings.map(({ id, text }) => (
             <li key={id}>
               <Link
-                to={`${location.pathname}#${id}`}
+                to={`${location.pathname}#${id}`} // necesario para <Link>
                 className={`toc-link ${activeId === id ? 'active' : ''}`}
                 onClick={(e) => handleLinkClick(e, id)}
               >
