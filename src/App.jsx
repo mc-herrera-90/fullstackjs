@@ -22,14 +22,15 @@ import GitHubRepo from './components/cards/GithubRepo.jsx'
 import MathComponent from './components/MathComponent.jsx'
 import Blockquote from './components/Blockquote.jsx'
 import FileTree from './components/FileTree.jsx'
-
+import FloatingToC from './components/FloatingToc.jsx'
 const mdxComponents = {
   h2: StepHeading,
   ProjectDetails,
   GitHubRepo,
   MathComponent,
   Blockquote,
-  FileTree
+  FileTree,
+  FloatingToC
 }
 
 
