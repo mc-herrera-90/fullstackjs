@@ -21,6 +21,7 @@
   --color-button-hover: #665eff;
   --color-button-active: #3c36b2;
   --color-button-text: #ffffff;
+  --nav-menu: #2f3140;
   /* CODE COLORS */
   --color-code-bg: #f5f5f5;          /* Fondo claro gris */
   --color-code-text: #d6336c;        /* Rosa oscuro para texto */
@@ -107,6 +108,7 @@ body.dark {
   --color-button-hover: #736bfa;
   --color-button-active: #443dbd;
   --color-button-text: #ffffff;
+  --nav-menu: #dfe2f9;
 
   --color-code-bg: #202a39;     /* Fondo oscuro */
   --color-code-text: #f07178;   /* Rosa claro para texto */
