@@ -385,7 +385,7 @@ dist/
 `,n.jsx("img",{src:ux,alt:"Repo Settings"}),`
 `,n.jsxs(e.ul,{children:[`
 `,n.jsx(e.li,{children:"GitHub comenzará a construir tu sitio. Esto puede tardar unos segundos."}),`
-`,n.jsxs(e.li,{children:["Luego verás la URL donde tu sitio publicado, algo así:",n.jsx(e.br,{}),`
+`,n.jsxs(e.li,{children:["Luego verás la URL de tu sitio publicado, algo así:",n.jsx(e.br,{}),`
 `,n.jsx(e.a,{href:"https://tu-usuario.github.io/mi-cv-html/",children:"https://tu-usuario.github.io/mi-cv-html/"})]}),`
 `]}),`
 `,n.jsx(e.p,{children:"¡Listo! Ahora tu CV está online. En mi caso es 👇"}),`
