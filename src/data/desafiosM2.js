@@ -21,6 +21,7 @@ const projects = {
           {
             "type": "folder",
             "name": "css",
+            "open": true,
             "children": [
               {
                 "type": "file",
@@ -32,6 +33,7 @@ const projects = {
           {
             "type": "folder",
             "name": "img",
+            "open": true,
             "children": [
               {
                 "type": "file",
