@@ -1,0 +1,34 @@
+.path-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Segoe UI', 'Fira Code', monospace;
+  letter-spacing: 0.3px;
+  user-select: text;
+  line-height: 1.6;
+  padding: 6px 10px;
+  border: 1px solid rgba(91, 81, 237, 0.15); /* violeta suave */
+  border-radius: 10px;
+  transition: border-color 0.2s ease;
+  background: rgba(91, 81, 237, 0.035); /* violeta extra sutil */
+}
+
+.path-wrapper:hover {
+  border-color: rgba(91, 81, 237, 0.25);
+}
+
+.icon {
+  color: #5b51ed;
+  font-size: 14px;
+  margin-right: 4px;
+}
+
+.path-segment {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.separator {
+  font-weight: bold;
+}

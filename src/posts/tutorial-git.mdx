@@ -1,3 +1,5 @@
+<FloatingToC/>
+
 ## Git 🗂️: <br/>__Tutorial Práctico__
 
 Git es un sistema de control de versiones distribuido. Te permite llevar el historial de tus proyectos, trabajar en equipo y mantener un flujo de trabajo profesional.
@@ -12,16 +14,115 @@ Verifica la instalación:
 git --version
 ````
 
-## Paso 2 Configuración inicial
+## Paso 2 Niveles de Configuración
+
+Cuando empezamos a usar Git, es fundamental comprender cómo personalizar su comportamiento y adaptar su funcionamiento a nuestras necesidades. Por suerte, contamos con la herramienta  `git config`, que nos permite establecer y consultar variables que afectan tanto el funcionamiento como la apariencia de Git.
+
+### __1__. Configuración del sistema
+
+<PathDisplay path="/etc/gitconfig" />
+
+- __Afecta a__: Todos los usuarios del sistema.
+- __Modificación__: Requiere privilegios de superusuario.
+
+Comando:
+
+```bash
+git config --system ...
+```
+
+### __2__. Configuración global (usuario)
+
+<PathDisplay path="~/.gitconfig" />
+
+- __Afecta a__: Todos los repositorios del usuario actual.
+
+Comando:
+
+```bash
+git config --global ...
+```
+
+### __3__. Configuración local (repositorio)
+
+<PathDisplay path=".git/config" />
+
+- __Afecta a__: Solo al repositorio donde se ejecuta el comando.
+
+Comando:
+
+```bash
+git config --local ...
+```
+
+<Blockquote type="info">
+La configuración __local__ tiene mayor prioridad que la __global__, y esta a su vez tiene mayor prioridad que la del __sistema__.
+</Blockquote>
+
+### __4.__ Configurar Identidad
+
+Git necesita saber quién eres. Así cada confirmación (`commit`) llevará tu nombre y correo electrónico.
+
 
 ```bash
 git config --global user.name "Tu Nombre"
 git config --global user.email "tucorreo@ejemplo.com"
-git config --global init.defaultBranch main
+```
+
+### __5.__ Otras Configuraciones
+
+Para usar __VS Code__ como editor predeterminado:
+
+```bash
 git config --global core.editor "code --wait"
 ```
 
+Para abrir el archivo de configuración directamente en tu editor predeterminado:
+
+```bash
+git config --global -e
+```
+
+### __6__. Manejo de Finales de Línea
+
+En Windows (CRLF): 
+
+```bash
+git config --global core.autocrlf true
+```
+
+En Linux/Mac (LF):
+
+```bash
+git config --global core.autocrlf input
+```
+
+<Blockquote type="tip">
+Esto previene problemas al colaborar entre sistemas operativos diferentes.
+</Blockquote>
+
+
+### __7.__ Alias
+
+Configurar alias para comandos repetitivos:
+
+```bash
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.st status
+git config --global alias.rt remote
+```
+
+Para ver todas las configuraciones aplicadas y su origen, usamos el siguiente comando:
+
+```bash
+git config --list --show-origin
+```
+
 ## Paso 3 Inicializar un repositorio
+
+Desde cero:
 
 ```bash
 mkdir mi-proyecto
@@ -29,17 +130,47 @@ cd mi-proyecto
 git init
 ```
 
-Esto crea un repositorio vacío en la carpeta `.git`.
+Con nombre específico:
 
-## __Ciclo Básico__ 
+```bash
+git mi-proyecto
+```
 
-### add → commit → push
+Esto crea un repositorio vacío en la carpeta <PathDisplay path=".git" />
 
-Ver estado actual:
+
+### ¿Qué hay dentro de la carpeta .git? 
+
+La carpeta <PathDisplay path=".git" /> contiene toda la metadata del repositorio. Algunos archivos y carpetas clave:
+
+```perl
+.git/
+├── config               # Configuración local
+├── HEAD                 # Apunta a la rama actual
+├── index                # Área de preparación (staging)
+├── objects/             # Objetos Git (commits, blobs, etc.)
+├── refs/                # Referencias (branches, tags)
+├── hooks/               # Scripts automáticos
+└── logs/                # Historial de cambios
+```
+
+## Paso 4 Ciclo Básico 
+
+### __1__. Estado de los archivos
+
+Ver cambios:
 
 ```bash
 git status
 ```
+
+Versión corta:
+
+```bash
+git status -s
+```
+
+### __2__. Área de preparación (staging)
 
 Agregar archivos:
 
@@ -49,13 +180,21 @@ git add archivo.txt
 git add .
 ```
 
+Forma interactiva:
+
+```bash
+git add -i
+```
+
+### __3__. Confirmación de cambios (commit)
+
 Crear un commit:
 
 ```bash
 git commit -m "Mensaje claro del cambio"
 ```
 
-## __Sincronizar__
+### __4.__ Sincronizar
 
 Conectar a un repositorio remoto:
 
