@@ -6,7 +6,7 @@ export default () => {
       <h2 className="team-title">Raíces Digitales </h2>
       <div className="team-grid">
         {[
-          "astorgaAriel", "nat-duchens", "klvudiooo", "danielamunval",
+          "Bea-C-H", "astorgaAriel", "nat-duchens", "klvudiooo", "danielamunval",
           "marioAmauta", "favevargas", "MarceCarreno", "Caroooopaz", "ScarlettSocias",
           "jpizarroc99", "galdamesf", "Carlosssantonio", "carohurtadosaa", "Conybri",
           "mc-herrera-90", "Tammy-Escobar", "FrancoSteven", "WaleskaH", "Oratee",
