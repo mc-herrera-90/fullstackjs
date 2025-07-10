@@ -30,7 +30,7 @@ export default function Home() {
         <Card title="Introducción al desarrollo web" icon="🐱‍👤" to="/desafios/m2">
           Creación de páginas con HTML y CSS, abarcando estructura semántica, estilos, diseño responsivo y buenas prácticas, desde cero y con ejemplos prácticos y explicaciones claras.
         </Card>
-        <Card title="CSS avanzado" icon="🎨">
+        <Card title="CSS avanzado" icon="🎨" to="/desafios/m3">
           El módulo de CSS avanzado aborda los aspectos de construcción de layouts bajo una mirada responsiva ocupando Flexbox, CSS Grid, Media queries y Sass.
         </Card>
         <Card title="JavaScript para la web" icon="👨‍💻">

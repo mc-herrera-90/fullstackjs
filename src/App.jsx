@@ -8,11 +8,13 @@ import Proyectos from './pages/Proyectos'
 import Cohorte from './pages/Cohorte.jsx'
 import { Blog } from './pages/Blog';
 import { BlogPostPage } from './pages/BlogPostPage';
-import IndexM2 from './pages/desafios/m2/Index';
 import IndexM1 from './pages/desafios/m1/Index';
-import { desafiosM2 } from './data/desafiosM2'
-import { desafiosM1 } from './data/desafiosM1'
-import { useLocation } from 'react-router-dom'
+import IndexM2 from './pages/desafios/m2/Index';
+import IndexM3 from './pages/desafios/m3/Index';
+import { desafiosM1 } from './data/desafiosM1';
+import { desafiosM2 } from './data/desafiosM2';
+import { desafiosM3 } from './data/desafiosM3';
+import { useLocation } from 'react-router-dom';
 import CopyCodeButtonInjector from './components/CopyCodeButtonInjector';
 import ScrollToTop from './components/ScrollToTop';
 import Footer from './components/Footer'
@@ -23,6 +25,8 @@ import MathComponent from './components/MathComponent.jsx'
 import Blockquote from './components/Blockquote.jsx'
 import FileTree from './components/FileTree.jsx'
 import FloatingToC from './components/FloatingToc.jsx'
+
+
 const mdxComponents = {
   h2: StepHeading,
   ProjectDetails,
@@ -73,6 +77,7 @@ function App() {
           <Route path="/blog/:slug" element={<BlogPostPage />} />
           <Route path="/desafios/m1" element={<IndexM1 />} />
           <Route path="/desafios/m2" element={<IndexM2 />} />
+          <Route path="/desafios/m3" element={<IndexM3 />} />
           {
             desafiosM1.map(({slug, component: Component}) => (
               <Route 
@@ -84,6 +89,11 @@ function App() {
           {
             desafiosM2.map(({slug, component: Component}) => (
               <Route key={slug} path={`/desafios/m2/${slug}`} element={<Component components={mdxComponents}/>} />
+            ))
+          }
+          {
+            desafiosM3.map(({slug, component: Component}) => (
+              <Route key={slug} path={`/desafios/m3/${slug}`} element={<Component components={mdxComponents}/>} />
             ))
           }
         </Routes>
