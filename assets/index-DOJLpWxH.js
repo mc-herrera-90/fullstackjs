@@ -520,15 +520,15 @@ while (condicion) {
 `,n.jsx(e.h2,{children:"PASO 4 Repositorio"}),`
 `,n.jsx(e.p,{children:"Pasa por el repositorio, ahí encontrarás el código completo por si quieres revisar la solución o clonarlo para experimentar por tu cuenta."}),`
 `,n.jsx(o,{owner:"mc-herrera-90",repo:"cachipun-java"})]})}function ZD(r={}){const{wrapper:e}=r.components||{};return e?n.jsx(e,{...r,children:n.jsx(NN,{...r})}):NN(r)}function ep(r,e){throw new Error("Expected component `"+r+"` to be defined: you likely forgot to import, pass, or provide it.")}function RN(r){const e={blockquote:"blockquote",br:"br",code:"code",h2:"h2",li:"li",ol:"ol",p:"p",pre:"pre",span:"span",strong:"strong",ul:"ul",...r.components},{FloatingToC:s,GitHubRepo:o,MathComponent:c,ProjectDetails:u}=e;return s||Xo("FloatingToC"),o||Xo("GitHubRepo"),c||Xo("MathComponent"),u||Xo("ProjectDetails"),n.jsxs(n.Fragment,{children:[n.jsx(s,{}),`
-`,n.jsx(u,{details:{name:"Sucesión de Fibinacci",abstract:"Este proyecto consiste en hacer una __aplicación de consola en Java__ que calcule la sucesión de Fibonacci hasta un número entero ingresado por el usuario. El objetivo es practicar conceptos básicos de programación, como el uso de variables, estructuras de control como bucles `for`, y la lógica necesaria.",languages:"Java",ide:"VS Code",javaVersion:"Java (`latest version`)",type:"Aplicación de consola",recommended:"Java Básico",time:"15 mins – 30 mins"}}),`
+`,n.jsx(u,{details:{name:"Sucesión de Fibinacci",abstract:"Este proyecto consiste en hacer una __aplicación de consola en Java__ que calcule la sucesión de Fibonacci hasta un número entero ingresado por el usuario. El objetivo es practicar conceptos básicos de programación, como el uso de variables, estructuras de control como bucles `for`.",languages:"Java",ide:"VS Code",javaVersion:"Java (`latest version`)",type:"Aplicación de consola",recommended:"Java Básico",time:"15 mins – 30 mins"}}),`
 `,n.jsx(e.h2,{children:"¿Te suena la Sucesión de Fibonacci?"}),`
-`,n.jsxs(e.p,{children:["La sucesión de Fibonacci es una serie de números en la que cada número es la ",n.jsx(e.strong,{children:"suma de los dos anteriores"}),". Cada número se obtiene sumando los dos anteriores, lo que se expresa así:"]}),`
+`,n.jsxs(e.p,{children:["La sucesión de Fibonacci, en ocasiones también conocida como secuencia de Fibonacci, es en sí una sucesión matemática infinita. Consta de una serie de números naturales que se ",n.jsx(e.strong,{children:"suman de a 2"}),", a partir de 0 y 1. Básicamente, en la sucesión de Fibonacci se consigue el siguiente número sumando los dos anteriores, lo que se expresa así:"]}),`
 `,n.jsx(c,{formula:`\\begin{align*}
 F(n) &= F(n - 1) + F(n - 2) \\\\
 &\\text{con } F(0) = 0 \\text{ y } F(1) = 1
 \\end{align*}`}),`
-`,n.jsx(e.p,{children:"Entonces, ¿Cómo sería la sucesión de Fibonacci hasta el décimo término?"}),`
-`,n.jsx(e.p,{children:"La sucesión de Fibonacci siempre comienza con los valores 0 y 1, es decir:"}),`
+`,n.jsx(e.p,{children:`Entonces, ¿Cómo sería la sucesión de Fibonacci hasta el décimo término?.
+La sucesión de Fibonacci siempre comienza con los valores 0 y 1, es decir:`}),`
 `,n.jsx(c,{formula:`\\begin{align*}
 F(0) = 0 \\text{ y } F(1) = 1
 \\end{align*}`}),`
@@ -538,7 +538,7 @@ F(n) &= F(n - 1) + F(n - 2)
 \\end{align*}`}),`
 `,n.jsxs(e.p,{children:["Si queremos obtener los ",n.jsx(e.strong,{children:"primeros 10 términos"})," (desde ",n.jsx(e.code,{children:"F(0)"})," hasta ",n.jsx(e.code,{children:"F(9)"}),"), la sucesión sería:"]}),`
 `,n.jsx(c,{formula:"0,\\ 1,\\ 1,\\ 2,\\ 3,\\ 5,\\ 8,\\ 13,\\ 21,\\ 34"}),`
-`,n.jsxs(e.h2,{children:["Lógica paso a paso ",n.jsx("br",{}),"(",n.jsx(e.strong,{children:"versión iterativa"}),")"]}),`
+`,n.jsx(e.h2,{children:"Lógica del ejercicio"}),`
 `,n.jsxs(e.p,{children:["Queremos construir los primeros ",n.jsx(e.code,{children:"n"})," términos de la sucesión. Para eso:"]}),`
 `,n.jsxs(e.ol,{children:[`
 `,n.jsxs(e.li,{children:[`
@@ -593,18 +593,18 @@ F(n) &= F(n - 1) + F(n - 2)
 `,n.jsxs(e.p,{children:["Ahora usamos un bucle ",n.jsx(e.code,{children:"for"})," para generar los siguientes términos:"]}),`
 `,n.jsx(e.pre,{children:n.jsxs(e.code,{className:"hljs language-java",children:[n.jsx(e.span,{className:"hljs-comment",children:"// filename: SucesionFibonacci.java"}),`
 `,n.jsx(e.span,{className:"hljs-keyword",children:"public"})," ",n.jsx(e.span,{className:"hljs-keyword",children:"class"})," ",n.jsx(e.span,{className:"hljs-title class_",children:"SucesionFibonacci"}),` {
-    `,n.jsx(e.span,{className:"hljs-keyword",children:"public"})," ",n.jsx(e.span,{className:"hljs-keyword",children:"static"})," ",n.jsx(e.span,{className:"hljs-keyword",children:"void"})," ",n.jsx(e.span,{className:"hljs-title function_",children:"main"}),n.jsx(e.span,{className:"hljs-params",children:"(String[] args)"}),` {
-        `,n.jsx(e.span,{className:"hljs-comment",children:"// ... Código anterior"}),`
-        System.out.print(`,n.jsx(e.span,{className:"hljs-string",children:'"Sucesión de Fibonacci: "'}),`);
+  `,n.jsx(e.span,{className:"hljs-keyword",children:"public"})," ",n.jsx(e.span,{className:"hljs-keyword",children:"static"})," ",n.jsx(e.span,{className:"hljs-keyword",children:"void"})," ",n.jsx(e.span,{className:"hljs-title function_",children:"main"}),n.jsx(e.span,{className:"hljs-params",children:"(String[] args)"}),` {
+    `,n.jsx(e.span,{className:"hljs-comment",children:"// ... Código anterior"}),`
+    System.out.print(`,n.jsx(e.span,{className:"hljs-string",children:'"Sucesión de Fibonacci: "'}),`);
 
-        `,n.jsx(e.span,{className:"hljs-keyword",children:"for"})," (",n.jsx(e.span,{className:"hljs-type",children:"int"})," ",n.jsx(e.span,{className:"hljs-variable",children:"i"})," ",n.jsx(e.span,{className:"hljs-operator",children:"="})," ",n.jsx(e.span,{className:"hljs-number",children:"0"}),`; i < n; i++) {
-            System.out.print(a + `,n.jsx(e.span,{className:"hljs-string",children:'" "'}),`);
+    `,n.jsx(e.span,{className:"hljs-keyword",children:"for"})," (",n.jsx(e.span,{className:"hljs-type",children:"int"})," ",n.jsx(e.span,{className:"hljs-variable",children:"i"})," ",n.jsx(e.span,{className:"hljs-operator",children:"="})," ",n.jsx(e.span,{className:"hljs-number",children:"0"}),`; i < n; i++) {
+      System.out.print(a + `,n.jsx(e.span,{className:"hljs-string",children:'" "'}),`);
 
-            `,n.jsx(e.span,{className:"hljs-type",children:"int"})," ",n.jsx(e.span,{className:"hljs-variable",children:"siguiente"})," ",n.jsx(e.span,{className:"hljs-operator",children:"="}),` a + b;
-            a = b;
-            b = siguiente;
-        }
+      `,n.jsx(e.span,{className:"hljs-type",children:"int"})," ",n.jsx(e.span,{className:"hljs-variable",children:"siguiente"})," ",n.jsx(e.span,{className:"hljs-operator",children:"="}),` a + b;
+      a = b;
+      b = siguiente;
     }
+  }
 }
 `]})}),`
 `,n.jsxs(e.blockquote,{children:[`
@@ -622,22 +622,23 @@ Iteración 4: a = 3, b = 5 → imprime 3
 Iteración 5: a = 5, b = 8 → imprime 5
 `})}),`
 `]}),`
-`,n.jsx(e.pre,{children:n.jsxs(e.code,{className:"hljs language-java",children:[n.jsx(e.span,{className:"hljs-keyword",children:"public"})," ",n.jsx(e.span,{className:"hljs-keyword",children:"class"})," ",n.jsx(e.span,{className:"hljs-title class_",children:"SucesionFibonacci"}),` {
-    `,n.jsx(e.span,{className:"hljs-keyword",children:"public"})," ",n.jsx(e.span,{className:"hljs-keyword",children:"static"})," ",n.jsx(e.span,{className:"hljs-keyword",children:"void"})," ",n.jsx(e.span,{className:"hljs-title function_",children:"main"}),n.jsx(e.span,{className:"hljs-params",children:"(String[] args)"}),` {
-        `,n.jsx(e.span,{className:"hljs-type",children:"int"})," ",n.jsx(e.span,{className:"hljs-variable",children:"n"})," ",n.jsx(e.span,{className:"hljs-operator",children:"="})," ",n.jsx(e.span,{className:"hljs-number",children:"6"}),"; ",n.jsx(e.span,{className:"hljs-comment",children:"// Cuántos términos mostrar"}),`
-        `,n.jsx(e.span,{className:"hljs-type",children:"int"})," ",n.jsx(e.span,{className:"hljs-variable",children:"a"})," ",n.jsx(e.span,{className:"hljs-operator",children:"="})," ",n.jsx(e.span,{className:"hljs-number",children:"0"}),`;
-        `,n.jsx(e.span,{className:"hljs-type",children:"int"})," ",n.jsx(e.span,{className:"hljs-variable",children:"b"})," ",n.jsx(e.span,{className:"hljs-operator",children:"="})," ",n.jsx(e.span,{className:"hljs-number",children:"1"}),`;
+`,n.jsx(e.pre,{children:n.jsxs(e.code,{className:"hljs language-java",children:[n.jsx(e.span,{className:"hljs-comment",children:"// filename: SucesionFibonacci.java"}),`
+`,n.jsx(e.span,{className:"hljs-keyword",children:"public"})," ",n.jsx(e.span,{className:"hljs-keyword",children:"class"})," ",n.jsx(e.span,{className:"hljs-title class_",children:"SucesionFibonacci"}),` {
+  `,n.jsx(e.span,{className:"hljs-keyword",children:"public"})," ",n.jsx(e.span,{className:"hljs-keyword",children:"static"})," ",n.jsx(e.span,{className:"hljs-keyword",children:"void"})," ",n.jsx(e.span,{className:"hljs-title function_",children:"main"}),n.jsx(e.span,{className:"hljs-params",children:"(String[] args)"}),` {
+    `,n.jsx(e.span,{className:"hljs-type",children:"int"})," ",n.jsx(e.span,{className:"hljs-variable",children:"n"})," ",n.jsx(e.span,{className:"hljs-operator",children:"="})," ",n.jsx(e.span,{className:"hljs-number",children:"6"}),"; ",n.jsx(e.span,{className:"hljs-comment",children:"// Cuántos términos mostrar"}),`
+    `,n.jsx(e.span,{className:"hljs-type",children:"int"})," ",n.jsx(e.span,{className:"hljs-variable",children:"a"})," ",n.jsx(e.span,{className:"hljs-operator",children:"="})," ",n.jsx(e.span,{className:"hljs-number",children:"0"}),`;
+    `,n.jsx(e.span,{className:"hljs-type",children:"int"})," ",n.jsx(e.span,{className:"hljs-variable",children:"b"})," ",n.jsx(e.span,{className:"hljs-operator",children:"="})," ",n.jsx(e.span,{className:"hljs-number",children:"1"}),`;
 
-        System.out.print(`,n.jsx(e.span,{className:"hljs-string",children:'"Sucesión de Fibonacci: "'}),`);
+    System.out.print(`,n.jsx(e.span,{className:"hljs-string",children:'"Sucesión de Fibonacci: "'}),`);
 
-        `,n.jsx(e.span,{className:"hljs-keyword",children:"for"})," (",n.jsx(e.span,{className:"hljs-type",children:"int"})," ",n.jsx(e.span,{className:"hljs-variable",children:"i"})," ",n.jsx(e.span,{className:"hljs-operator",children:"="})," ",n.jsx(e.span,{className:"hljs-number",children:"0"}),`; i < n; i++) {
-            System.out.print(a + `,n.jsx(e.span,{className:"hljs-string",children:'" "'}),`);
+    `,n.jsx(e.span,{className:"hljs-keyword",children:"for"})," (",n.jsx(e.span,{className:"hljs-type",children:"int"})," ",n.jsx(e.span,{className:"hljs-variable",children:"i"})," ",n.jsx(e.span,{className:"hljs-operator",children:"="})," ",n.jsx(e.span,{className:"hljs-number",children:"0"}),`; i < n; i++) {
+      System.out.print(a + `,n.jsx(e.span,{className:"hljs-string",children:'" "'}),`);
 
-            `,n.jsx(e.span,{className:"hljs-type",children:"int"})," ",n.jsx(e.span,{className:"hljs-variable",children:"siguiente"})," ",n.jsx(e.span,{className:"hljs-operator",children:"="}),` a + b;
-            a = b;
-            b = siguiente;
-        }
+      `,n.jsx(e.span,{className:"hljs-type",children:"int"})," ",n.jsx(e.span,{className:"hljs-variable",children:"siguiente"})," ",n.jsx(e.span,{className:"hljs-operator",children:"="}),` a + b;
+      a = b;
+      b = siguiente;
     }
+  }
 }
 `]})}),`
 `,n.jsx(e.h2,{children:"PASO 4 Repositorio"}),`
