@@ -2,7 +2,7 @@
 <ProjectDetails 
   details={{
     name: "Sucesión de Fibinacci",
-    abstract: `Este proyecto consiste en hacer una __aplicación de consola en Java__ que calcule la sucesión de Fibonacci hasta un número entero ingresado por el usuario. El objetivo es practicar conceptos básicos de programación, como el uso de variables, estructuras de control como bucles \`for\`, y la lógica necesaria.`,
+    abstract: `Este proyecto consiste en hacer una __aplicación de consola en Java__ que calcule la sucesión de Fibonacci hasta un número entero ingresado por el usuario. El objetivo es practicar conceptos básicos de programación, como el uso de variables, estructuras de control como bucles \`for\`.`,
     languages: "Java",
     ide: "VS Code",
     javaVersion: `Java (\`latest version\`)`,
@@ -15,7 +15,7 @@
 
 ## ¿Te suena la Sucesión de Fibonacci?
 
-La sucesión de Fibonacci es una serie de números en la que cada número es la __suma de los dos anteriores__. Cada número se obtiene sumando los dos anteriores, lo que se expresa así:
+La sucesión de Fibonacci, en ocasiones también conocida como secuencia de Fibonacci, es en sí una sucesión matemática infinita. Consta de una serie de números naturales que se __suman de a 2__, a partir de 0 y 1. Básicamente, en la sucesión de Fibonacci se consigue el siguiente número sumando los dos anteriores, lo que se expresa así:
 
 <MathComponent
   formula={`\\begin{align*}
@@ -25,8 +25,7 @@ F(n) &= F(n - 1) + F(n - 2) \\\\
 />
 
 
-Entonces, ¿Cómo sería la sucesión de Fibonacci hasta el décimo término?
-
+Entonces, ¿Cómo sería la sucesión de Fibonacci hasta el décimo término?.
 La sucesión de Fibonacci siempre comienza con los valores 0 y 1, es decir:
 
 <MathComponent
@@ -49,7 +48,7 @@ Si queremos obtener los __primeros 10 términos__ (desde `F(0)` hasta `F(9)`), l
   formula={`0,\\ 1,\\ 1,\\ 2,\\ 3,\\ 5,\\ 8,\\ 13,\\ 21,\\ 34`}
 />
 
-## Lógica paso a paso <br />(__versión iterativa__)
+## Lógica del ejercicio
 
 Queremos construir los primeros `n` términos de la sucesión. Para eso:
 
@@ -109,18 +108,18 @@ Ahora usamos un bucle `for` para generar los siguientes términos:
 ```java
 // filename: SucesionFibonacci.java
 public class SucesionFibonacci {
-    public static void main(String[] args) {
-        // ... Código anterior
-        System.out.print("Sucesión de Fibonacci: ");
+  public static void main(String[] args) {
+    // ... Código anterior
+    System.out.print("Sucesión de Fibonacci: ");
 
-        for (int i = 0; i < n; i++) {
-            System.out.print(a + " ");
+    for (int i = 0; i < n; i++) {
+      System.out.print(a + " ");
 
-            int siguiente = a + b;
-            a = b;
-            b = siguiente;
-        }
+      int siguiente = a + b;
+      a = b;
+      b = siguiente;
     }
+  }
 }
 ```
 
@@ -141,22 +140,23 @@ public class SucesionFibonacci {
 > ```
 
 ```java
+// filename: SucesionFibonacci.java
 public class SucesionFibonacci {
-    public static void main(String[] args) {
-        int n = 6; // Cuántos términos mostrar
-        int a = 0;
-        int b = 1;
+  public static void main(String[] args) {
+    int n = 6; // Cuántos términos mostrar
+    int a = 0;
+    int b = 1;
 
-        System.out.print("Sucesión de Fibonacci: ");
+    System.out.print("Sucesión de Fibonacci: ");
 
-        for (int i = 0; i < n; i++) {
-            System.out.print(a + " ");
+    for (int i = 0; i < n; i++) {
+      System.out.print(a + " ");
 
-            int siguiente = a + b;
-            a = b;
-            b = siguiente;
-        }
+      int siguiente = a + b;
+      a = b;
+      b = siguiente;
     }
+  }
 }
 ```
 
