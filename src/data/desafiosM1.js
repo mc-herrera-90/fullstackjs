@@ -8,8 +8,8 @@ import Desafio6 from '../pages/desafios/m1/todolist.mdx';
 export const desafiosM1 = [
     {title: 'Calculadora IMC', difficult: 'Fácil', slug: 'calculadora-imc', component: Desafio1},
     {title: 'Cachipún', difficult: 'Fácil', slug: 'cachipun', component: Desafio2},
-    {title: 'Sucesión de Fibonacci', difficult: 'Fácil', slug: 'factorial', component: Desafio3},
-    {title: 'Factorial', difficult: 'Fácil', slug: 'fibonacci', component: Desafio4},
+    {title: 'Sucesión de Fibonacci', difficult: 'Fácil', slug: 'fibonacci', component: Desafio3},
+    {title: 'Factorial', difficult: 'Fácil', slug: 'factorial', component: Desafio4},
     {title: 'Gestor Escolar', difficult: 'Intermedio', slug: 'gestor-escolar', component: Desafio5},
     {title: 'To-Do', difficult: 'Intermedio', slug: 'todo-list', component: Desafio6},
 ]
