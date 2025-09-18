@@ -303,8 +303,8 @@ while (condicion) {
   }
 }`}];function $D(){const[r,e]=Y.useState("Variables"),s=Y.useRef(null),o=bN.find(c=>c.label===r);return Y.useEffect(()=>{s.current&&WD.highlightElement(s.current)},[r]),n.jsxs("div",{className:"cheatsheet-container",children:[n.jsx("h1",{className:"cheatsheet-title",children:"🧠 Java Cheatsheet"}),n.jsx("div",{className:"tabs",children:bN.map(({label:c})=>n.jsx("button",{className:`tab-button ${c===r?"active":""}`,onClick:()=>e(c),children:c},c))}),n.jsx("pre",{className:"code-block",children:n.jsx("code",{ref:s,className:"hljs language-java",children:o.code})})]})}function TN(r){const e={code:"code",h2:"h2",li:"li",p:"p",pre:"pre",span:"span",strong:"strong",table:"table",tbody:"tbody",td:"td",th:"th",thead:"thead",tr:"tr",ul:"ul",...r.components},{Blockquote:s,FloatingToC:o,GitHubRepo:c,MathComponent:u,ProjectDetails:_}=e;return s||ys("Blockquote"),o||ys("FloatingToC"),c||ys("GitHubRepo"),u||ys("MathComponent"),_||ys("ProjectDetails"),n.jsxs(n.Fragment,{children:[n.jsx(o,{}),`
 `,n.jsx(_,{details:{name:"Calculadora IMC",abstract:"Este proyecto consiste en hacer una __aplicación de consola en Java__ que calcule el IMC ( Índice de Masa Corporal ) a partir del `peso` y la `altura` que ingresa el usuario por teclado. La idea es practicar conceptos básicos de programación orientada a objetos, como el uso de clases, métodos y entrada de datos, manteniendo el código ordenado y fácil de entender.",languages:"Java",ide:"VS Code",javaVersion:"Java (`latest version`)",type:"Aplicación de consola",recommended:"Java Básico",time:"15 mins – 30 mins"}}),`
-`,n.jsxs(e.p,{children:["El ",n.jsx(e.strong,{children:"IMC"}),", conocido como el índice de masa corporal, es una medida que asocia el peso de una persona. Este valor es utilizado como indicador nutricional y constituye un índice fácil y sencillo de calcular para determinar el estado de obesidad y sobrepreso de una persona."]}),`
-`,n.jsxs(e.p,{children:["El ",n.jsx(e.strong,{children:"IMC"})," se calcula de la siguiente manera:"]}),`
+`,n.jsxs(e.p,{children:["El ",n.jsx(e.strong,{children:"IMC"}),", conocido como el índice de masa corporal, es una medida que se asocia al peso de una persona. Este valor es utilizado como indicador nutricional y constituye un índice fácil y sencillo de calcular para determinar el estado de obesidad y sobrepreso de una persona."]}),`
+`,n.jsxs(e.p,{children:["El ",n.jsx(e.strong,{children:"IMC"})," se calcula con la siguiente formula:"]}),`
 `,n.jsx(u,{formula:"\\\\IMC=\\frac{W}{H^2}"}),`
 `,n.jsx(e.p,{children:n.jsx(e.strong,{children:"Donde:"})}),`
 `,n.jsxs(e.ul,{children:[`
@@ -329,8 +329,8 @@ while (condicion) {
 `]})}),`
 `,n.jsx(s,{type:"warning",children:n.jsx(e.p,{children:"Recuerda que en Java, el nombre del archivo debe coincidir exactamente con el nombre de la clase pública principal."})}),`
 `,n.jsx(e.h2,{children:"PASO 2 Capturar los datos del usuario"}),`
-`,n.jsxs(e.p,{children:["Java no trae por defecto entrada desde consola, por eso es que se necesita importar la clase ",n.jsx(e.code,{children:"Scanner"})," desde la librería ",n.jsx(e.code,{children:"java.util"}),"."]}),`
-`,n.jsxs(e.p,{children:["Vamos a usar ",n.jsx(e.code,{children:"Scanner"})," para leer el ",n.jsx(e.strong,{children:"peso"})," y la ",n.jsx(e.strong,{children:"altura"})," por teclado."]}),`
+`,n.jsxs(e.p,{children:["Java trae por defecto mecanismos para leer la entrada desde el teclado, sólo se necesita importar la clase ",n.jsx(e.code,{children:"Scanner"})," desde la librería ",n.jsx(e.code,{children:"java.util"}),"."]}),`
+`,n.jsxs(e.p,{children:["Vamos a capturar con ",n.jsx(e.code,{children:"Scanner"})," el ",n.jsx(e.strong,{children:"peso"})," y la ",n.jsx(e.strong,{children:"altura"})," por teclado."]}),`
 `,n.jsx(e.pre,{children:n.jsxs(e.code,{className:"hljs language-java",children:[n.jsx(e.span,{className:"hljs-comment",children:"// filename: CalculadoraIMC.java"}),`
 `,n.jsx(e.span,{className:"hljs-keyword",children:"import"}),` java.util.Scanner;
 
@@ -362,10 +362,21 @@ while (condicion) {
     `,n.jsx(e.span,{className:"hljs-keyword",children:"public"})," ",n.jsx(e.span,{className:"hljs-keyword",children:"static"})," ",n.jsx(e.span,{className:"hljs-keyword",children:"void"})," ",n.jsx(e.span,{className:"hljs-title function_",children:"main"}),n.jsx(e.span,{className:"hljs-params",children:"(String[] args)"}),`{
         `,n.jsx(e.span,{className:"hljs-comment",children:"// código anterior..."}),`
         `,n.jsx(e.span,{className:"hljs-type",children:"double"})," ",n.jsx(e.span,{className:"hljs-variable",children:"imc"})," ",n.jsx(e.span,{className:"hljs-operator",children:"="}),` peso / (altura * altura);
-        System.out.printf(`,n.jsx(e.span,{className:"hljs-string",children:'"Tu IMC es: %.2f\\\\n"'}),`, imc);
+        System.out.printf(`,n.jsx(e.span,{className:"hljs-string",children:'"Tu IMC es: %.2f\\n"'}),`, imc);
     }
 }
 `]})}),`
+`,n.jsx(s,{type:"tip",children:n.jsxs(e.p,{children:["En el programa, el resultado del IMC se muestra con solo ",n.jsx(e.strong,{children:"dos cifras decimales"})," gracias al especificador de formato ",n.jsx(e.code,{children:"%.2f"})," dentro de ",n.jsx(e.code,{children:"System.out.printf"}),"."]})}),`
+`,n.jsxs(e.ul,{children:[`
+`,n.jsxs(e.li,{children:[n.jsx(e.code,{children:"f"})," → indica que se trata de un número en formato de punto flotante (decimal)."]}),`
+`,n.jsxs(e.li,{children:[n.jsx(e.code,{children:".2"})," → significa que se deben mostrar ",n.jsx(e.strong,{children:"exactamente 2 decimales"}),", redondeando el valor en caso necesario."]}),`
+`]}),`
+`,n.jsx(e.p,{children:"Por ejemplo:"}),`
+`,n.jsxs(e.ul,{children:[`
+`,n.jsxs(e.li,{children:["Si el IMC calculado es ",n.jsx(e.code,{children:"23.4567"}),", se mostrará como ",n.jsx(e.code,{children:"23.46"}),"."]}),`
+`,n.jsxs(e.li,{children:["Si es ",n.jsx(e.code,{children:"23.4"}),", se mostrará como ",n.jsx(e.code,{children:"23.40"}),"."]}),`
+`]}),`
+`,n.jsxs(e.p,{children:["Esto no cambia el valor real de la variable ",n.jsx(e.code,{children:"imc"})," (que sigue teniendo todos sus decimales), solo ",n.jsx(e.strong,{children:"cómo se imprime en pantalla"}),"."]}),`
 `,n.jsx(e.h2,{children:"PASO 4 Clasificar el resultado"}),`
 `,n.jsx(e.p,{children:"Ahora agregamos la lógica para mostrar la categoría según el resultado:"}),`
 `,n.jsx(e.pre,{children:n.jsxs(e.code,{className:"hljs language-java",children:[n.jsx(e.span,{className:"hljs-comment",children:"// filename: CalculadoraIMC.java"}),`
@@ -373,7 +384,7 @@ while (condicion) {
     `,n.jsx(e.span,{className:"hljs-keyword",children:"public"})," ",n.jsx(e.span,{className:"hljs-keyword",children:"static"})," ",n.jsx(e.span,{className:"hljs-keyword",children:"void"})," ",n.jsx(e.span,{className:"hljs-title function_",children:"main"}),n.jsx(e.span,{className:"hljs-params",children:"(String[] args)"}),`{
         `,n.jsx(e.span,{className:"hljs-comment",children:"// código anterior..."}),`
         `,n.jsx(e.span,{className:"hljs-type",children:"double"})," ",n.jsx(e.span,{className:"hljs-variable",children:"imc"})," ",n.jsx(e.span,{className:"hljs-operator",children:"="}),` peso / (altura * altura);
-        System.out.printf(`,n.jsx(e.span,{className:"hljs-string",children:'"Tu IMC es: %.2f\\\\n"'}),`, imc);
+        System.out.printf(`,n.jsx(e.span,{className:"hljs-string",children:'"Tu IMC es: %.2f\\n"'}),`, imc);
         
         `,n.jsx(e.span,{className:"hljs-keyword",children:"if"})," (imc < ",n.jsx(e.span,{className:"hljs-number",children:"18.5"}),`) {
             System.out.println(`,n.jsx(e.span,{className:"hljs-string",children:'"Clasificación: Bajo peso"'}),`);
@@ -390,7 +401,7 @@ while (condicion) {
 `,n.jsx(e.h2,{children:"PASO 5 Repositorio"}),`
 `,n.jsx(e.p,{children:"Pasa por el repositorio, ahí encontrarás el código completo por si quieres revisar la solución o clonarlo para experimentar por tu cuenta."}),`
 `,n.jsx(c,{owner:"mc-herrera-90",repo:"calculadoraIMC_Java"})]})}function XD(r={}){const{wrapper:e}=r.components||{};return e?n.jsx(e,{...r,children:n.jsx(TN,{...r})}):TN(r)}function ys(r,e){throw new Error("Expected component `"+r+"` to be defined: you likely forgot to import, pass, or provide it.")}function NN(r){const e={blockquote:"blockquote",code:"code",em:"em",h2:"h2",li:"li",p:"p",pre:"pre",span:"span",strong:"strong",ul:"ul",...r.components},{FloatingToC:s,GitHubRepo:o,ProjectDetails:c}=e;return s||ep("FloatingToC"),o||ep("GitHubRepo"),c||ep("ProjectDetails"),n.jsxs(n.Fragment,{children:[n.jsx(s,{}),`
-`,n.jsx(c,{details:{name:"Cachipun",abstract:`Este proyecto consiste en crear una __aplicación de consola en Java__ que simule el juego de __Cachipún__ ✊📄✂️ (piedra, papel o tijera) contra la computadora 🤖. El usuario debe ingresar su jugada por __teclado__, y el programa responderá con una **elección aleatoria**, determinando al **ganador** según las reglas del juego.
+`,n.jsx(c,{details:{name:"Cachipun",abstract:`Este proyecto consiste en crear una __aplicación de consola en Java__ que simule el juego de __Cachipún__ (piedra ✊, papel ✋ o tijera ✌️) contra la computadora. El usuario debe ingresar su jugada por __teclado__, y el programa responderá con una **elección aleatoria**, determinando al **ganador** según las reglas del juego.
   
   Ideal si estás empezando con Java, este ejercicio te ayudará a practicar __entrada de datos__, __condicionales__ y __generación aleatoria__.
 `,languages:"Java",ide:"VS Code",javaVersion:"Java (`latest version`)",type:"Aplicación de consola",recommended:"Java Básico",time:"15 mins – 30 mins"}}),`
@@ -401,9 +412,9 @@ while (condicion) {
 `,n.jsx(e.li,{children:"El computador elige una opción aleatoria."}),`
 `,n.jsxs(e.li,{children:["Gana quien siga la lógica del juego:",`
 `,n.jsxs(e.ul,{children:[`
-`,n.jsx(e.li,{children:"🌑 Piedra vence a tijeras"}),`
-`,n.jsx(e.li,{children:"✂️ Tijeras vencen a papel"}),`
-`,n.jsx(e.li,{children:"📄 Papel vence a piedra"}),`
+`,n.jsx(e.li,{children:"✊ Piedra vence a tijeras ✌️"}),`
+`,n.jsx(e.li,{children:"✌️ Tijeras vencen a papel ✋"}),`
+`,n.jsx(e.li,{children:"✋ Papel vence a piedra ✊"}),`
 `]}),`
 `]}),`
 `]}),`
@@ -425,7 +436,7 @@ while (condicion) {
 }
 `]})}),`
 `,n.jsxs(e.blockquote,{children:[`
-`,n.jsxs(e.p,{children:["Ya conoces ",n.jsx(e.code,{children:"Scanner"}),", que sirve para leer lo que escribe el usuario por teclado. También importamos la clase ",n.jsx(e.code,{children:"Random"}),", que usaremos para generar la jugada aleatoria del computador (piedra, papel o tijera), simulando así una elección impredecible como en un juego real."]}),`
+`,n.jsxs(e.p,{children:["Ya conoces ",n.jsx(e.code,{children:"Scanner"}),", que nos sirve para leer lo que escribe el usuario por teclado. También importamos la clase ",n.jsx(e.code,{children:"Random"}),", que usaremos para generar la jugada aleatoria del computador (piedra, papel o tijera), simulando así una elección impredecible como en un juego real."]}),`
 `]}),`
 `,n.jsx(e.h2,{children:"PASO 2 Entrada del usuario y jugada aleatoria"}),`
 `,n.jsxs(e.p,{children:["El siguiente paso es capturar la jugada del usuario y generar el de la computadora al azar (utilizando ",n.jsx(e.code,{children:"Random"}),"):"]}),`
@@ -434,19 +445,19 @@ while (condicion) {
 `,n.jsx(e.span,{className:"hljs-keyword",children:"import"}),` java.util.Random;
 
 `,n.jsx(e.span,{className:"hljs-keyword",children:"public"})," ",n.jsx(e.span,{className:"hljs-keyword",children:"class"})," ",n.jsx(e.span,{className:"hljs-title class_",children:"Cachipun"}),` {
-    `,n.jsx(e.span,{className:"hljs-keyword",children:"public"})," ",n.jsx(e.span,{className:"hljs-keyword",children:"static"})," ",n.jsx(e.span,{className:"hljs-keyword",children:"void"})," ",n.jsx(e.span,{className:"hljs-title function_",children:"main"}),n.jsx(e.span,{className:"hljs-params",children:"(String[] args)"}),` {
-        `,n.jsx(e.span,{className:"hljs-type",children:"Scanner"})," ",n.jsx(e.span,{className:"hljs-variable",children:"scanner"})," ",n.jsx(e.span,{className:"hljs-operator",children:"="})," ",n.jsx(e.span,{className:"hljs-keyword",children:"new"})," ",n.jsx(e.span,{className:"hljs-title class_",children:"Scanner"}),`(System.in);
-        `,n.jsx(e.span,{className:"hljs-type",children:"Random"})," ",n.jsx(e.span,{className:"hljs-variable",children:"random"})," ",n.jsx(e.span,{className:"hljs-operator",children:"="})," ",n.jsx(e.span,{className:"hljs-keyword",children:"new"})," ",n.jsx(e.span,{className:"hljs-title class_",children:"Random"}),`();
+	`,n.jsx(e.span,{className:"hljs-keyword",children:"public"})," ",n.jsx(e.span,{className:"hljs-keyword",children:"static"})," ",n.jsx(e.span,{className:"hljs-keyword",children:"void"})," ",n.jsx(e.span,{className:"hljs-title function_",children:"main"}),n.jsx(e.span,{className:"hljs-params",children:"(String[] args)"}),` {
+		`,n.jsx(e.span,{className:"hljs-type",children:"Scanner"})," ",n.jsx(e.span,{className:"hljs-variable",children:"scanner"})," ",n.jsx(e.span,{className:"hljs-operator",children:"="})," ",n.jsx(e.span,{className:"hljs-keyword",children:"new"})," ",n.jsx(e.span,{className:"hljs-title class_",children:"Scanner"}),`(System.in);
+		`,n.jsx(e.span,{className:"hljs-type",children:"Random"})," ",n.jsx(e.span,{className:"hljs-variable",children:"random"})," ",n.jsx(e.span,{className:"hljs-operator",children:"="})," ",n.jsx(e.span,{className:"hljs-keyword",children:"new"})," ",n.jsx(e.span,{className:"hljs-title class_",children:"Random"}),`();
 
-        System.out.println(`,n.jsx(e.span,{className:"hljs-string",children:'"Bienvenido al juego de Cachipún"'}),`);
-        System.out.print(`,n.jsx(e.span,{className:"hljs-string",children:'"Elige una opción (piedra, papel o tijera): "'}),`);
-        `,n.jsx(e.span,{className:"hljs-type",children:"String"})," ",n.jsx(e.span,{className:"hljs-variable",children:"jugador"})," ",n.jsx(e.span,{className:"hljs-operator",children:"="}),` scanner.nextLine().toLowerCase();
+		System.out.println(`,n.jsx(e.span,{className:"hljs-string",children:'"Bienvenido al juego de Cachipún"'}),`);
+		System.out.println(`,n.jsx(e.span,{className:"hljs-string",children:'"Elige una opción (piedra, papel o tijera): "'}),`);
+		`,n.jsx(e.span,{className:"hljs-type",children:"String"})," ",n.jsx(e.span,{className:"hljs-variable",children:"jugador"})," ",n.jsx(e.span,{className:"hljs-operator",children:"="}),` scanner.nextLine().toLowerCase();
 
-        String[] opciones = {`,n.jsx(e.span,{className:"hljs-string",children:'"piedra"'}),", ",n.jsx(e.span,{className:"hljs-string",children:'"papel"'}),", ",n.jsx(e.span,{className:"hljs-string",children:'"tijera"'}),`};
-        `,n.jsx(e.span,{className:"hljs-type",children:"String"})," ",n.jsx(e.span,{className:"hljs-variable",children:"computadora"})," ",n.jsx(e.span,{className:"hljs-operator",children:"="})," opciones[random.nextInt(",n.jsx(e.span,{className:"hljs-number",children:"3"}),`)];
+		String[] opciones = {`,n.jsx(e.span,{className:"hljs-string",children:'"piedra"'}),", ",n.jsx(e.span,{className:"hljs-string",children:'"papel"'}),", ",n.jsx(e.span,{className:"hljs-string",children:'"tijera"'}),`};
+		`,n.jsx(e.span,{className:"hljs-type",children:"String"})," ",n.jsx(e.span,{className:"hljs-variable",children:"computadora"})," ",n.jsx(e.span,{className:"hljs-operator",children:"="})," opciones[random.nextInt(",n.jsx(e.span,{className:"hljs-number",children:"3"}),`)];
 
-        System.out.println(`,n.jsx(e.span,{className:"hljs-string",children:'"La computadora eligió: "'}),` + computadora);
-    }
+		System.out.println(`,n.jsx(e.span,{className:"hljs-string",children:'"La computadora eligió: "'}),` + computadora);
+	}
 }
 `]})}),`
 `,n.jsxs(e.blockquote,{children:[`
@@ -470,29 +481,27 @@ while (condicion) {
 `,n.jsx(e.span,{className:"hljs-keyword",children:"import"}),` java.util.Random;
 
 `,n.jsx(e.span,{className:"hljs-keyword",children:"public"})," ",n.jsx(e.span,{className:"hljs-keyword",children:"class"})," ",n.jsx(e.span,{className:"hljs-title class_",children:"Cachipun"}),` {
-    `,n.jsx(e.span,{className:"hljs-keyword",children:"public"})," ",n.jsx(e.span,{className:"hljs-keyword",children:"static"})," ",n.jsx(e.span,{className:"hljs-keyword",children:"void"})," ",n.jsx(e.span,{className:"hljs-title function_",children:"main"}),n.jsx(e.span,{className:"hljs-params",children:"(String[] args)"}),` {
-        `,n.jsx(e.span,{className:"hljs-comment",children:"// ... Código anterior"}),`
-        `,n.jsx(e.span,{className:"hljs-keyword",children:"if"}),` (jugador.equals(computadora)) {
-            System.out.println(`,n.jsx(e.span,{className:"hljs-string",children:'"¡Empate!"'}),`);
-        } `,n.jsx(e.span,{className:"hljs-keyword",children:"else"})," ",n.jsx(e.span,{className:"hljs-keyword",children:"if"}),` (
-            (jugador.equals(`,n.jsx(e.span,{className:"hljs-string",children:'"piedra"'}),") && computadora.equals(",n.jsx(e.span,{className:"hljs-string",children:'"tijera"'}),`)) ||
-            (jugador.equals(`,n.jsx(e.span,{className:"hljs-string",children:'"papel"'}),") && computadora.equals(",n.jsx(e.span,{className:"hljs-string",children:'"piedra"'}),`)) ||
-            (jugador.equals(`,n.jsx(e.span,{className:"hljs-string",children:'"tijera"'}),") && computadora.equals(",n.jsx(e.span,{className:"hljs-string",children:'"papel"'}),`))
-        ) {
-            System.out.println(`,n.jsx(e.span,{className:"hljs-string",children:'"¡Ganaste!"'}),`);
-        } `,n.jsx(e.span,{className:"hljs-keyword",children:"else"})," ",n.jsx(e.span,{className:"hljs-keyword",children:"if"}),` (
-            jugador.equals(`,n.jsx(e.span,{className:"hljs-string",children:'"piedra"'}),`) ||
-            jugador.equals(`,n.jsx(e.span,{className:"hljs-string",children:'"papel"'}),`) ||
-            jugador.equals(`,n.jsx(e.span,{className:"hljs-string",children:'"tijera"'}),`)
-        ) {
-            System.out.println(`,n.jsx(e.span,{className:"hljs-string",children:'"¡Perdiste!"'}),`);
-        } `,n.jsx(e.span,{className:"hljs-keyword",children:"else"}),` {
-            System.out.println(`,n.jsx(e.span,{className:"hljs-string",children:'"Opción no válida. Debes elegir piedra, papel o tijera."'}),`);
-        }
-
-        scanner.close(); `,n.jsx(e.span,{className:"hljs-comment",children:"// Cerramos el Scanner"}),`
-    }
-
+	`,n.jsx(e.span,{className:"hljs-keyword",children:"public"})," ",n.jsx(e.span,{className:"hljs-keyword",children:"static"})," ",n.jsx(e.span,{className:"hljs-keyword",children:"void"})," ",n.jsx(e.span,{className:"hljs-title function_",children:"main"}),n.jsx(e.span,{className:"hljs-params",children:"(String[] args)"}),` {
+		`,n.jsx(e.span,{className:"hljs-comment",children:"// ... Código anterior"}),`
+		`,n.jsx(e.span,{className:"hljs-keyword",children:"if"}),` (jugador.equals(computadora)) {
+			System.out.println(`,n.jsx(e.span,{className:"hljs-string",children:'"¡Empate!"'}),`);
+		} `,n.jsx(e.span,{className:"hljs-keyword",children:"else"})," ",n.jsx(e.span,{className:"hljs-keyword",children:"if"}),` (
+			(jugador.equals(`,n.jsx(e.span,{className:"hljs-string",children:'"piedra"'}),") && computadora.equals(",n.jsx(e.span,{className:"hljs-string",children:'"tijera"'}),`)) ||
+			(jugador.equals(`,n.jsx(e.span,{className:"hljs-string",children:'"papel"'}),") && computadora.equals(",n.jsx(e.span,{className:"hljs-string",children:'"piedra"'}),`)) ||
+			(jugador.equals(`,n.jsx(e.span,{className:"hljs-string",children:'"tijera"'}),") && computadora.equals(",n.jsx(e.span,{className:"hljs-string",children:'"papel"'}),`))
+		) {
+			System.out.println(`,n.jsx(e.span,{className:"hljs-string",children:'"¡Ganaste!"'}),`);
+		} `,n.jsx(e.span,{className:"hljs-keyword",children:"else"})," ",n.jsx(e.span,{className:"hljs-keyword",children:"if"}),` (
+			jugador.equals(`,n.jsx(e.span,{className:"hljs-string",children:'"piedra"'}),`) ||
+			jugador.equals(`,n.jsx(e.span,{className:"hljs-string",children:'"papel"'}),`) ||
+			jugador.equals(`,n.jsx(e.span,{className:"hljs-string",children:'"tijera"'}),`)
+		) {
+			System.out.println(`,n.jsx(e.span,{className:"hljs-string",children:'"¡Perdiste!"'}),`);
+		} `,n.jsx(e.span,{className:"hljs-keyword",children:"else"}),` {
+			System.out.println(`,n.jsx(e.span,{className:"hljs-string",children:'"Opción no válida. Debes elegir piedra, papel o tijera."'}),`);
+		}
+		scanner.close(); `,n.jsx(e.span,{className:"hljs-comment",children:"// Cerramos el Scanner"}),`
+	}
 }
 `]})}),`
 `,n.jsxs(e.blockquote,{children:[`
