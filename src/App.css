@@ -199,7 +199,6 @@ body.dark ::-webkit-scrollbar-thumb {
     padding-inline-end: 0;
   }
   pre code {
-    font-size: 16px;
     line-height: 1.4rem;
   }
 }

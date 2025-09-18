@@ -13,9 +13,9 @@
   }}
 />
 
-El __IMC__, conocido como el índice de masa corporal, es una medida que asocia el peso de una persona. Este valor es utilizado como indicador nutricional y constituye un índice fácil y sencillo de calcular para determinar el estado de obesidad y sobrepreso de una persona.
+El __IMC__, conocido como el índice de masa corporal, es una medida que se asocia al peso de una persona. Este valor es utilizado como indicador nutricional y constituye un índice fácil y sencillo de calcular para determinar el estado de obesidad y sobrepreso de una persona.
 
-El __IMC__ se calcula de la siguiente manera:
+El __IMC__ se calcula con la siguiente formula:
 
 <MathComponent formula="\\IMC=\frac{W}{H^2}" />
 
@@ -58,9 +58,9 @@ Recuerda que en Java, el nombre del archivo debe coincidir exactamente con el no
 
 ## PASO 2 Capturar los datos del usuario
 
-Java no trae por defecto entrada desde consola, por eso es que se necesita importar la clase `Scanner` desde la librería `java.util`.
+Java trae por defecto mecanismos para leer la entrada desde el teclado, sólo se necesita importar la clase `Scanner` desde la librería `java.util`.
 
-Vamos a usar `Scanner` para leer el __peso__ y la __altura__ por teclado.
+Vamos a capturar con `Scanner` el __peso__ y la __altura__ por teclado.
 
 ```java
 // filename: CalculadoraIMC.java
@@ -101,10 +101,24 @@ public class CalculadoraIMC {
     public static void main(String[] args){
         // código anterior...
         double imc = peso / (altura * altura);
-        System.out.printf("Tu IMC es: %.2f\\n", imc);
+        System.out.printf("Tu IMC es: %.2f\n", imc);
     }
 }
 ```
+
+<Blockquote type="tip">
+En el programa, el resultado del IMC se muestra con solo **dos cifras decimales** gracias al especificador de formato `%.2f` dentro de `System.out.printf`.
+</Blockquote>
+
+* `f` → indica que se trata de un número en formato de punto flotante (decimal).
+* `.2` → significa que se deben mostrar **exactamente 2 decimales**, redondeando el valor en caso necesario.
+
+Por ejemplo:
+
+* Si el IMC calculado es `23.4567`, se mostrará como `23.46`.
+* Si es `23.4`, se mostrará como `23.40`.
+
+Esto no cambia el valor real de la variable `imc` (que sigue teniendo todos sus decimales), solo **cómo se imprime en pantalla**.
 
 ## PASO 4 Clasificar el resultado
 
@@ -116,7 +130,7 @@ public class CalculadoraIMC {
     public static void main(String[] args){
         // código anterior...
         double imc = peso / (altura * altura);
-        System.out.printf("Tu IMC es: %.2f\\n", imc);
+        System.out.printf("Tu IMC es: %.2f\n", imc);
         
         if (imc < 18.5) {
             System.out.println("Clasificación: Bajo peso");
