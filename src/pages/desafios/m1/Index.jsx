@@ -24,11 +24,12 @@ export default () => {
             </thead>
             <tbody>
                 { desafiosM1.map((entry, index) => {
+                    let color = entry.difficult === "Fácil" ? "--success": "--warning";
                     return (
                     <tr key={index} onClick={() => handleRowClick(entry.slug)} style={{cursor: "pointer"}}>
                         <td data-label="N°">{index + 1}</td>
                         <td data-label="Dificultad">
-                            {entry.difficult}
+                           <i class="fa-regular fa-circle-dot" style={{color: `var(${color}, green)`}}></i> {entry.difficult}
                         </td>
                         <td data-label="Desafío">
                             {entry.title}

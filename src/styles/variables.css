@@ -10,6 +10,8 @@
   --color-visited: #31333c;
   --color-card-bg: #f9f9f9;
   --color-blockcode-bg: #f0f0f0;
+  --success: green;
+  --warning: #8B8000;
 
   /* === NAVBAR COLORS === */
   --color-nav-bg: #f9f4ff;
@@ -70,7 +72,6 @@
   --filetree-border: #282a2d;
   --filetree-shadow: rgba(0, 0, 0, 0.05);
   --filetree-hover-bg: #babacc; /* color hover para modo claro y oscuro */
-
 }
 
 
@@ -86,7 +87,8 @@ body.dark {
   --filetree-border: #444444;
   --filetree-shadow: rgba(0, 0, 0, 0.3);
   --filetree-hover-bg: #434344; /* mismo color para modo oscuro */
-
+  --success: lightgreen;
+  --warning: lightyellow;
 
   --color-primary: #c6c3fe;
   --color-secondary: #aabefb;
